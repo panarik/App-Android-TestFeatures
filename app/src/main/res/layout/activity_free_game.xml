@@ -6,4 +6,29 @@
     android:layout_height="match_parent"
     tools:context=".FreeGameActivity">
 
+    <ImageView
+        android:id="@+id/chestClosed"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:onClick="chest"
+        app:srcCompat="@drawable/chest_closed" />
+
+    <ImageView
+        android:id="@+id/chestEmpty"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:alpha="0"
+        android:onClick="chest"
+        app:srcCompat="@drawable/chest_open_empty" />
+
+    <ImageView
+        android:id="@+id/chestGold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:alpha="0"
+        android:onClick="chest"
+        app:srcCompat="@drawable/chest_open_gold" />
 </RelativeLayout>
