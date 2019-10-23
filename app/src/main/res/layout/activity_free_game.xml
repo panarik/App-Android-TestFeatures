@@ -44,4 +44,12 @@
         android:text="Try Again :)"
         android:onClick="tryAgain"
         />
+
+    <ImageView
+        android:id="@+id/youVinView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:alpha="0"
+        app:srcCompat="@drawable/you_win" />
 </RelativeLayout>
