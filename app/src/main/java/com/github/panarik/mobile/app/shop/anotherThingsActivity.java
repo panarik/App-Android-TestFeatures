@@ -7,7 +7,9 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 
-public class anotherThingsActivity extends AppCompatActivity {
+public class anotherThingsActivity extends AppCompatActivity implements View.OnClickListener {
+
+    int orientationFliper = 1;
 
 
     @Override
@@ -15,7 +17,10 @@ public class anotherThingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_another_things);
 
+        ImageView fliper = findViewById(R.id.fliper);
+        fliper.setOnClickListener(this);
     }
+/*
 
     public void flip(View view) {
         ImageView fliper = findViewById(R.id.fliper);
@@ -25,6 +30,19 @@ public class anotherThingsActivity extends AppCompatActivity {
     public void zoom(View view) {
         ImageView resizeView = findViewById(R.id.resizeView);
         resizeView.animate().scaleY(0.2f).scaleX(0.2f).rotation(720).translationXBy(300).setDuration(1000);
+    }
+*/
 
+    @Override
+    public void onClick(View v) {
+
+        ImageView fliper = findViewById(R.id.fliper);
+        orientationFliper = orientationFliper +1;
+
+        if (orientationFliper % 2 == 0){
+            fliper.animate().rotation(180).setDuration(1000);
+        } else {
+            fliper.animate().rotation(0).setDuration(1000);
+        }
     }
 }
