@@ -45,4 +45,9 @@ public class FreeGameActivity extends AppCompatActivity {
         Intent goToMainIntent = new Intent(FreeGameActivity.this, MainActivity.class);
         startActivity(goToMainIntent);
     }
+
+    public void anotherThings(View view) {
+        Intent anotherThings = new Intent(FreeGameActivity.this, anotherThingsActivity.class);
+        startActivity(anotherThings);
+    }
 }
