@@ -2,6 +2,7 @@ package com.github.panarik.mobile.app.shop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -87,5 +88,10 @@ public class anotherThingsActivity extends AppCompatActivity implements View.OnC
                 break;
 
         }
+    }
+
+    public void VideoViewActivity(View view) {
+        Intent VideoViewActivity = new Intent(anotherThingsActivity.this, VideoViewActivity.class);
+        startActivity(VideoViewActivity);
     }
 }
