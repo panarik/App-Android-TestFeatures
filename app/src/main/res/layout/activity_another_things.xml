@@ -1,26 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-android:orientation="vertical"
     tools:context=".anotherThingsActivity">
 
     <ImageView
         android:id="@+id/fliper"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         app:srcCompat="@drawable/fliper"
         />
 
     <ImageView
         android:id="@+id/resizeView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_below="@id/fliper"
+        android:layout_marginTop="20sp"
         app:srcCompat="@drawable/zoom"
         />
 
+    <ImageView
+        android:id="@+id/flowerImageView"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_below="@id/resizeView"
+        android:layout_marginTop="30sp"
+        app:srcCompat="@drawable/bud_and_flover_1" />
 
-</LinearLayout>
+
+</RelativeLayout>
