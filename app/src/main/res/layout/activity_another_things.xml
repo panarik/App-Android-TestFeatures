@@ -24,12 +24,33 @@
         />
 
     <ImageView
-        android:id="@+id/flowerImageView"
+        android:id="@+id/flowerImageView1"
         android:layout_width="match_parent"
         android:layout_height="130dp"
         android:layout_below="@id/resizeView"
         android:layout_marginTop="30sp"
         app:srcCompat="@drawable/bud_and_flover_1" />
+    <ImageView
+        android:id="@+id/flowerImageView2"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_below="@id/resizeView"
+        android:layout_marginTop="30sp"
+        app:srcCompat="@drawable/bud_and_flover_2" />
+    <ImageView
+        android:id="@+id/flowerImageView3"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_below="@id/resizeView"
+        android:layout_marginTop="30sp"
+        app:srcCompat="@drawable/bud_and_flover_3" />
 
+    <ImageView
+        android:id="@+id/flowerImageView4"
+        android:layout_width="match_parent"
+        android:layout_height="130dp"
+        android:layout_below="@id/resizeView"
+        android:layout_marginTop="30sp"
+        app:srcCompat="@drawable/bud_and_flover_4" />
 
 </RelativeLayout>
