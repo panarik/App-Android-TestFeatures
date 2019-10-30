@@ -7,22 +7,18 @@
     tools:context=".PlayingAudioActivity">
 
     <Button
-        android:id="@+id/buttonPlay"
+        android:id="@+id/buttonControl"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerVertical="true"
-        android:onClick="Play"
-        android:text="Play"
-         />
+        android:layout_centerHorizontal="true"
+        android:onClick="Control"
+        android:text="Play"/>
 
-    <Button
-        android:id="@+id/buttonPause"
-        android:layout_width="wrap_content"
+    <SeekBar
+        android:id="@+id/volumeSeekBar"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:layout_toRightOf="@id/buttonPlay"
-        android:layout_marginStart="30dp"
-        android:onClick="Pause"
-        android:text="Pause"
-         />
+        android:layout_below="@id/buttonControl"
+        android:layout_marginTop="20dp" />
 </RelativeLayout>
