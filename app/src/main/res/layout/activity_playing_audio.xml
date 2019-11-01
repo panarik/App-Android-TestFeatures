@@ -18,7 +18,29 @@
     <SeekBar
         android:id="@+id/volumeSeekBar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="20dp"
         android:layout_below="@id/buttonControl"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="#D9D9E1"
         android:layout_marginTop="20dp" />
+
+    <ImageView
+        android:id="@+id/controlPlay"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="380dp"
+        app:srcCompat="@drawable/ic_play_circle_filled_black_24dp"
+        tools:ignore="VectorDrawableCompat"
+        android:onClick="controlVolume"/>
+
+    <ImageView
+        android:id="@+id/controlPause"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="380dp"
+        app:srcCompat="@drawable/ic_play_circle_filled_black_24dp"
+        tools:ignore="VectorDrawableCompat" />
 </RelativeLayout>

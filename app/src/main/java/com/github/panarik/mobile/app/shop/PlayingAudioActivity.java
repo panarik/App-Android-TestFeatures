@@ -11,10 +11,11 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 
-public class PlayingAudioActivity extends AppCompatActivity {
+public class PlayingAudioActivity extends AppCompatActivity implements View.OnClickListener {
 
     MediaPlayer mediaPlayer;
     String control = "Play";
+    int controlPlayStatus = 1;
     SeekBar volumeSeekBar;
     AudioManager audioManager;
 
@@ -63,5 +64,31 @@ public class PlayingAudioActivity extends AppCompatActivity {
                 control = "Play";
                 break;
         }
+    }
+
+    public void controlVolume(View view) {
+
+        View controlPlay = findViewById(R.id.controlPlay);
+        View controlPause = findViewById(R.id.controlPause);
+
+        switch (controlPlayStatus) {
+            case 1:
+                mediaPlayer.start();
+                controlPlayStatus = controlPlayStatus+1;
+                controlPlay.animate().alpha(0).setDuration(500);
+                controlPause.animate().alpha(100).setDuration(500);
+                break;
+            case 2:
+                mediaPlayer.pause();
+                controlPlayStatus = controlPlayStatus-1;
+                controlPlay.animate().alpha(100).setDuration(500);
+                controlPause.animate().alpha(0).setDuration(500);
+                break;
+        }
+    }
+
+    @Override
+    public void onClick(View v) {
+
     }
 }
