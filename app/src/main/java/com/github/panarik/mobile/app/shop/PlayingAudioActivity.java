@@ -18,6 +18,9 @@ public class PlayingAudioActivity extends AppCompatActivity implements View.OnCl
     int controlPlayStatus = 1;
     SeekBar volumeSeekBar;
     AudioManager audioManager;
+    Button buttonControl;
+    View controlPlay;
+    View controlPause;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +28,16 @@ public class PlayingAudioActivity extends AppCompatActivity implements View.OnCl
         setContentView(R.layout.activity_playing_audio);
         mediaPlayer = MediaPlayer.create(getApplicationContext(), R.raw.audio);
         volumeSeekBar = findViewById(R.id.volumeSeekBar);
+        buttonControl = findViewById(R.id.buttonControl);
+        controlPlay = findViewById(R.id.controlPlay);
+        controlPause = findViewById(R.id.controlPause);
+
+        buttonControl.setOnClickListener(this);
+        controlPlay.setOnClickListener(this);
+        controlPause.setOnClickListener(this);
+
+        controlPause.animate().alpha(0).setDuration(0);
+        Log.d("controlPlayStatusM: ", "start - "+controlPlayStatus);
 
         audioManager = (AudioManager) getSystemService(AUDIO_SERVICE);
         int maxVolume = audioManager.getStreamMaxVolume(AudioManager.STREAM_MUSIC);
@@ -74,15 +87,15 @@ public class PlayingAudioActivity extends AppCompatActivity implements View.OnCl
         switch (controlPlayStatus) {
             case 1:
                 mediaPlayer.start();
-                controlPlayStatus = controlPlayStatus+1;
-                controlPlay.animate().alpha(0).setDuration(500);
-                controlPause.animate().alpha(100).setDuration(500);
+                controlPlayStatus = controlPlayStatus + 1;
+                controlPlay.animate().alpha(0).setDuration(0);
+                controlPause.animate().alpha(100).setDuration(0);
                 break;
             case 2:
                 mediaPlayer.pause();
-                controlPlayStatus = controlPlayStatus-1;
-                controlPlay.animate().alpha(100).setDuration(500);
-                controlPause.animate().alpha(0).setDuration(500);
+                controlPlayStatus = controlPlayStatus - 1;
+                controlPlay.animate().alpha(100).setDuration(0);
+                controlPause.animate().alpha(0).setDuration(0);
                 break;
         }
     }
@@ -90,5 +103,54 @@ public class PlayingAudioActivity extends AppCompatActivity implements View.OnCl
     @Override
     public void onClick(View v) {
 
+        Button buttonControl = findViewById(R.id.buttonControl);
+        ImageView controlPlay = findViewById(R.id.controlPlay);
+        ImageView controlPause = findViewById(R.id.controlPause);
+
+        switch (v.getId()) {
+            case R.id.buttonControl:
+                switch (controlPlayStatus) {
+                    case 1:
+                        mediaPlayer.start();
+                        buttonControl.setText("Pause");
+                        Log.d("buttonControl: ", ""+buttonControl);
+                        controlPlay.animate().alpha(0).setDuration(0);
+                        controlPause.animate().alpha(100).setDuration(0);
+                        controlPlayStatus = controlPlayStatus + 1;
+                        Log.d("buttonControlMessage: ", ""+buttonControl);
+                        Log.d("controlPlayStatusM: ", ""+controlPlayStatus);
+                        break;
+                    case 2:
+                        mediaPlayer.pause();
+                        buttonControl.setText("Play");
+                        controlPlay.animate().alpha(100).setDuration(0);
+                        controlPause.animate().alpha(0).setDuration(0);
+                        controlPlayStatus = controlPlayStatus - 1;
+                        Log.d("buttonControlMessage: ", ""+buttonControl);
+                        Log.d("controlPlayStatusM: ", ""+controlPlayStatus);
+                        break;
+                }
+                break;
+            case R.id.controlPlay:
+                switch (controlPlayStatus) {
+                    case 1:
+                        mediaPlayer.start();
+                        controlPlayStatus = controlPlayStatus + 1;
+                        controlPlay.animate().alpha(0).setDuration(0);
+                        controlPause.animate().alpha(100).setDuration(0);
+                        buttonControl.setText("Pause");
+                        Log.d("controlPlayStatusM: ", "onClick controlPlay - "+controlPlayStatus);
+                        break;
+                    case 2:
+                        mediaPlayer.pause();
+                        controlPlayStatus = controlPlayStatus - 1;
+                        controlPlay.animate().alpha(100).setDuration(0);
+                        controlPause.animate().alpha(0).setDuration(0);
+                        buttonControl.setText("Play");
+                        Log.d("controlPlayStatusM: ", "onClick controlPlay - "+controlPlayStatus);
+                        break;
+                }
+                break;
+        }
     }
 }
