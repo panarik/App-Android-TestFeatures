@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".PlayingAudioActivity"></activity>
+        <activity android:name=".catgame.PetActivity"></activity>
+        <activity android:name=".PlayingAudioActivity" />
         <activity android:name=".VideoViewActivity" />
         <activity android:name=".anotherThingsActivity" />
         <activity android:name=".FreeGameActivity" />

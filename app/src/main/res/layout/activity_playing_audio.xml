@@ -99,7 +99,14 @@
         android:background="#FFFFFF"
         android:theme="@style/SeekBarColor"/>
 
-
+    <Button
+        android:id="@+id/toPetActivity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:onClick="toPetAtcivity"
+        android:text="далее в гости к коту Котовичу" />
 
 
 </RelativeLayout>

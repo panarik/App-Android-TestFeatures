@@ -2,6 +2,7 @@ package com.github.panarik.mobile.app.shop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
@@ -10,6 +11,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
+
+import com.github.panarik.mobile.app.shop.catgame.PetActivity;
 
 import java.util.Timer;
 import java.util.TimerTask;
@@ -81,6 +84,11 @@ public class PlayingAudioActivity extends AppCompatActivity {
             mediaPlayer.start();
             playPauseIcon.setImageResource(R.drawable.ic_logo_media_pause_75);
         }
+    }
+
+    public void toPetAtcivity(View view) {
+        Intent PetActivity = new Intent(PlayingAudioActivity.this, PetActivity.class);
+        startActivity(PetActivity);
     }
 
     /*
