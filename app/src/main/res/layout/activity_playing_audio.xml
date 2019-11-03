@@ -21,7 +21,7 @@
         android:layout_height="match_parent"
         android:scaleType = "centerCrop"
         app:srcCompat="@drawable/media_sound_background"/>
-
+<!--
     <ImageView
         android:id="@+id/controlPause"
         android:layout_width="80dp"
@@ -31,9 +31,10 @@
         android:layout_marginBottom="50dp"
         app:srcCompat="@drawable/ic_logo_media_pause_75"
         tools:ignore="VectorDrawableCompat" />
-
+-->
     <ImageView
-        android:id="@+id/controlPlay"
+        android:id="@+id/controlPlayPause"
+        android:onClick="Play"
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
@@ -44,10 +45,11 @@
 
     <ImageView
         android:id="@+id/controlForward"
+        android:onClick="Forward"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_toRightOf="@id/controlPlay"
-        android:layout_alignTop="@id/controlPlay"
+        android:layout_toRightOf="@id/controlPlayPause"
+        android:layout_alignTop="@id/controlPlayPause"
         android:layout_marginTop="10dp"
         android:layout_marginStart="20dp"
         app:srcCompat="@drawable/ic_media_forward_blue_75"
@@ -55,10 +57,11 @@
 
     <ImageView
         android:id="@+id/controlBackward"
+        android:onClick="Backward"
         android:layout_width="60dp"
         android:layout_height="60dp"
-        android:layout_toLeftOf="@id/controlPlay"
-        android:layout_alignTop="@id/controlPlay"
+        android:layout_toLeftOf="@id/controlPlayPause"
+        android:layout_alignTop="@id/controlPlayPause"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="20dp"
         app:srcCompat="@drawable/ic_logo_media_backward_75"
@@ -86,7 +89,7 @@
         android:textStyle="bold" />
 
     <SeekBar
-        android:id="@+id/volumeSeekBar"
+        android:id="@+id/seekBar"
         android:layout_width="match_parent"
         android:layout_height="20dp"
         android:layout_marginStart="20dp"
