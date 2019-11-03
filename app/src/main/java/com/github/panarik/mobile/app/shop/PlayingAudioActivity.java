@@ -22,6 +22,8 @@ public class PlayingAudioActivity extends AppCompatActivity implements View.OnCl
     View controlPlay;
     View controlPause;
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -153,4 +155,6 @@ public class PlayingAudioActivity extends AppCompatActivity implements View.OnCl
                 break;
         }
     }
+
+
 }

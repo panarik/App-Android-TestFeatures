@@ -27,7 +27,8 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="420dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
         app:srcCompat="@drawable/ic_logo_media_pause_75"
         tools:ignore="VectorDrawableCompat" />
 
@@ -36,7 +37,8 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="420dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="50dp"
         app:srcCompat="@drawable/ic_logo_media_play_75"
         tools:ignore="VectorDrawableCompat"/>
 
@@ -75,10 +77,13 @@
         android:id="@+id/textSongNameView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
         android:layout_below="@id/controlQuaver"
-        android:textSize="22sp"
-        android:text="My Song" />
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="My Song"
+        android:textColor="@color/colorAccent"
+        android:textSize="26sp"
+        android:textStyle="bold" />
 
     <SeekBar
         android:id="@+id/volumeSeekBar"
@@ -87,8 +92,9 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:layout_below="@id/textSongNameView"
+        android:layout_marginTop="20dp"
         android:background="#FFFFFF"
-        android:alpha="50"/>
+        android:theme="@style/SeekBarColor"/>
 
 
 
