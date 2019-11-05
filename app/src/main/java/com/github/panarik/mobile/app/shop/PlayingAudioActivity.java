@@ -86,10 +86,12 @@ public class PlayingAudioActivity extends AppCompatActivity {
         }
     }
 
-    public void toPetAtcivity(View view) {
-        Intent PetActivity = new Intent(PlayingAudioActivity.this, PetActivity.class);
-        startActivity(PetActivity);
+    public void toListViewActivity(View view) {
+
+        Intent toArrayListIntent = new Intent(PlayingAudioActivity.this, ListViewActivity.class);
+        startActivity(toArrayListIntent);
     }
+
 
     /*
 _________________________________________________

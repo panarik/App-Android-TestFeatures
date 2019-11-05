@@ -105,8 +105,8 @@
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:onClick="toPetAtcivity"
-        android:text="далее в гости к коту Котовичу" />
+        android:onClick="toListViewActivity"
+        android:text="далее list view" />
 
 
 </RelativeLayout>
