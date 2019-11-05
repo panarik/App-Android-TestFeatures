@@ -2,7 +2,7 @@ package com.github.panarik.mobile.app.shop.catgame;
 
 import android.util.Log;
 
-public class Pet {
+public class Pet extends Animal {
 
     // Вариант №1
     int age;

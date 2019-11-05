@@ -12,7 +12,7 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 
-import com.github.panarik.mobile.app.shop.catgame.PetActivity;
+import com.github.panarik.mobile.app.shop.catgame.*;
 
 import java.util.Timer;
 import java.util.TimerTask;

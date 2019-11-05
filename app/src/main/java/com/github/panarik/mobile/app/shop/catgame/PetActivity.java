@@ -42,5 +42,11 @@ public class PetActivity extends AppCompatActivity {
         Pet barsik = new Pet(12, "Barsik");
         barsik.talk();
         // Конец №4
+
+        // Наследование: PumaPet <- Pet <- Animal
+        PumaPet puma = new PumaPet();
+        puma.breath();
+        puma.talk();
+
     }
 }
