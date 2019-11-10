@@ -2,6 +2,7 @@ package com.github.panarik.mobile.app.shop;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -54,4 +55,8 @@ public class ListViewActivity extends AppCompatActivity {
 
     }
 
+    public void GoToRecycler(View view) {
+        Intent RecyclerViewActivity = new Intent(ListViewActivity.this, com.github.panarik.mobile.app.shop.recyclerview.RecyclerViewActivity.class);
+        startActivity(RecyclerViewActivity);
+    }
 }
