@@ -5,13 +5,25 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.panarik.mobile.app.shop.R;
 
 public class RecyclerProductAdapter extends RecyclerView.Adapter {
+
+
+    public static class ProductViewHolder extends RecyclerView.ViewHolder {
+
+        public ImageView productImageView;
+        public TextView productNameTextView;
+        public TextView productDescriptionTextView;
+
+        public ProductViewHolder(@NonNull View itemView) {
+            super(itemView);
+        }
+    }
+
 
     @NonNull
     @Override
@@ -31,15 +43,5 @@ public class RecyclerProductAdapter extends RecyclerView.Adapter {
         return 0;
     }
 
-    public static class ProductViewHolder extends RecyclerView.ViewHolder {
-
-        public ImageView productImageView;
-        public TextView productNameTextView;
-        public TextView productDescriptionTextView;
-
-        public ProductViewHolder(@NonNull View itemView) {
-            super(itemView);
-        }
-    }
 
 }
