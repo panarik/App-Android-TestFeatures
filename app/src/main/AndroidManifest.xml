@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".products.RecyclerProductViewActivity"></activity>
+        <activity android:name=".menu.MenuActivity"></activity>
+        <activity android:name=".products.RecyclerProductViewActivity" />
         <activity android:name=".products.ProductsActivity" />
         <activity android:name=".ProductsActivity" />
         <activity android:name=".recyclerview.RecyclerViewActivity" />

@@ -64,4 +64,12 @@
         android:layout_marginTop="20dp"
         android:alpha="0"
         app:srcCompat="@drawable/you_win" />
+
+    <Button
+        android:id="@+id/button4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="MENU OPTIONS"
+        android:onClick="goToMenuActivity"
+        />
 </RelativeLayout>

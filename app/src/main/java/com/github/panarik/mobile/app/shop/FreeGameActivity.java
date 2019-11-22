@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
+import com.github.panarik.mobile.app.shop.menu.MenuActivity;
+
 public class FreeGameActivity extends AppCompatActivity {
 
 
@@ -49,5 +51,11 @@ public class FreeGameActivity extends AppCompatActivity {
     public void anotherThings(View view) {
         Intent anotherThings = new Intent(FreeGameActivity.this, anotherThingsActivity.class);
         startActivity(anotherThings);
+    }
+
+    public void goToMenuActivity(View view) {
+
+        Intent goToMenuActivity = new Intent (FreeGameActivity.this, MenuActivity.class);
+        startActivity(goToMenuActivity);
     }
 }
