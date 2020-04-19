@@ -20,6 +20,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         далее IDEA сама предложит добавить два метода
         тест
         тест2
+        коммит 4
 */
     int quantity = 0;
     Spinner spinner;
