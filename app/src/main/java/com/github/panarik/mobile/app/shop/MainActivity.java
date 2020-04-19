@@ -19,6 +19,7 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener { /*имплиментируем возможность данного метода сушать действя (клики) пользователей и реагировать на них
         далее IDEA сама предложит добавить два метода
         тест
+        тест2
 */
     int quantity = 0;
     Spinner spinner;
