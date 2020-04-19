@@ -21,6 +21,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         тест
         тест2
         коммит 4
+        коммит 5
 */
     int quantity = 0;
     Spinner spinner;
