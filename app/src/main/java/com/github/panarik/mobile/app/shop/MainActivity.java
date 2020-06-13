@@ -19,14 +19,14 @@ import java.util.HashMap;
 public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener { /*имплиментируем возможность данного метода сушать действя (клики) пользователей и реагировать на них
         далее IDEA сама предложит добавить два метода
 */
-    int quantity = 0;
+    int quantity = 0; //количество товара
     Spinner spinner;
     ArrayList spinnerArrayList;
     ArrayAdapter spinnerAdapter;
-    HashMap goodsMap; //создаём переменную для опредения БД доваров
-    String goodsName; //создаём переменную с наименованием Товара
-    double price; // переменная, которая будет отображать цену Товара
-    EditText userNameEditText; //переменная для ввода данных об имене пользователя.
+    HashMap goodsMap; //БД доваров
+    String goodsName; //наименование Товара
+    double price; // цена Товара
+    EditText userNameEditText; //ввод данных об имене пользователя.
 
 
     @Override
@@ -120,24 +120,13 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
                 goodsImageView.setImageResource(R.drawable.led_3mm);
                 break;
         }
-        /*
-        if (goodsName.equals("Интерьер - 3мм")) {
-            goodsImageView.setImageResource(R.drawable.led_3mm);
-        } else if (goodsName.equals("Интерьер - 4мм")) {
-            goodsImageView.setImageResource(R.drawable.led_4mm);
-        } else if (goodsName.equals("Фасад - 10мм")) {
-            goodsImageView.setImageResource(R.drawable.mediafacade_10mm);
-        } else if (goodsName.equals("Фасад - 20мм")) {
-            goodsImageView.setImageResource(R.drawable.mediafacade_20mm);
-        }
-        */
     }
 
 
     @Override
     public void onNothingSelected(AdapterView<?> parent) {
-
     }
+
 
     public void addToCart(View view) {
 

@@ -1,11 +1,11 @@
 apply plugin: 'com.android.application'
 
 android {
-    compileSdkVersion 28
+    compileSdkVersion 29
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.github.panarik.mobile.app.shop"
-        minSdkVersion 19
+        minSdkVersion 24 //24 - требование строки android:networkSecurityConfig="@xml/network_security_config" в AndroidManifest
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"
@@ -24,9 +24,15 @@ dependencies {
     implementation 'androidx.appcompat:appcompat:1.1.0'
     implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
     testImplementation 'junit:junit:4.12'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.0'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.1'
-    implementation 'androidx.recyclerview:recyclerview:1.0.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
     implementation 'androidx.cardview:cardview:1.0.0'
+
+    //test
+    androidTestImplementation 'com.android.support.test:rules:1.0.2'
+
+    //mock "okhttp"
+    androidTestImplementation("com.squareup.okhttp3:mockwebserver:4.7.2")
 
 }
