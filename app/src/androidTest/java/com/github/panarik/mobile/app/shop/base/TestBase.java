@@ -2,6 +2,7 @@ package com.github.panarik.mobile.app.shop.base;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
+import androidx.test.uiautomator.UiDevice;
 
 import com.github.panarik.mobile.app.shop.MainActivity;
 
@@ -17,8 +18,13 @@ import okhttp3.Response;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
 
+import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
+
 @RunWith(AndroidJUnit4.class)
 public class TestBase {
+
+    //текущий девайс
+    public UiDevice mDevice;
 
 
     //server setup
@@ -46,6 +52,17 @@ public class TestBase {
                 .setResponseCode(200) //set response code
         );
     }
+
+    @Before
+    public void startMainActivity() {
+        // Initialize UiDevice instance
+        mDevice = UiDevice.getInstance(getInstrumentation());
+
+        // Start from the home screen
+        // mDevice.pressHome();
+    }
+
+
 
     @After
     public void stopMockServer() throws Exception {
