@@ -1,5 +1,6 @@
 package com.github.panarik.mobile.app.shop.screen;
 
+import android.os.SystemClock;
 import android.view.View;
 
 import androidx.test.espresso.Espresso;
@@ -22,12 +23,42 @@ import static org.hamcrest.Matchers.anything;
 public class TestMainBase extends TestBase {
 
     @Test
-    public void editTextTest(){
-        onView(withId(R.id.editText)).perform(typeText("alex")).check(matches(withText("alex")));
+    public void editTextNameTest() {
+        onView(withId(R.id.editText))
+                .perform(typeText("alex"))
+                .check(matches(withText("alex")));
     }
 
     @Test
-    public void editSpinnerTest(){
+    public void editTextSpinnerTest() {
+        onView(withId(R.id.spinner))
+                .perform(click());
+        onData(anything())
+                .atPosition(0)
+                .perform(click())
+                .check(matches(withText("Интерьер - 3мм")));
+    }
+
+    @Test
+    public void viewTextQuantityTest() {
+        onView(withId(R.id.textView5))
+                .check(matches(withText("0")));
+    }
+
+    @Test
+    public void viewTextPriceTest() {
+        onView(withId(R.id.textView4))
+                .check(matches(withText("0.0 $")));
+    }
+
+    @Test
+    public void editAddToCardTest(){
+        //вводим имя
+        onView(withId(R.id.editText))
+                .perform(typeText("alex"))
+                .check(matches(withText("alex")));
+
+        //выбираем товар
         onView(withId(R.id.spinner))
                 .perform(click());
         onData(anything())
@@ -35,6 +66,10 @@ public class TestMainBase extends TestBase {
                 .perform(click())
                 .check(matches(withText("Интерьер - 3мм")));
 
+        //указываем количество
+        //onView(withId(R.id.button2))
+        //       .perform(click());
+        //
     }
 
 }

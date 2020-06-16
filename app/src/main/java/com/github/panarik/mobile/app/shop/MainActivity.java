@@ -96,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
 
-    @Override
+
     public void onItemSelected(AdapterView<?> parent, View view, int position, long id) { // метод. Код в методе будет выполняться, когда какой-то эелемент выбран.
         goodsName = spinner.getSelectedItem().toString(); // значение переменной goodsName которое выбранно в спиннере в данный момент
         price = (double) goodsMap.get(goodsName); // переменная с ценой будет получать текущее значение переменной с ценой товара в массиве исходя из выбраного в спиннере товара)
@@ -123,7 +123,6 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
     }
 
 
-    @Override
     public void onNothingSelected(AdapterView<?> parent) {
     }
 
