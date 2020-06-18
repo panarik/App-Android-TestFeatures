@@ -5,7 +5,8 @@ android {
     buildToolsVersion "29.0.2"
     defaultConfig {
         applicationId "com.github.panarik.mobile.app.shop"
-        minSdkVersion 24 //24 - требование строки android:networkSecurityConfig="@xml/network_security_config" в AndroidManifest
+        minSdkVersion 24
+        //24 - требование строки android:networkSecurityConfig="@xml/network_security_config" в AndroidManifest
         targetSdkVersion 29
         versionCode 1
         versionName "1.0"

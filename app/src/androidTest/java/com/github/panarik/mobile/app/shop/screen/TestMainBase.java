@@ -71,7 +71,10 @@ public class TestMainBase extends TestBase {
                 .atPosition(0)
                 .perform(click())
                 .check(matches(withText("Интерьер - 3мм")));
+
+        //закрываем ввод текста
         mDevice.pressBack();
+
         //указываем количество
         onView(withId(R.id.button2))
                .perform(click());

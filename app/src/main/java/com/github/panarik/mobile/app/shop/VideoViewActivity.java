@@ -26,7 +26,7 @@ public class VideoViewActivity extends AppCompatActivity {
     }
 
     public void toPlayingAudio(View view) {
-        Intent PlayingAudioActivity = new Intent(VideoViewActivity.this, PlayingAudioActivity.class);
-        startActivity(PlayingAudioActivity);
+        Intent VideoWebActivity = new Intent(VideoViewActivity.this, VideoWebActivity.class);
+        startActivity(VideoWebActivity);
     }
 }
