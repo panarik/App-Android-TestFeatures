@@ -6,19 +6,33 @@
     android:layout_margin="8dp"
     app:cardCornerRadius="8dp">
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
         android:orientation="vertical"
+        android:padding="16dp">
 
         <ImageView
-            android:id="@+id/posterImageViewWebMovie"
-            android:src="@mipmap/ic_launcher"
+            android:id="@+id/posterWebMovieImageView"
             android:layout_width="match_parent"
-            android:layout_height="200dp"></ImageView>
+            android:layout_height="200dp"
+            android:src="@mipmap/ic_launcher" />
 
+        <TextView
+            android:id="@+id/titleWebMovieTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Title"
+            android:textColor="@android:color/black"
+            android:textSize="30sp" />
+
+        <TextView
+            android:id="@+id/yearWebMovieTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Year"
+            android:textColor="@android:color/black"
+            android:textSize="15sp" />
 
     </LinearLayout>
 
