@@ -1,4 +1,4 @@
-package com.github.panarik.mobile.app.shop.menu;
+package com.github.panarik.mobile.app.shop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,7 +10,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import com.github.panarik.mobile.app.shop.R;
-import com.github.panarik.mobile.app.shop.menu.createinterface.CreateInterfaceActivity;
+import com.github.panarik.mobile.app.shop.data.menu.createinterface.CreateInterfaceActivity;
 
 import java.util.ArrayList;
 

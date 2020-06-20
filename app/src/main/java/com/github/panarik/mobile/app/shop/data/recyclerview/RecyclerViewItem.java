@@ -1,4 +1,4 @@
-package com.github.panarik.mobile.app.shop.recyclerview;
+package com.github.panarik.mobile.app.shop.data.recyclerview;
 
 public class RecyclerViewItem {
 

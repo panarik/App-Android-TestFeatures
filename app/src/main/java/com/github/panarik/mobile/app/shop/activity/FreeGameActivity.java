@@ -1,4 +1,4 @@
-package com.github.panarik.mobile.app.shop;
+package com.github.panarik.mobile.app.shop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.github.panarik.mobile.app.shop.menu.MenuActivity;
+import com.github.panarik.mobile.app.shop.R;
 
 public class FreeGameActivity extends AppCompatActivity {
 
@@ -49,7 +49,7 @@ public class FreeGameActivity extends AppCompatActivity {
     }
 
     public void anotherThings(View view) {
-        Intent anotherThings = new Intent(FreeGameActivity.this, anotherThingsActivity.class);
+        Intent anotherThings = new Intent(FreeGameActivity.this, AnotherThingsActivity.class);
         startActivity(anotherThings);
     }
 

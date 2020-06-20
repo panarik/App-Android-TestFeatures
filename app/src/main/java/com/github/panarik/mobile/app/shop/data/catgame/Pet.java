@@ -1,4 +1,4 @@
-package com.github.panarik.mobile.app.shop.catgame;
+package com.github.panarik.mobile.app.shop.data.catgame;
 
 import android.util.Log;
 

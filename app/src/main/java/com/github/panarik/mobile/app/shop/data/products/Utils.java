@@ -1,4 +1,4 @@
-package com.github.panarik.mobile.app.shop.products;
+package com.github.panarik.mobile.app.shop.data.products;
 
 public class Utils {
 

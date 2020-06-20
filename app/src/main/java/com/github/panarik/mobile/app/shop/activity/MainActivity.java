@@ -1,4 +1,4 @@
-package com.github.panarik.mobile.app.shop;
+package com.github.panarik.mobile.app.shop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,6 +12,9 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.github.panarik.mobile.app.shop.data.Order;
+import com.github.panarik.mobile.app.shop.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

@@ -1,4 +1,4 @@
-package com.github.panarik.mobile.app.shop.menu.createinterface;
+package com.github.panarik.mobile.app.shop.data.menu.createinterface;
 
 import androidx.appcompat.app.AppCompatActivity;
 

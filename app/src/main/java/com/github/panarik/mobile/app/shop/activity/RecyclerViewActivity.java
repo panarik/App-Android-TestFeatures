@@ -1,11 +1,13 @@
-package com.github.panarik.mobile.app.shop.recyclerview;
+package com.github.panarik.mobile.app.shop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.panarik.mobile.app.shop.R;
-import com.github.panarik.mobile.app.shop.products.RecyclerProductViewActivity;
+import com.github.panarik.mobile.app.shop.data.products.RecyclerProductViewActivity;
+import com.github.panarik.mobile.app.shop.data.recyclerview.RecyclerViewAdapter;
+import com.github.panarik.mobile.app.shop.data.recyclerview.RecyclerViewItem;
 
 import android.content.Intent;
 import android.os.Bundle;

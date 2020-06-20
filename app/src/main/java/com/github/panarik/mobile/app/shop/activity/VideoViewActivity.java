@@ -1,4 +1,4 @@
-package com.github.panarik.mobile.app.shop;
+package com.github.panarik.mobile.app.shop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,6 +7,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.MediaController;
 import android.widget.VideoView;
+
+import com.github.panarik.mobile.app.shop.R;
 
 public class VideoViewActivity extends AppCompatActivity {
 

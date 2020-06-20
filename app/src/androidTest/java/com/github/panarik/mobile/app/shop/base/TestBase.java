@@ -4,7 +4,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.uiautomator.UiDevice;
 
-import com.github.panarik.mobile.app.shop.MainActivity;
+import com.github.panarik.mobile.app.shop.activity.MainActivity;
 
 import org.junit.After;
 import org.junit.Before;

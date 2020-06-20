@@ -1,4 +1,4 @@
-package com.github.panarik.mobile.app.shop;
+package com.github.panarik.mobile.app.shop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,8 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
+
+import com.github.panarik.mobile.app.shop.R;
 
 import java.util.ArrayList;
 
@@ -56,7 +58,7 @@ public class ListViewActivity extends AppCompatActivity {
     }
 
     public void GoToRecycler(View view) {
-        Intent RecyclerViewActivity = new Intent(ListViewActivity.this, com.github.panarik.mobile.app.shop.recyclerview.RecyclerViewActivity.class);
+        Intent RecyclerViewActivity = new Intent(ListViewActivity.this, com.github.panarik.mobile.app.shop.activity.RecyclerViewActivity.class);
         startActivity(RecyclerViewActivity);
     }
 }

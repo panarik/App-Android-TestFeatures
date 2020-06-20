@@ -1,4 +1,4 @@
-package com.github.panarik.mobile.app.shop;
+package com.github.panarik.mobile.app.shop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,10 +6,11 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ImageView;
 
-public class anotherThingsActivity extends AppCompatActivity implements View.OnClickListener {
+import com.github.panarik.mobile.app.shop.R;
+
+public class AnotherThingsActivity extends AppCompatActivity implements View.OnClickListener {
 
     int statFliper = 1;
     int statResizeView = 1;
@@ -91,7 +92,7 @@ public class anotherThingsActivity extends AppCompatActivity implements View.OnC
     }
 
     public void VideoViewActivity(View view) {
-        Intent VideoViewActivity = new Intent(anotherThingsActivity.this, VideoViewActivity.class);
+        Intent VideoViewActivity = new Intent(AnotherThingsActivity.this, VideoViewActivity.class);
         startActivity(VideoViewActivity);
     }
 }

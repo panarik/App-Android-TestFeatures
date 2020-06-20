@@ -1,10 +1,12 @@
-package com.github.panarik.mobile.app.shop;
+package com.github.panarik.mobile.app.shop.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+
+import com.github.panarik.mobile.app.shop.R;
 
 public class VideoWebActivity extends AppCompatActivity {
 
