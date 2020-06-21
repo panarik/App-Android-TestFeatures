@@ -46,36 +46,19 @@ public class VideoWebActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
+        //setUp recycler view
         setContentView(R.layout.activity_video_web);
-
         recyclerView = findViewById(R.id.videoWebView);
         recyclerView.hasFixedSize();
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
-
-        movies = new ArrayList<>();
-        requestQueue = Volley.newRequestQueue(this);
 
         //search movie
         editNameMovie = (EditText) findViewById(R.id.editNameMovie);
-        buttonSearchMovie = (Button) findViewById(R.id.searchMovie);
-
-        buttonSearchMovie.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                textNameMovie = editNameMovie.getText().toString();
-
-                Toast.makeText(getApplicationContext(),editNameMovie.getText(),Toast.LENGTH_SHORT)
-                        .show();
-
-                getMovies();
-            }
-        });
     }
 
 
     private void getMovies() {
 
-        String url = "http://www.omdbapi.com/?apikey=e44ad19e&s="+textNameMovie;
+        String url = "http://www.omdbapi.com/?apikey=e44ad19e&s=" + textNameMovie;
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.GET, //выбираем тип запроса
@@ -119,7 +102,6 @@ public class VideoWebActivity extends AppCompatActivity {
                         error.printStackTrace(); //если придет ошибка из бека
                     }
                 });
-
         requestQueue.add(request);
     }
 
@@ -127,5 +109,18 @@ public class VideoWebActivity extends AppCompatActivity {
     public void toPlayingAudio(View view) {
         Intent PlayingAudioActivity = new Intent(VideoWebActivity.this, PlayingAudioActivity.class);
         startActivity(PlayingAudioActivity);
+    }
+
+    public void toSearchMovie(View view) {
+        //new objects
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        movies = new ArrayList<>();
+        requestQueue = Volley.newRequestQueue(this);
+
+        textNameMovie = editNameMovie.getText().toString();
+        Toast.makeText(getApplicationContext(), editNameMovie.getText(), Toast.LENGTH_SHORT)
+                .show();
+
+        getMovies();
     }
 }
