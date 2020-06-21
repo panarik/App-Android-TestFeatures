@@ -50,7 +50,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.MovieViewHol
         String posterUrl = currentMovie.getPosterUrl();
 
         movieVewHolder.titleWebMovieTextView.setText(title);
-        movieVewHolder.yearWebMovieTextView.setText(title);
+        movieVewHolder.yearWebMovieTextView.setText(year);
         Picasso.get()
                 .load(posterUrl) //закружаем постер по URL posterUrl
                 .fit().centerInside() //располагаем по центру загруженное изображение
