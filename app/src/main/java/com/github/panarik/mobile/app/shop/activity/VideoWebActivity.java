@@ -38,12 +38,14 @@ public class VideoWebActivity extends AppCompatActivity {
     private RequestQueue requestQueue;
 
     EditText editNameMovie;
+    String textNameMovie;
     Button buttonSearchMovie;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_video_web);
 
         recyclerView = findViewById(R.id.videoWebView);
@@ -53,49 +55,27 @@ public class VideoWebActivity extends AppCompatActivity {
         movies = new ArrayList<>();
         requestQueue = Volley.newRequestQueue(this);
 
-        getMovies();
-
-
+        //search movie
         editNameMovie = (EditText) findViewById(R.id.editNameMovie);
         buttonSearchMovie = (Button) findViewById(R.id.searchMovie);
 
         buttonSearchMovie.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                textNameMovie = editNameMovie.getText().toString();
+
                 Toast.makeText(getApplicationContext(),editNameMovie.getText(),Toast.LENGTH_SHORT)
                         .show();
 
+                getMovies();
             }
         });
-
-
-        //editNameMovie = findViewById(R.id.editMovie);
-        //textNameMovie = editNameMovie.getText().toString();
-        //Log.i("editMovieStatus = ", ""+textNameMovie);
-
-        /*
-        final EditText editText = findViewById(R.id.editNameMovie);
-        editText.setOnKeyListener(new View.OnKeyListener() {
-                                      public boolean onKey(View v, int keyCode, KeyEvent event) {
-                                          if (event.getAction() == KeyEvent.ACTION_DOWN &&
-                                                  (keyCode == KeyEvent.KEYCODE_ENTER)) {
-                                              // сохраняем текст, введенный до нажатия Enter в переменную
-                                              textNameMovie = editText.getText().toString();
-                                              return true;
-                                          }
-                                          return false;
-                                      }
-                                  }
-        );
-        Log.i("textNameMovie = ", ""+textNameMovie);
-
-         */
     }
 
 
     private void getMovies() {
 
-        String url = "http://www.omdbapi.com/?apikey=e44ad19e&s=superman";
+        String url = "http://www.omdbapi.com/?apikey=e44ad19e&s="+textNameMovie;
 
         JsonObjectRequest request = new JsonObjectRequest(
                 Request.Method.GET, //выбираем тип запроса
