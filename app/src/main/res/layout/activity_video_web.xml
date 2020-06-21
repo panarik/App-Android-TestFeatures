@@ -1,24 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".activity.VideoWebActivity">
 
-    <Button
-        android:id="@+id/toPlayingAudioActivity"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentBottom="true"
-        android:layout_margin="10dp"
-        android:onClick="toPlayingAudio"
-        android:text="переходим к музыке!"/>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/videoWebView"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="537dp"
-        android:background="@color/cardview_dark_background" />
-</RelativeLayout>
+        android:layout_height="100dp"
+        android:background="@android:color/white">
+        <EditText
+            android:id="@+id/editNameMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="60dp"
+            android:layout_centerVertical="true"
+            android:hint="Название фильма"
+            android:ems="10"
+            android:inputType="textPersonName" />
+        <Button
+            android:id="@+id/searchMovie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toEndOf="@id/editNameMovie"
+            android:text="Поиск!" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/videoWebView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/cardview_dark_background" />
+        <Button
+            android:id="@+id/toPlayingAudioActivity"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:layout_margin="10dp"
+            android:onClick="toPlayingAudio"
+            android:text="переходим к музыке!" />
+    </RelativeLayout>
+
+
+</LinearLayout>

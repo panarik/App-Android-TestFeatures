@@ -6,7 +6,13 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
+import android.view.KeyEvent;
 import android.view.View;
+import android.widget.AdapterView;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -31,6 +37,9 @@ public class VideoWebActivity extends AppCompatActivity {
     private ArrayList<Movie> movies;
     private RequestQueue requestQueue;
 
+    EditText editNameMovie;
+    Button buttonSearchMovie;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +54,42 @@ public class VideoWebActivity extends AppCompatActivity {
         requestQueue = Volley.newRequestQueue(this);
 
         getMovies();
+
+
+        editNameMovie = (EditText) findViewById(R.id.editNameMovie);
+        buttonSearchMovie = (Button) findViewById(R.id.searchMovie);
+
+        buttonSearchMovie.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(getApplicationContext(),editNameMovie.getText(),Toast.LENGTH_SHORT)
+                        .show();
+
+            }
+        });
+
+
+        //editNameMovie = findViewById(R.id.editMovie);
+        //textNameMovie = editNameMovie.getText().toString();
+        //Log.i("editMovieStatus = ", ""+textNameMovie);
+
+        /*
+        final EditText editText = findViewById(R.id.editNameMovie);
+        editText.setOnKeyListener(new View.OnKeyListener() {
+                                      public boolean onKey(View v, int keyCode, KeyEvent event) {
+                                          if (event.getAction() == KeyEvent.ACTION_DOWN &&
+                                                  (keyCode == KeyEvent.KEYCODE_ENTER)) {
+                                              // сохраняем текст, введенный до нажатия Enter в переменную
+                                              textNameMovie = editText.getText().toString();
+                                              return true;
+                                          }
+                                          return false;
+                                      }
+                                  }
+        );
+        Log.i("textNameMovie = ", ""+textNameMovie);
+
+         */
     }
 
 
@@ -103,6 +148,4 @@ public class VideoWebActivity extends AppCompatActivity {
         Intent PlayingAudioActivity = new Intent(VideoWebActivity.this, PlayingAudioActivity.class);
         startActivity(PlayingAudioActivity);
     }
-
-
 }
