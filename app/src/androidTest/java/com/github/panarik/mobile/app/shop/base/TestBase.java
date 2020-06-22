@@ -44,10 +44,12 @@ public class TestBase {
 
     @Before
     public void setupMockServer() throws Exception {
+
         //run server
         server.start();
 
         //configure server
+
         serverUrl = server.url("api/test"); //set server path
         server.enqueue(response
                 .setBody("test body") //set response body
@@ -60,15 +62,15 @@ public class TestBase {
         // Initialize UiDevice instance
         mDevice = UiDevice.getInstance(getInstrumentation());
 
-        // Start from the home screen
-        mDevice.pressHome();
+        //  Press home screen?
+        // mDevice.pressHome();
     }
 
 
 
     @After
     public void stopMockServer() throws Exception {
-        //server.shutdown();
+        server.shutdown();
     }
 
 

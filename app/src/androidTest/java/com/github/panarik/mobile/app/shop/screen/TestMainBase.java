@@ -79,16 +79,17 @@ public class TestMainBase extends TestBase {
         //указываем количество
         onView(withId(R.id.button2))
                .perform(click());
-
     }
 
+    
     @Test
     public void checkPreconditionsTest() {
         assertThat(mDevice, is(notNullValue()));
     }
 
+
     @Test
-    public void testOkHttp() throws Exception {
+    public void OkHttpTest() throws Exception {
 
         //run Get Request
         responseBody = getRequest(client, serverUrl);
@@ -96,5 +97,4 @@ public class TestMainBase extends TestBase {
         //matcher
         Assert.assertEquals("test body", responseBody); //body equals
     }
-
 }
