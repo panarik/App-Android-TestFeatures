@@ -54,7 +54,7 @@
         app:srcCompat="@drawable/bud_and_flover_4" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/toWatchVideo"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/flowerImageView4"
@@ -62,7 +62,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:textSize="24sp"
-        android:onClick="VideoViewActivity"
-        android:text="Lets Watch TV!" />
+        android:onClick="videoViewActivity"
+        android:text="Lets watch Video!" />
 
 </RelativeLayout>

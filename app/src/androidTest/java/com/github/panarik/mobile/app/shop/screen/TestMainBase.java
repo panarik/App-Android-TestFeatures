@@ -81,7 +81,7 @@ public class TestMainBase extends TestBase {
                .perform(click());
     }
 
-    
+
     @Test
     public void checkPreconditionsTest() {
         assertThat(mDevice, is(notNullValue()));

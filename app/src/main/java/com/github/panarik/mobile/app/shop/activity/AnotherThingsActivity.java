@@ -91,7 +91,7 @@ public class AnotherThingsActivity extends AppCompatActivity implements View.OnC
         }
     }
 
-    public void VideoViewActivity(View view) {
+    public void videoViewActivity(View view) {
         Intent VideoViewActivity = new Intent(AnotherThingsActivity.this, VideoViewActivity.class);
         startActivity(VideoViewActivity);
     }
