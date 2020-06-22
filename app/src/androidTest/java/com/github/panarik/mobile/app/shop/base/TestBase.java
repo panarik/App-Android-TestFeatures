@@ -6,6 +6,8 @@ import androidx.test.uiautomator.UiDevice;
 
 import com.github.panarik.mobile.app.shop.activity.MainActivity;
 
+import com.github.panarik.mobile.app.shop.R;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Rule;
@@ -59,14 +61,14 @@ public class TestBase {
         mDevice = UiDevice.getInstance(getInstrumentation());
 
         // Start from the home screen
-        // mDevice.pressHome();
+        mDevice.pressHome();
     }
 
 
 
     @After
     public void stopMockServer() throws Exception {
-        server.shutdown();
+        //server.shutdown();
     }
 
 
