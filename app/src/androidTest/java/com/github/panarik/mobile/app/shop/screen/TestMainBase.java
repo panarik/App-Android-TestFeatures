@@ -79,8 +79,8 @@ public class TestMainBase extends TestBase {
         //указываем количество
         onView(withId(R.id.button2))
                .perform(click());
-    }
 
+    }
 
     @Test
     public void checkPreconditionsTest() {
