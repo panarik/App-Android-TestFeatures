@@ -2,10 +2,10 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 29
-    buildToolsVersion "29.0.2"
+    buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.github.panarik.mobile.app.shop"
-        minSdkVersion 24 //min 19
+        minSdkVersion 19 //min 19
         //24 - требование строки android:networkSecurityConfig="@xml/network_security_config" в AndroidManifest
         // android:networkSecurityConfig="@xml/network_security_config" - требование okhttp
 

@@ -9,6 +9,7 @@ import androidx.test.uiautomator.UiDevice;
 import com.github.panarik.mobile.app.shop.R;
 import com.github.panarik.mobile.app.shop.base.TestBase;
 
+import org.junit.Assert;
 import org.junit.Test;
 
 import static androidx.test.espresso.Espresso.onData;
@@ -84,6 +85,16 @@ public class TestMainBase extends TestBase {
     @Test
     public void checkPreconditionsTest() {
         assertThat(mDevice, is(notNullValue()));
+    }
+
+    @Test
+    public void testOkHttp() throws Exception {
+
+        //run Get Request
+        responseBody = getRequest(client, serverUrl);
+
+        //matcher
+        Assert.assertEquals("test body", responseBody); //body equals
     }
 
 }
