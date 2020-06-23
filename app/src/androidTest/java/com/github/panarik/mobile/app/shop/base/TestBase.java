@@ -13,12 +13,14 @@ import org.junit.Before;
 import org.junit.Rule;
 import org.junit.runner.RunWith;
 
+/*
 import okhttp3.HttpUrl;
 import okhttp3.OkHttpClient;
 import okhttp3.Request;
 import okhttp3.Response;
 import okhttp3.mockwebserver.MockResponse;
 import okhttp3.mockwebserver.MockWebServer;
+ */
 
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 
@@ -30,18 +32,19 @@ public class TestBase {
 
 
     //server setup
-    public MockWebServer server = new MockWebServer();
-    public HttpUrl serverUrl;
-    public MockResponse response = new MockResponse();
+    // public MockWebServer server = new MockWebServer();
+    // public HttpUrl serverUrl;
+    // public MockResponse response = new MockResponse();
 
     //client setup
-    public OkHttpClient client = new OkHttpClient();
-    public String responseBody;
+    // public OkHttpClient client = new OkHttpClient();
+    // public String responseBody;
 
     //start main activity
     @Rule
     public ActivityTestRule<MainActivity> activityActivityTestRule = new ActivityTestRule<>(MainActivity.class);
 
+    /*
     @Before
     public void setupMockServer() throws Exception {
 
@@ -56,6 +59,7 @@ public class TestBase {
                 .setResponseCode(200) //set response code
         );
     }
+     */
 
     @Before
     public void startMainActivity() {
@@ -70,7 +74,7 @@ public class TestBase {
 
     @After
     public void stopMockServer() throws Exception {
-        server.shutdown();
+        //server.shutdown();
     }
 
 
@@ -79,6 +83,8 @@ public class TestBase {
        - client - for GET request object
        - serverUrl - for configure server URL of GET request
     */
+
+    /*
     public String getRequest(OkHttpClient client, HttpUrl serverUrl) throws Exception {
 
         //run client request
@@ -90,9 +96,7 @@ public class TestBase {
         try (Response response = client.newCall(request).execute()){
             return response.body().string();
         }
-
     }
-
-
+*/
 
 }

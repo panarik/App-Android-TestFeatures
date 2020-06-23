@@ -5,7 +5,8 @@ android {
     buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.github.panarik.mobile.app.shop"
-        minSdkVersion 19 //min 19
+        minSdkVersion 23 //min 19
+        //23 - требование android:usesCleartextTraffic="true" в AndroidManifest - нужно для запуска http Трафика
         //24 - требование строки android:networkSecurityConfig="@xml/network_security_config" в AndroidManifest
         // android:networkSecurityConfig="@xml/network_security_config" - требование okhttp
 
@@ -50,7 +51,7 @@ dependencies {
     androidTestImplementation 'org.hamcrest:hamcrest-integration:1.3'
 
     //mock "OkHttp"
-    implementation 'com.squareup.okhttp3:mockwebserver:4.7.2'
+    // implementation 'com.squareup.okhttp3:mockwebserver:4.7.2'
 
 
 }

@@ -87,7 +87,7 @@ public class TestMainBase extends TestBase {
         assertThat(mDevice, is(notNullValue()));
     }
 
-
+/*
     @Test
     public void OkHttpTest() throws Exception {
 
@@ -97,4 +97,6 @@ public class TestMainBase extends TestBase {
         //matcher
         Assert.assertEquals("test body", responseBody); //body equals
     }
+ */
+
 }
