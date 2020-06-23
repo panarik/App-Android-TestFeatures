@@ -5,12 +5,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.app.Activity;
+import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.KeyEvent;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.EditText;
@@ -31,6 +34,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+
+import static android.app.PendingIntent.getActivity;
 
 public class VideoWebActivity extends AppCompatActivity {
 
@@ -132,7 +137,12 @@ public class VideoWebActivity extends AppCompatActivity {
         Toast.makeText(getApplicationContext(), editNameMovie.getText(), Toast.LENGTH_SHORT)
                 .show();
 
+        //запуск recycler view
         getMovies();
+
+        //закрываем клавиатуру
+        InputMethodManager imm = (InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE);
+        imm.toggleSoftInput(InputMethodManager.SHOW_FORCED, 0);
     }
 
 
@@ -160,4 +170,5 @@ public class VideoWebActivity extends AppCompatActivity {
 
         quitDialog.show();
     }
+
 }
