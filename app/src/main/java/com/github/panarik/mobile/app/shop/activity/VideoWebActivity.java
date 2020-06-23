@@ -1,9 +1,11 @@
 package com.github.panarik.mobile.app.shop.activity;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
@@ -42,6 +44,13 @@ public class VideoWebActivity extends AppCompatActivity {
     Button buttonSearchMovie;
 
 
+    //переопределяем кнопку "Назад"
+    @Override
+    public void onBackPressed() {
+        // super.onBackPressed();
+        openQuitDialog();
+    }
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -53,6 +62,8 @@ public class VideoWebActivity extends AppCompatActivity {
 
         //search movie
         editNameMovie = (EditText) findViewById(R.id.editNameMovie);
+
+
     }
 
 
@@ -122,5 +133,31 @@ public class VideoWebActivity extends AppCompatActivity {
                 .show();
 
         getMovies();
+    }
+
+
+
+
+    private void openQuitDialog() {
+        AlertDialog.Builder quitDialog = new AlertDialog.Builder(
+                VideoWebActivity.this);
+        quitDialog.setTitle("Уже уходишь?");
+
+        quitDialog.setPositiveButton("Таки да!", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // TODO Auto-generated method stub
+                finish();
+            }
+        });
+
+        quitDialog.setNegativeButton("Нет", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                // TODO Auto-generated method stub
+            }
+        });
+
+        quitDialog.show();
     }
 }
