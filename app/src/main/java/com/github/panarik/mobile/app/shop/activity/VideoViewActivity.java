@@ -23,7 +23,7 @@ public class VideoViewActivity extends AppCompatActivity {
         MediaController mediaController = new MediaController(this);
         mediaController.setAnchorView(videoView);
         videoView.setMediaController(mediaController);
-        videoView.start();
+        //videoView.start();
 
     }
 

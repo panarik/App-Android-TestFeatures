@@ -44,6 +44,8 @@ dependencies {
 
     //test
     androidTestImplementation 'com.android.support.test:rules:1.0.2'
+    //forTestRecyclerView
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
 
     //UIAutomator
     androidTestImplementation 'com.android.support.test.uiautomator:uiautomator-v18:2.1.3'
