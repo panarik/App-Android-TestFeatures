@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MobileAppShop</string>
+
+    <!--for testing-->
+    <string name="item_element_text">Superman Returns</string>
+
 </resources>

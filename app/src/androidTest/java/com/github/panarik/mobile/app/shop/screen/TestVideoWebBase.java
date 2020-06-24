@@ -63,17 +63,17 @@ public class TestVideoWebBase extends TestBase {
 
         onView(withId(R.id.videoWebView))
                 .perform(actionOnItemAtPosition(0, click()));
-        //scrollTo() - Scrolls to the matched View.
-        //scrollToHolder() - Scrolls to the matched View Holder.
-        //scrollToPosition() - Scrolls to a specific position.
-        //actionOnHolderItem() - Performs a View Action on a matched View Holder.
-        //actionOnItem() - Performs a View Action on a matched View.
-
-
+        /*
+          scrollTo() - Scrolls to the matched View.
+          scrollToHolder() - Scrolls to the matched View Holder.
+          scrollToPosition() - Scrolls to a specific position.
+          actionOnHolderItem() - Performs a View Action on a matched View Holder.
+          actionOnItem() - Performs a View Action on a matched View.
+         */
     }
 
-    //добираемся до нужного экрана
-    public void goToTestVideoWeb() {
+    //run to current screen
+    public static void goToTestVideoWeb() {
         onView(withId(R.id.freeGame))
                 .perform(click());
         onView(withId(R.id.anotherThings))
@@ -85,7 +85,7 @@ public class TestVideoWebBase extends TestBase {
     }
 
 
-    //UI wait some time
+    //UI wait some second
     public static ViewAction waitFor(final long millis) {
         return new ViewAction() {
             @Override
