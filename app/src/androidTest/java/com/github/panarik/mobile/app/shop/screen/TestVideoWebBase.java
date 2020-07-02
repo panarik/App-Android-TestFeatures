@@ -18,6 +18,7 @@ import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
+import static androidx.test.espresso.matcher.ViewMatchers.hasContentDescription;
 import static androidx.test.espresso.matcher.ViewMatchers.hasDescendant;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
@@ -47,7 +48,7 @@ public class TestVideoWebBase extends TestBase {
         onView(withId(R.id.searchMovie))
                 .perform(click());
 
-        onView(isRoot()).perform(waitFor(2000));
+        onView(isRoot()).perform(waitFor(1000));
 
         /*
         onView(allOf(isDisplayed()))
@@ -55,14 +56,17 @@ public class TestVideoWebBase extends TestBase {
                 //также обрабатываем клик
                 //.perform(RecyclerViewActions.actionOnItemAtPosition(2, click()));
          */
-
-        /*
+         /*
         onView(anyOf(withId(R.id.videoWebView), withId(R.id.titleWebMovieTextView)))
                 .check(matches(withText("Superman")));
          */
 
         onView(withId(R.id.videoWebView))
-                .perform(actionOnItemAtPosition(0, click()));
+                .perform(actionOnItemAtPosition(1, click()));
+        String itemElementText = getApplicationContext()
+                .getResources()
+                .getString(R.string.item_element_text);
+        onView(withText(itemElementText)).check(matches(isDisplayed()));
         /*
           scrollTo() - Scrolls to the matched View.
           scrollToHolder() - Scrolls to the matched View Holder.
@@ -70,7 +74,10 @@ public class TestVideoWebBase extends TestBase {
           actionOnHolderItem() - Performs a View Action on a matched View Holder.
           actionOnItem() - Performs a View Action on a matched View.
          */
+
+
     }
+
 
     //run to current screen
     public static void goToTestVideoWeb() {

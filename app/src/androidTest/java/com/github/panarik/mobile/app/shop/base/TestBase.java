@@ -1,5 +1,6 @@
 package com.github.panarik.mobile.app.shop.base;
 
+import androidx.test.ext.junit.rules.ActivityScenarioRule;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.uiautomator.UiDevice;
@@ -66,7 +67,7 @@ public class TestBase {
         // Initialize UiDevice instance
         mDevice = UiDevice.getInstance(getInstrumentation());
 
-        //  Press home screen?
+        //  Press home button?
         // mDevice.pressHome();
     }
 

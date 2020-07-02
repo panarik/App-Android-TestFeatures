@@ -18,6 +18,7 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.pressBack;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.matcher.ViewMatchers.hasContentDescription;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
@@ -36,6 +37,7 @@ public class TestMainBase extends TestBase {
                 .check(matches(withText("alex")));
     }
 
+
     @Test
     public void editTextSpinnerTest() {
         onView(withId(R.id.spinner))
@@ -43,8 +45,9 @@ public class TestMainBase extends TestBase {
         onData(anything())
                 .atPosition(0)
                 .perform(click())
-                .check(matches(withText("Интерьер - 3мм")));
+                .check(matches(withText("Интерьер - 3м")));
     }
+
 
     @Test
     public void viewTextQuantityTest() {
@@ -52,11 +55,13 @@ public class TestMainBase extends TestBase {
                 .check(matches(withText("0")));
     }
 
+
     @Test
     public void viewTextPriceTest() {
         onView(withId(R.id.textView4))
                 .check(matches(withText("0.0 $")));
     }
+
 
     @Test
     public void editAddToCardTest() {
@@ -78,7 +83,7 @@ public class TestMainBase extends TestBase {
 
         //указываем количество
         onView(withId(R.id.button2))
-               .perform(click());
+                .perform(click());
 
     }
 
@@ -98,5 +103,19 @@ public class TestMainBase extends TestBase {
         Assert.assertEquals("test body", responseBody); //body equals
     }
  */
+
+
+    @Test
+    public void textOnScreen() {
+        onView(withText("Quantity"))
+                .check(matches(isDisplayed()));
+    }
+
+
+    @Test
+    public void anyContentViews(){
+        onView(hasContentDescription())
+                .check(matches(isDisplayed()));
+    }
 
 }
