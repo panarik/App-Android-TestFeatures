@@ -12,6 +12,7 @@ import com.github.panarik.mobile.app.shop.base.TestBase;
 import org.junit.Assert;
 import org.junit.Test;
 
+import static androidx.test.espresso.Espresso.closeSoftKeyboard;
 import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
