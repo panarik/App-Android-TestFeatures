@@ -9,7 +9,6 @@
     <ListView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="15"
         android:divider="@android:color/transparent"
         android:transcriptMode="alwaysScroll"
         tools:listitem="@layout/chat_message_item"
@@ -28,13 +27,22 @@
             android:layout_centerVertical="true"
             android:hint="message" />
 
+        <ImageView
+            android:background="@drawable/ic_insert_photo_00459c_24dp"
+            android:id="@+id/chat_messageSendPhotoImageView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@id/chat_messageEditText"/>
+
         <Button
+            android:id="@+id/chat_messageSendButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="20dp"
-            android:layout_toRightOf="@id/chat_messageEditText"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@id/chat_messageSendPhotoImageView"
             android:text="SEND" />
 
 
