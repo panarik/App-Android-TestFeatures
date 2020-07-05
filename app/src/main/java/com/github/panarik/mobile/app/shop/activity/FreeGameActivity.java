@@ -31,6 +31,8 @@ public class FreeGameActivity extends AppCompatActivity {
 
         int chanse = (int) (Math.random() * 4);
         if (chanse <= 2) {
+            // someView.setVisibility(View.INVISIBLE);
+            // someView.setVisibility(View.VISIBLE);
             chestClosed.animate().alpha(0).setDuration(1);
             chestEmpty.animate().alpha(100).setDuration(500);
             tryAgain.animate().alpha(100).setDuration(500);

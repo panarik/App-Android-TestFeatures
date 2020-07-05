@@ -4,15 +4,15 @@ public class ChatMessage {
 
     String text;
     String name;
-    String imegeUrl;
+    String imageUrl;
 
     public ChatMessage() {
     }
 
-    public ChatMessage(String text, String name, String imegeUrl) {
+    public ChatMessage(String text, String name, String imageUrl) {
         this.text = text;
         this.name = name;
-        this.imegeUrl = imegeUrl;
+        this.imageUrl = imageUrl;
     }
 
     public String getText() {
@@ -31,11 +31,11 @@ public class ChatMessage {
         this.name = name;
     }
 
-    public String getImegeUrl() {
-        return imegeUrl;
+    public String getImageUrl() {
+        return imageUrl;
     }
 
-    public void setImegeUrl(String imegeUrl) {
-        this.imegeUrl = imegeUrl;
+    public void setImageUrl(String imageUrl) {
+        this.imageUrl = imageUrl;
     }
 }
