@@ -52,11 +52,6 @@ public class ChatActivity extends AppCompatActivity {
         database = getInstance();
         //инициализируем узел в БД
         messagesDatabaseReference = database.getReference().child("messages");
-        usersDatabaseReference = database.getReference().child("users");
-        //устанавливаем значение в узел
-        messagesDatabaseReference.child("message1").setValue("Hello! I'm HERE!");
-        messagesDatabaseReference.child("message2").setValue("Really?");
-        usersDatabaseReference.setValue("user_1");
 
         userName = "User";
         progressBar = findViewById(R.id.progressBar);
@@ -106,6 +101,17 @@ public class ChatActivity extends AppCompatActivity {
         chat_messageSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+
+                //собираем текст
+                ChatMessage message = new ChatMessage();
+                message.setText(chat_messageEditText.getText().toString());
+                message.setName(userName);
+                message.setImageUrl(null);
+
+                //отправляем на сервер с помощью .push()
+                messagesDatabaseReference.push().setValue(message);
+
+
                 chat_messageEditText.setText("");
             }
         });
