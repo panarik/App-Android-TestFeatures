@@ -17,9 +17,14 @@ import android.widget.ProgressBar;
 import com.github.panarik.mobile.app.shop.R;
 import com.github.panarik.mobile.app.shop.data.chat.ChatMessage;
 import com.github.panarik.mobile.app.shop.data.chat.ChatMessageAdapter;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import static com.google.firebase.database.FirebaseDatabase.getInstance;
 
 import java.util.ArrayList;
 import java.util.List;
+
 
 public class ChatActivity extends AppCompatActivity {
 
@@ -32,10 +37,23 @@ public class ChatActivity extends AppCompatActivity {
 
     private String userName;
 
+    //БД Firebase
+    FirebaseDatabase database;
+    DatabaseReference messagesDatabaseReference;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
+
+        //инициализируем БД Firebase
+        database = getInstance();
+        //инициализируем узел в БД
+        messagesDatabaseReference = database.getReference().child("messages");
+        //устанавливаем значение в узел
+        messagesDatabaseReference.setValue("Hello! I'm HERE!");
+
 
         userName = "User";
         progressBar = findViewById(R.id.progressBar);
