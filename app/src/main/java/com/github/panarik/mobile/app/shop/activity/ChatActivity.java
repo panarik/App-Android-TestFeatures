@@ -1,5 +1,7 @@
 package com.github.panarik.mobile.app.shop.activity;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -17,6 +19,9 @@ import android.widget.ProgressBar;
 import com.github.panarik.mobile.app.shop.R;
 import com.github.panarik.mobile.app.shop.data.chat.ChatMessage;
 import com.github.panarik.mobile.app.shop.data.chat.ChatMessageAdapter;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
@@ -52,6 +57,8 @@ public class ChatActivity extends AppCompatActivity {
         database = getInstance();
         //инициализируем узел в БД
         messagesDatabaseReference = database.getReference().child("messages");
+        //прослушиваем ДБ на изменения
+        ChildEventListener messagesChildEventListener;
 
         userName = "User";
         progressBar = findViewById(R.id.progressBar);
@@ -122,6 +129,40 @@ public class ChatActivity extends AppCompatActivity {
             public void onClick(View v) {
             }
         });
+
+
+        //прослушаваем различные изменения БД
+        messagesChildEventListener = new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                //получаем снимок (snapshot)
+                ChatMessage message = snapshot.getValue(
+                        //указываем где распознавать значения
+                        ChatMessage.class);
+                //итого, получаем объект с полями, и устанавливаем его в Адаптер
+                adapter.add(message);
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        };
+
+        //прикрепляем listener к БД messages.
+        messagesDatabaseReference.addChildEventListener(messagesChildEventListener);
+
 
     }
 }
