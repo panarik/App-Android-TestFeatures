@@ -40,6 +40,7 @@ public class ChatActivity extends AppCompatActivity {
     //БД Firebase
     FirebaseDatabase database;
     DatabaseReference messagesDatabaseReference;
+    DatabaseReference usersDatabaseReference;
 
 
     @Override
@@ -51,9 +52,11 @@ public class ChatActivity extends AppCompatActivity {
         database = getInstance();
         //инициализируем узел в БД
         messagesDatabaseReference = database.getReference().child("messages");
+        usersDatabaseReference = database.getReference().child("users");
         //устанавливаем значение в узел
-        messagesDatabaseReference.setValue("Hello! I'm HERE!");
-
+        messagesDatabaseReference.child("message1").setValue("Hello! I'm HERE!");
+        messagesDatabaseReference.child("message2").setValue("Really?");
+        usersDatabaseReference.setValue("user_1");
 
         userName = "User";
         progressBar = findViewById(R.id.progressBar);
