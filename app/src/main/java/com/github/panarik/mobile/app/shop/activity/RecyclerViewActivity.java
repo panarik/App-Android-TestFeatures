@@ -57,7 +57,7 @@ public class RecyclerViewActivity extends AppCompatActivity {
     }
 
     public void goToChat(View view) {
-        Intent goToChatActivity = new Intent(RecyclerViewActivity.this, ChatActivity.class);
+        Intent goToChatActivity = new Intent(RecyclerViewActivity.this, SignInActivity.class);
         startActivity(goToChatActivity);
     }
 }
