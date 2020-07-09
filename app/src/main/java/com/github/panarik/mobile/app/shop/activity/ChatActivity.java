@@ -4,10 +4,14 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
@@ -19,6 +23,7 @@ import android.widget.ProgressBar;
 import com.github.panarik.mobile.app.shop.R;
 import com.github.panarik.mobile.app.shop.data.chat.ChatMessage;
 import com.github.panarik.mobile.app.shop.data.chat.ChatMessageAdapter;
+import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -39,7 +44,6 @@ public class ChatActivity extends AppCompatActivity {
     private ImageButton chat_messageSendPhotoImageButton;
     private Button chat_messageSendButton;
     private EditText chat_messageEditText;
-
     private String userName;
 
     //БД Firebase
@@ -163,6 +167,31 @@ public class ChatActivity extends AppCompatActivity {
         //прикрепляем listener к БД messages.
         messagesDatabaseReference.addChildEventListener(messagesChildEventListener);
 
+    }
 
+
+    //активация меню
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.menu_main, menu);
+        return true;
+    }
+
+    //пункты меню
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        switch (item.getItemId()) {
+            case R.id.main_sign_out:
+                //выйти из учетной записи
+                FirebaseAuth.getInstance().signOut();
+                //переход на экран авторизации
+                Intent goToSignInActivity = new Intent(ChatActivity.this, SignInActivity.class);
+                startActivity(goToSignInActivity);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+        }
     }
 }
