@@ -28,6 +28,7 @@ public class SignInActivity extends AppCompatActivity {
     private EditText chat_nameEditText;
     private EditText chat_emailEditText;
     private EditText chat_passwordEditText;
+    private EditText chat_passwordConfirmEditText;
     private Button chat_loginSignUpButton;
     private TextView chat_toggleSingUpTextView;
 
@@ -44,6 +45,7 @@ public class SignInActivity extends AppCompatActivity {
         chat_nameEditText = findViewById(R.id.chat_nameEditText);
         chat_emailEditText = findViewById(R.id.chat_emailEditText);
         chat_passwordEditText = findViewById(R.id.chat_passwordEditText);
+        chat_passwordConfirmEditText = findViewById(R.id.chat_passwordConfirmEditText);
         chat_loginSignUpButton = findViewById(R.id.chat_loginSignUpButton);
         chat_toggleSingUpTextView = findViewById(R.id.chat_toggleSingUpTextView);
 
@@ -66,30 +68,69 @@ public class SignInActivity extends AppCompatActivity {
 
     //добавление нового аккаунта
     private void loginSignUpUser(String email, String password) { //метод берет email и password
-        auth.createUserWithEmailAndPassword(email, password)
-                .addOnCompleteListener(
-                        this, new OnCompleteListener<AuthResult>() {
 
-                            @Override
-                            public void onComplete(@NonNull Task<AuthResult> task) {
-                                if (task.isSuccessful()) {
-                                    // Sign in success, update UI with the signed-in user's information
-                                    Log.d(TAG, "createUserWithEmail:success");
-                                    FirebaseUser user = auth.getCurrentUser();
-                                    //updateUI(user);
-                                } else {
-                                    // If sign in fails, display a message to the user.
-                                    Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                    Toast.makeText(SignInActivity.this, "Authentication failed.",
-                                            Toast.LENGTH_SHORT).show();
-                                    //updateUI(null);
-                                }
+        //проверяем пользователь зарегистрирован или нет
+
+        if (chat_loginModeActive) {
+            //если да, то выполняем код отсюда: https://firebase.google.com/docs/auth/android/password-auth?authuser=0
+            auth.signInWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                        @Override
+                        public void onComplete(@NonNull Task<AuthResult> task) {
+                            if (task.isSuccessful()) {
+                                // Sign in success, update UI with the signed-in user's information
+                                Log.d(TAG, "signInWithEmail:success");
+                                FirebaseUser user = auth.getCurrentUser();
+                                //updateUI(user);
+
+                                //только когда выполнена авторизация, переходим на экран чата
+                                Intent goToChatActivity = new Intent(SignInActivity.this, ChatActivity.class);
+                                startActivity(goToChatActivity);
+
+                            } else {
+                                // If sign in fails, display a message to the user.
+                                Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                Toast.makeText(SignInActivity.this, "Authentication failed.",
+                                        Toast.LENGTH_SHORT).show();
+                                //updateUI(null);
+                                // ...
                             }
-
+                            // ...
                         }
-                );
-        Intent goToChatActivity = new Intent (SignInActivity.this, ChatActivity.class);
-        startActivity(goToChatActivity);
+                    });
+
+        } else {
+            auth.createUserWithEmailAndPassword(email, password)
+                    .addOnCompleteListener(
+                            this, new OnCompleteListener<AuthResult>() {
+
+                                @Override
+                                public void onComplete(@NonNull Task<AuthResult> task) {
+                                    if (task.isSuccessful()) {
+                                        // Sign in success, update UI with the signed-in user's information
+                                        Log.d(TAG, "createUserWithEmail:success");
+                                        FirebaseUser user = auth.getCurrentUser();
+                                        //updateUI(user);
+
+                                        //только когда выполнена авторизация, переходим на экран чата
+                                        Intent goToChatActivity = new Intent(SignInActivity.this, ChatActivity.class);
+                                        startActivity(goToChatActivity);
+
+                                    } else {
+                                        // If sign in fails, display a message to the user.
+                                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                        Toast.makeText(SignInActivity.this, "Authentication failed.",
+                                                Toast.LENGTH_SHORT).show();
+                                        //updateUI(null);
+                                    }
+                                }
+
+                            }
+                    );
+        }
+
+
+
 
     }
 
@@ -100,10 +141,12 @@ public class SignInActivity extends AppCompatActivity {
             chat_loginModeActive = false;
             chat_loginSignUpButton.setText("Sign Up");
             chat_toggleSingUpTextView.setText("Or log in");
+            chat_passwordConfirmEditText.setVisibility(View.VISIBLE);
         } else {
             chat_loginModeActive = true;
             chat_loginSignUpButton.setText("Log In");
             chat_toggleSingUpTextView.setText("Or sign Up");
+            chat_passwordConfirmEditText.setVisibility(View.GONE);
         }
     }
 }
