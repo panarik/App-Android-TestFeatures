@@ -40,6 +40,15 @@
         android:hint="Your Password"
         android:inputType="textPassword" />
 
+    <EditText
+        android:id="@+id/chat_passwordConfirmEditText"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="15dp"
+        android:hint="Confirm Password"
+        android:inputType="textPassword" />
+
     <Button
         android:id="@+id/chat_loginSignUpButton"
         android:layout_width="150dp"
@@ -55,6 +64,7 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="15dp"
         android:clickable="true"
+        android:onClick="chat_toggleLoginMode"
         android:textSize="18sp"
         android:text="Tap to Log In" />
 

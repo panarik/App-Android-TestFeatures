@@ -3,6 +3,7 @@ package com.github.panarik.mobile.app.shop.activity;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -29,6 +30,9 @@ public class SignInActivity extends AppCompatActivity {
     private EditText chat_passwordEditText;
     private Button chat_loginSignUpButton;
     private TextView chat_toggleSingUpTextView;
+
+    //переключаем регистрацию и логин
+    private boolean chat_loginModeActive;
 
     private static final String TAG = "SignInActivity";
 
@@ -84,7 +88,22 @@ public class SignInActivity extends AppCompatActivity {
 
                         }
                 );
+        Intent goToChatActivity = new Intent (SignInActivity.this, ChatActivity.class);
+        startActivity(goToChatActivity);
+
     }
 
 
+    public void chat_toggleLoginMode(View view) {
+        //проверяем
+        if (chat_loginModeActive) {
+            chat_loginModeActive = false;
+            chat_loginSignUpButton.setText("Sign Up");
+            chat_toggleSingUpTextView.setText("Or log in");
+        } else {
+            chat_loginModeActive = true;
+            chat_loginSignUpButton.setText("Log In");
+            chat_toggleSingUpTextView.setText("Or sign Up");
+        }
+    }
 }
