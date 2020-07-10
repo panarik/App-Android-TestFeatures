@@ -71,22 +71,27 @@ public class RecyclerViewActivity extends AppCompatActivity implements RecyclerV
     //метод для клика по recyclerview item
     @Override
     public void recycler_onItemClick(int position) {
-
         Log.d(TAG, "onNoteClick: clicked");
 
-        //переход в активити по клику
-        Intent intent = new Intent(this, SomeActivity.class);
-        intent.putExtra("some_object", "something else");
-        startActivity(intent);
-
-        /*
         //используем текущий ArrayList
         recyclerViewItems.get(position);
-        //при вызове переход на новое активити
-        Intent intent = new Intent(this, NewActivity.class);
-        startActivity(intent);
 
-         */
+        switch (position){
+            case 0:
+                Intent someIntent = new Intent(this, SomeActivity.class);
+                startActivity(someIntent);
+                break;
+            case 1:
+                Intent some2Intent = new Intent(this, Some2Activity.class);
+                startActivity(some2Intent);
+            default:
+                Log.d(TAG, "Nope");
+        }
+
+        //переход в активити по клику
+        //Intent intent = new Intent(this, SomeActivity.class);
+        //intent.putExtra("some_object", "something else");
+        //startActivity(intent);
     }
 
 
