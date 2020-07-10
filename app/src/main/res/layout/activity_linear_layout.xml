@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".data.menu.createinterface.LinearLayoutActivity">
+    tools:context="com.github.panarik.smartFeatures.data.menu.createinterface.LinearLayoutActivity">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

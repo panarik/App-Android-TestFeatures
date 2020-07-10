@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.github.panarik.mobile.app.shop">
+    package="com.github.panarik.smartFeatures.app.shop">
     <!-- все разрешения -->
     <uses-permission android:name="android.permission.INTERNET" />
 
@@ -11,24 +11,24 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.Some2Activity"/>
-        <activity android:name=".activity.SomeActivity" />
-        <activity android:name=".activity.ChatActivity" />
-        <activity android:name=".activity.VideoWebActivity" />
-        <activity android:name=".data.menu.createinterface.LinearLayoutActivity" />
-        <activity android:name=".data.menu.createinterface.CreateInterfaceActivity" />
-        <activity android:name=".activity.MenuActivity" />
-        <activity android:name=".activity.PictureEffectsActivity" />
-        <activity android:name=".data.products.RecyclerProductViewActivity" />
-        <activity android:name=".activity.RecyclerViewActivity" />
-        <activity android:name=".activity.ListViewActivity" />
-        <activity android:name=".data.catgame.PetActivity" />
-        <activity android:name=".activity.PlayingAudioActivity" />
-        <activity android:name=".activity.VideoLocalActivity" />
-        <activity android:name=".activity.FreeGameActivity" />
-        <activity android:name=".activity.OrderActivity" />
-        <activity android:name=".activity.MainActivity"/>
-        <activity android:name=".activity.SignInActivity">
+        <activity android:name="com.github.panarik.smartFeatures.activity.Some2Activity"/>
+        <activity android:name="com.github.panarik.smartFeatures.activity.SomeActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.activity.ChatActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.activity.VideoWebActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.data.menu.createinterface.LinearLayoutActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.data.menu.createinterface.CreateInterfaceActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.activity.MenuActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.activity.PictureEffectsActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.data.products.RecyclerProductViewActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.activity.RecyclerViewActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.activity.ListViewActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.data.catgame.PetActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.activity.PlayingAudioActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.activity.VideoLocalActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.activity.FreeGameActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.activity.OrderActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.activity.MainActivity"/>
+        <activity android:name="com.github.panarik.smartFeatures.activity.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
