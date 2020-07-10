@@ -20,7 +20,7 @@ public class PictureEffectsActivity extends AppCompatActivity implements View.On
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_another_things);
+        setContentView(R.layout.activity_picture_effects);
 
         ImageView fliper = findViewById(R.id.fliper);
         ImageView resizeView = findViewById(R.id.resizeView);
@@ -91,8 +91,8 @@ public class PictureEffectsActivity extends AppCompatActivity implements View.On
         }
     }
 
-    public void goToVideoViewActivity(View view) {
-        Intent goToVideoViewActivity = new Intent(PictureEffectsActivity.this, VideoViewActivity.class);
+    public void goToVideoLocalActivity(View view) {
+        Intent goToVideoViewActivity = new Intent(PictureEffectsActivity.this, VideoLocalActivity.class);
         startActivity(goToVideoViewActivity);
     }
 }

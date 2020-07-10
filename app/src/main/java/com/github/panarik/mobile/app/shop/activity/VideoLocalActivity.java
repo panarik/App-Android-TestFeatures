@@ -10,12 +10,12 @@ import android.widget.VideoView;
 
 import com.github.panarik.mobile.app.shop.R;
 
-public class VideoViewActivity extends AppCompatActivity {
+public class VideoLocalActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_video_view);
+        setContentView(R.layout.activity_video_local);
 
         VideoView videoView = findViewById(R.id.videoView);
         videoView.setVideoPath("android.resource://"+getPackageName()+"/"+R.raw.wedding);
@@ -28,7 +28,7 @@ public class VideoViewActivity extends AppCompatActivity {
     }
 
     public void toPlayingAudio(View view) {
-        Intent VideoWebActivity = new Intent(VideoViewActivity.this, VideoWebActivity.class);
+        Intent VideoWebActivity = new Intent(VideoLocalActivity.this, VideoWebActivity.class);
         startActivity(VideoWebActivity);
     }
 }
