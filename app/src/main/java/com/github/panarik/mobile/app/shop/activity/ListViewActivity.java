@@ -30,9 +30,9 @@ public class ListViewActivity extends AppCompatActivity {
         listView = findViewById(R.id.listView);
 
         arrayList = new ArrayList();
-        arrayList.add("MEGA Khimki");
-        arrayList.add("MEGA Belaya Dacha");
-        arrayList.add("MEGA Dybenko");
+        arrayList.add("Первый");
+        arrayList.add("Второй");
+        arrayList.add("Третий");
 
         listSize = arrayList.size();
         Log.d("listSize", "" + listSize);
