@@ -31,7 +31,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements RecyclerV
         setContentView(R.layout.activity_recycler_view);
 
         recyclerViewItems = new ArrayList<>();
-        recyclerViewItems.add(new RecyclerViewItem(R.drawable.ic_sentiment_satisfied_black_24dp, "Happy", "Life is fun"));
+        recyclerViewItems.add(new RecyclerViewItem(R.drawable.chest_open_gold, "Free Game", "эффекты alpha и немного математики"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.ic_sentiment_neutral_black_24dp, "Normal", "Life is life"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.ic_sentiment_dissatisfied_black_24dp, "Sad", "Life is sad"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.ic_sentiment_satisfied_black_24dp, "Happy", "Life is fun"));

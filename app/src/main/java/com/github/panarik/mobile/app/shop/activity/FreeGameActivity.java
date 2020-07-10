@@ -58,9 +58,9 @@ public class FreeGameActivity extends AppCompatActivity {
         startActivity(goToMainIntent);
     }
 
-    public void anotherThings(View view) {
-        Intent anotherThings = new Intent(FreeGameActivity.this, AnotherThingsActivity.class);
-        startActivity(anotherThings);
+    public void goToPictureEffectsActivity(View view) {
+        Intent goToPictureEffectsActivity = new Intent(FreeGameActivity.this, PictureEffectsActivity.class);
+        startActivity(goToPictureEffectsActivity);
     }
 
     public void goToMenuActivity(View view) {

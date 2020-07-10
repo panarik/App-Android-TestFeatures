@@ -10,7 +10,7 @@ import android.widget.ImageView;
 
 import com.github.panarik.mobile.app.shop.R;
 
-public class AnotherThingsActivity extends AppCompatActivity implements View.OnClickListener {
+public class PictureEffectsActivity extends AppCompatActivity implements View.OnClickListener {
 
     int statFliper = 1;
     int statResizeView = 1;
@@ -91,8 +91,8 @@ public class AnotherThingsActivity extends AppCompatActivity implements View.OnC
         }
     }
 
-    public void videoViewActivity(View view) {
-        Intent VideoViewActivity = new Intent(AnotherThingsActivity.this, VideoViewActivity.class);
-        startActivity(VideoViewActivity);
+    public void goToVideoViewActivity(View view) {
+        Intent goToVideoViewActivity = new Intent(PictureEffectsActivity.this, VideoViewActivity.class);
+        startActivity(goToVideoViewActivity);
     }
 }

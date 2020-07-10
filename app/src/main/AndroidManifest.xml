@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.Some2Activity"></activity>
+        <activity android:name=".activity.Some2Activity"/>
         <activity android:name=".activity.SomeActivity" />
         <activity android:name=".activity.SignInActivity" />
         <activity android:name=".activity.ChatActivity" />
@@ -19,13 +19,13 @@
         <activity android:name=".data.menu.createinterface.LinearLayoutActivity" />
         <activity android:name=".data.menu.createinterface.CreateInterfaceActivity" />
         <activity android:name=".activity.MenuActivity" />
+        <activity android:name=".activity.PictureEffectsActivity" />
         <activity android:name=".data.products.RecyclerProductViewActivity" />
         <activity android:name=".activity.RecyclerViewActivity" />
         <activity android:name=".activity.ListViewActivity" />
         <activity android:name=".data.catgame.PetActivity" />
         <activity android:name=".activity.PlayingAudioActivity" />
         <activity android:name=".activity.VideoViewActivity" />
-        <activity android:name=".activity.AnotherThingsActivity" />
         <activity android:name=".activity.FreeGameActivity" />
         <activity android:name=".activity.OrderActivity" />
         <activity android:name=".activity.MainActivity">

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.AnotherThingsActivity">
+    tools:context=".activity.PictureEffectsActivity">
 
     <ImageView
         android:id="@+id/fliper"
@@ -62,7 +62,7 @@
         android:layout_marginStart="20dp"
         android:layout_marginEnd="20dp"
         android:textSize="24sp"
-        android:onClick="videoViewActivity"
+        android:onClick="goToVideoViewActivity"
         android:text="Lets watch Video!" />
 
 </RelativeLayout>
