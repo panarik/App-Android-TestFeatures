@@ -149,4 +149,9 @@ public class SignInActivity extends AppCompatActivity {
             chat_passwordConfirmEditText.setVisibility(View.GONE);
         }
     }
+
+    public void goToRecyclerViewActivity(View view) {
+        Intent goToRecyclerViewActivity = new Intent(this, RecyclerViewActivity.class);
+        startActivity(goToRecyclerViewActivity);
+    }
 }

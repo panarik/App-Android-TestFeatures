@@ -13,7 +13,6 @@
         android:theme="@style/AppTheme">
         <activity android:name=".activity.Some2Activity"/>
         <activity android:name=".activity.SomeActivity" />
-        <activity android:name=".activity.SignInActivity" />
         <activity android:name=".activity.ChatActivity" />
         <activity android:name=".activity.VideoWebActivity" />
         <activity android:name=".data.menu.createinterface.LinearLayoutActivity" />
@@ -28,7 +27,8 @@
         <activity android:name=".activity.VideoLocalActivity" />
         <activity android:name=".activity.FreeGameActivity" />
         <activity android:name=".activity.OrderActivity" />
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity"/>
+        <activity android:name=".activity.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
