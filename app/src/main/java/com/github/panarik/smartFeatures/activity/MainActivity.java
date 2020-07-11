@@ -20,7 +20,7 @@ import android.view.View;
 
 import java.util.ArrayList;
 
-public class RecyclerViewActivity extends AppCompatActivity implements RecyclerViewAdapter.RecyclerItemListener {
+public class MainActivity extends AppCompatActivity implements RecyclerViewAdapter.RecyclerItemListener {
 
     private RecyclerView recyclerView; //переменная для связывания разметки с java кодом
     private RecyclerView.Adapter adapter;

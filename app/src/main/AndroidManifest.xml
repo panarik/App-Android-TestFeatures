@@ -18,7 +18,7 @@
         <activity android:name="com.github.panarik.smartFeatures.activity.MenuActivity" />
         <activity android:name="com.github.panarik.smartFeatures.activity.PictureEffectsActivity" />
         <activity android:name="com.github.panarik.smartFeatures.data.products.RecyclerProductViewActivity" />
-        <activity android:name="com.github.panarik.smartFeatures.activity.RecyclerViewActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.activity.MainActivity" />
         <activity android:name="com.github.panarik.smartFeatures.activity.ListViewActivity" />
         <activity android:name="com.github.panarik.smartFeatures.data.catgame.PetActivity" />
         <activity android:name="com.github.panarik.smartFeatures.activity.PlayingAudioActivity" />

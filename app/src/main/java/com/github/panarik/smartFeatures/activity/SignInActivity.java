@@ -54,7 +54,7 @@ public class SignInActivity extends AppCompatActivity {
 
         //проверяем зарегистрирован пользователь или нет
         if (auth.getCurrentUser() !=null){
-            Intent goToRecyclerViewActivity = new Intent(this, RecyclerViewActivity.class);
+            Intent goToRecyclerViewActivity = new Intent(this, MainActivity.class);
             startActivity(goToRecyclerViewActivity);
         }
 
@@ -90,7 +90,7 @@ public class SignInActivity extends AppCompatActivity {
                                 //updateUI(user);
 
                                 //только когда выполнена авторизация, переходим на главный экран
-                                Intent goToRecyclerViewActivity = new Intent(SignInActivity.this, RecyclerViewActivity.class);
+                                Intent goToRecyclerViewActivity = new Intent(SignInActivity.this, MainActivity.class);
                                 startActivity(goToRecyclerViewActivity);
 
                             } else {
@@ -120,7 +120,7 @@ public class SignInActivity extends AppCompatActivity {
                                         //updateUI(user);
 
                                         //только когда выполнена авторизация, переходим на главный экран
-                                        Intent goToRecyclerViewActivity = new Intent(SignInActivity.this, RecyclerViewActivity.class);
+                                        Intent goToRecyclerViewActivity = new Intent(SignInActivity.this, MainActivity.class);
                                         startActivity(goToRecyclerViewActivity);
 
                                     } else {
@@ -160,7 +160,7 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     public void goToRecyclerViewActivity(View view) {
-        Intent goToRecyclerViewActivity = new Intent(this, RecyclerViewActivity.class);
+        Intent goToRecyclerViewActivity = new Intent(this, MainActivity.class);
         startActivity(goToRecyclerViewActivity);
     }
 }

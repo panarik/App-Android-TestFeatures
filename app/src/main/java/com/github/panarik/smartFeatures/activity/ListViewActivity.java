@@ -58,7 +58,7 @@ public class ListViewActivity extends AppCompatActivity {
     }
 
     public void GoToRecycler(View view) {
-        Intent RecyclerViewActivity = new Intent(ListViewActivity.this, com.github.panarik.smartFeatures.activity.RecyclerViewActivity.class);
+        Intent RecyclerViewActivity = new Intent(ListViewActivity.this, MainActivity.class);
         startActivity(RecyclerViewActivity);
     }
 }
