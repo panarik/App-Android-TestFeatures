@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.github.panarik.smartFeatures.R;
 
@@ -17,6 +18,7 @@ public class FreeGameActivity extends AppCompatActivity {
     private ImageView chestGold;
     private Button tryAgain;
     private ImageView youVinView;
+    private TextView hint;
 
 
     @Override
@@ -29,6 +31,7 @@ public class FreeGameActivity extends AppCompatActivity {
         chestGold = findViewById(R.id.chestGold);
         tryAgain = findViewById(R.id.tryAgain);
         youVinView = findViewById(R.id.youVinView);
+        hint = findViewById(R.id.freeGame_hintTextView);
 
         tryAgain.setVisibility(Button.INVISIBLE);
 
@@ -36,6 +39,8 @@ public class FreeGameActivity extends AppCompatActivity {
     }
 
     public void chest(View view) {
+
+        hint.setVisibility(TextView.INVISIBLE);
 
 
         int chanse = (int) (Math.random() * 4);
@@ -54,7 +59,7 @@ public class FreeGameActivity extends AppCompatActivity {
     }
 
     public void tryAgain(View view) {
-        Intent goToMainIntent = new Intent(FreeGameActivity.this, ShopMainActivity.class);
+        Intent goToMainIntent = new Intent(FreeGameActivity.this, MainActivity.class);
         startActivity(goToMainIntent);
     }
 
