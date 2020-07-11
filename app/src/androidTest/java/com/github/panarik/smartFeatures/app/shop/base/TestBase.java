@@ -4,7 +4,7 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.uiautomator.UiDevice;
 
-import com.github.panarik.smartFeatures.activity.MainActivity;
+import com.github.panarik.smartFeatures.activity.ShopMainActivity;
 
 import org.junit.After;
 import org.junit.Before;
@@ -40,7 +40,7 @@ public class TestBase {
 
     //start main activity
     @Rule
-    public ActivityTestRule<MainActivity> activityActivityTestRule = new ActivityTestRule<>(MainActivity.class);
+    public ActivityTestRule<ShopMainActivity> activityActivityTestRule = new ActivityTestRule<>(ShopMainActivity.class);
 
     /*
     @Before

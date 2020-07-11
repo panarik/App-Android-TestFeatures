@@ -6,7 +6,7 @@ import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
 
-import com.github.panarik.smartFeatures.activity.MainActivity;
+import com.github.panarik.smartFeatures.activity.ShopMainActivity;
 
 import org.junit.Rule;
 import org.junit.Test;
@@ -29,7 +29,7 @@ import static org.junit.Assert.*;
 public class ExampleInstrumentedTest {
 
     @Rule
-    public ActivityTestRule<MainActivity> activityActivityTestRule = new ActivityTestRule<>(MainActivity.class);
+    public ActivityTestRule<ShopMainActivity> activityActivityTestRule = new ActivityTestRule<>(ShopMainActivity.class);
 
 
     @Test

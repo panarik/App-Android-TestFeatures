@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 import com.github.panarik.smartFeatures.app.shop.R;
 
-public class OrderActivity extends AppCompatActivity {
+public class ShopOrderActivity extends AppCompatActivity {
 
     String[] addresses = {"panarik@yandex.ru"};
     String subject = "Order from my BEST App";

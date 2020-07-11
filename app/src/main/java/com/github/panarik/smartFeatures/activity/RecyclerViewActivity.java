@@ -37,17 +37,7 @@ public class RecyclerViewActivity extends AppCompatActivity implements RecyclerV
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.playing_audio_band, "Play music", "sound playing, play pause buttons, seekBar"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.video_local_video, "Local video", "video from APK, control panel, volume listener"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.video_web_movie, "Movies online", "Text and pictures from API, RecycleView, search function,"));
-        recyclerViewItems.add(new RecyclerViewItem(R.drawable.ic_sentiment_neutral_black_24dp, "Normal", "Life is life"));
-        recyclerViewItems.add(new RecyclerViewItem(R.drawable.ic_sentiment_dissatisfied_black_24dp, "Sad", "Life is sad"));
-        recyclerViewItems.add(new RecyclerViewItem(R.drawable.ic_sentiment_satisfied_black_24dp, "Happy", "Life is fun"));
-        recyclerViewItems.add(new RecyclerViewItem(R.drawable.ic_sentiment_neutral_black_24dp, "Normal", "Life is life"));
-        recyclerViewItems.add(new RecyclerViewItem(R.drawable.ic_sentiment_dissatisfied_black_24dp, "Sad", "Life is sad"));
-        recyclerViewItems.add(new RecyclerViewItem(R.drawable.ic_sentiment_satisfied_black_24dp, "Happy", "Life is fun"));
-        recyclerViewItems.add(new RecyclerViewItem(R.drawable.ic_sentiment_neutral_black_24dp, "Normal", "Life is life"));
-        recyclerViewItems.add(new RecyclerViewItem(R.drawable.ic_sentiment_dissatisfied_black_24dp, "Sad", "Life is sad"));
-        recyclerViewItems.add(new RecyclerViewItem(R.drawable.ic_sentiment_satisfied_black_24dp, "Happy", "Life is fun"));
-        recyclerViewItems.add(new RecyclerViewItem(R.drawable.ic_sentiment_neutral_black_24dp, "Normal", "Life is life"));
-        recyclerViewItems.add(new RecyclerViewItem(R.drawable.ic_sentiment_dissatisfied_black_24dp, "Sad", "Life is sad"));
+        recyclerViewItems.add(new RecyclerViewItem(R.drawable.chat_chatlogo, "Messenger", "Firebase objects, GET Firebase realtime database data, POST messages into Firebase"));
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);     //для улучшения производительности задаем количество строк
@@ -61,9 +51,9 @@ public class RecyclerViewActivity extends AppCompatActivity implements RecyclerV
 
     }
 
-    public void goToChat(View view) {
-        Intent goToChatActivity = new Intent(RecyclerViewActivity.this, SignInActivity.class);
-        startActivity(goToChatActivity);
+    public void goToSignInActivity(View view) {
+        Intent goToSignInActivity = new Intent(RecyclerViewActivity.this, SignInActivity.class);
+        startActivity(goToSignInActivity);
     }
 
 
@@ -75,22 +65,50 @@ public class RecyclerViewActivity extends AppCompatActivity implements RecyclerV
         //используем текущий ArrayList
         recyclerViewItems.get(position);
 
-        switch (position){
+        switch (position) {
             case 0:
-                Intent someIntent = new Intent(this, SomeActivity.class);
-                startActivity(someIntent);
+                //ShopMainActivity
+                Intent gotoShopMainActivity = new Intent(this, ShopMainActivity.class);
+                startActivity(gotoShopMainActivity);
                 break;
             case 1:
-                Intent some2Intent = new Intent(this, Some2Activity.class);
-                startActivity(some2Intent);
+                //FreeGameActivity
+                Intent goToFreeGameActivity = new Intent(this, FreeGameActivity.class);
+                startActivity(goToFreeGameActivity);
+                break;
+            case 2:
+                //PictureEffectsActivity
+                Intent goToPictureEffectsActivity = new Intent(this, PictureEffectsActivity.class);
+                startActivity(goToPictureEffectsActivity);
+                break;
+            case 3:
+                //ListViewActivity
+                Intent goToListViewActivity = new Intent(this, ListViewActivity.class);
+                startActivity(goToListViewActivity);
+                break;
+            case 4:
+                //PlayingAudioActivity
+                Intent goToPlayingAudioActivity = new Intent(this, PlayingAudioActivity.class);
+                startActivity(goToPlayingAudioActivity);
+                break;
+            case 5:
+                //VideoLocalActivity
+                Intent goToVideoLocalActivity = new Intent(this, VideoLocalActivity.class);
+                startActivity(goToVideoLocalActivity);
+                break;
+            case 6:
+                //VideoWebActivity
+                Intent goToVideoWebActivity = new Intent(this, VideoWebActivity.class);
+                startActivity(goToVideoWebActivity);
+                break;
+            case 7:
+                //ChatActivity
+                Intent goToChatActivity = new Intent(this, ChatActivity.class);
+                startActivity(goToChatActivity);
+                break;
             default:
                 Log.d(TAG, "Nope");
         }
-
-        //переход в активити по клику
-        //Intent intent = new Intent(this, SomeActivity.class);
-        //intent.putExtra("some_object", "something else");
-        //startActivity(intent);
     }
 
 

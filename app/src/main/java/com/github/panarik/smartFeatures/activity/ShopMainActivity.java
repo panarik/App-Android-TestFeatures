@@ -19,7 +19,7 @@ import com.github.panarik.smartFeatures.app.shop.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener { /*имплиментируем возможность данного метода сушать действя (клики) пользователей и реагировать на них
+public class ShopMainActivity extends AppCompatActivity implements AdapterView.OnItemSelectedListener { /*имплиментируем возможность данного метода сушать действя (клики) пользователей и реагировать на них
         далее IDEA сама предложит добавить два метода
 */
     int quantity = 0; //количество товара
@@ -142,7 +142,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         order.orderPrice = quantity * price;
         Log.d("Order " + order.userName, "" + order.orderPrice);
 
-        Intent orderIntent = new Intent(MainActivity.this, OrderActivity.class); //Интент переносит данные отсюда (из класса MainActivity) в класс OrderActivity
+        Intent orderIntent = new Intent(ShopMainActivity.this, ShopOrderActivity.class); //Интент переносит данные отсюда (из класса MainActivity) в класс OrderActivity
         orderIntent.putExtra("userNameForIntent",order.userName); // записываем в значение order.userName в интент переменную orderIntent и задаём ключ userNameForIntent для записанного значения
         orderIntent.putExtra("goodsNameForIntent",order.goodsName);
         orderIntent.putExtra("quantityForIntent",order.quantity);
@@ -158,7 +158,7 @@ public class MainActivity extends AppCompatActivity implements AdapterView.OnIte
         order.quantity = quantity;
         order.orderPrice = quantity * price;
 
-        Intent freeGameIntent = new Intent(MainActivity.this, FreeGameActivity.class);
+        Intent freeGameIntent = new Intent(ShopMainActivity.this, FreeGameActivity.class);
         freeGameIntent.putExtra("userNameForIntent",order.userName);
         freeGameIntent.putExtra("goodsNameForIntent",order.goodsName);
         freeGameIntent.putExtra("quantityForIntent",order.quantity);

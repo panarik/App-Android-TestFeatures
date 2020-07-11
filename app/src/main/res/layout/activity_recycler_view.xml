@@ -16,12 +16,14 @@
         android:scrollbars="vertical"
         android:layout_marginBottom="70dp" />
 
-    <Button
+    <ImageView
         android:id="@+id/button3"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentBottom="true"
         android:layout_marginBottom="10dp"
-        android:onClick="goToChat"
-        android:text="GO TO CHAT" />
+        android:clickable="true"
+        android:focusable="true"
+        android:onClick="goToSignInActivity"
+        android:src="@drawable/recycler_view_back"/>
 </RelativeLayout>

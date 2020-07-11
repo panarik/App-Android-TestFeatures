@@ -54,7 +54,7 @@ public class FreeGameActivity extends AppCompatActivity {
     }
 
     public void tryAgain(View view) {
-        Intent goToMainIntent = new Intent(FreeGameActivity.this, MainActivity.class);
+        Intent goToMainIntent = new Intent(FreeGameActivity.this, ShopMainActivity.class);
         startActivity(goToMainIntent);
     }
 

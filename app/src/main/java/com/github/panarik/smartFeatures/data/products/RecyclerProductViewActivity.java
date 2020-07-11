@@ -39,6 +39,7 @@ public class RecyclerProductViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_recycler_product_view);
 
+        /*
         ArrayList<RecyclerProductItem> productItems = new ArrayList<>();
         productItems.add(new RecyclerProductItem(R.drawable.product_digital_totem, ProductName_digital_totem, ProductDescription_digital_totem, ProductTechnology_digital_totem));
         productItems.add(new RecyclerProductItem(R.drawable.product_navigation_totem, ProductName_navigation_totem, ProductDescription_navigation_totem, ProductTechnology_navigation_totem));
@@ -46,5 +47,7 @@ public class RecyclerProductViewActivity extends AppCompatActivity {
         productItems.add(new RecyclerProductItem(R.drawable.product_ipoint, ProductName_ipoint, ProductDescription_ipoint, ProductTechnology_ipoint));
         productItems.add(new RecyclerProductItem(R.drawable.product_navigation, ProductName_navigation, ProductDescription_navigation, ProductTechnology_navigation));
         productItems.add(new RecyclerProductItem(R.drawable.product_iwall, ProductName_iwall, ProductDescription_iwall, ProductTechnology_iwall));
+    */
     }
+
 }

@@ -26,8 +26,8 @@
         <activity android:name="com.github.panarik.smartFeatures.activity.PlayingAudioActivity" />
         <activity android:name="com.github.panarik.smartFeatures.activity.VideoLocalActivity" />
         <activity android:name="com.github.panarik.smartFeatures.activity.FreeGameActivity" />
-        <activity android:name="com.github.panarik.smartFeatures.activity.OrderActivity" />
-        <activity android:name="com.github.panarik.smartFeatures.activity.MainActivity"/>
+        <activity android:name="com.github.panarik.smartFeatures.activity.ShopOrderActivity" />
+        <activity android:name="com.github.panarik.smartFeatures.activity.ShopMainActivity"/>
         <activity android:name="com.github.panarik.smartFeatures.activity.SignInActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
