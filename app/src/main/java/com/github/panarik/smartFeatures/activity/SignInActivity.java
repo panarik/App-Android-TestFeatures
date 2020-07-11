@@ -89,9 +89,9 @@ public class SignInActivity extends AppCompatActivity {
                                 FirebaseUser user = auth.getCurrentUser();
                                 //updateUI(user);
 
-                                //только когда выполнена авторизация, переходим на экран чата
-                                Intent goToChatActivity = new Intent(SignInActivity.this, ChatActivity.class);
-                                startActivity(goToChatActivity);
+                                //только когда выполнена авторизация, переходим на главный экран
+                                Intent goToRecyclerViewActivity = new Intent(SignInActivity.this, RecyclerViewActivity.class);
+                                startActivity(goToRecyclerViewActivity);
 
                             } else {
                                 // If sign in fails, display a message to the user.
@@ -119,9 +119,9 @@ public class SignInActivity extends AppCompatActivity {
                                         FirebaseUser user = auth.getCurrentUser();
                                         //updateUI(user);
 
-                                        //только когда выполнена авторизация, переходим на экран чата
-                                        Intent goToChatActivity = new Intent(SignInActivity.this, ChatActivity.class);
-                                        startActivity(goToChatActivity);
+                                        //только когда выполнена авторизация, переходим на главный экран
+                                        Intent goToRecyclerViewActivity = new Intent(SignInActivity.this, RecyclerViewActivity.class);
+                                        startActivity(goToRecyclerViewActivity);
 
                                     } else {
                                         // If sign in fails, display a message to the user.

@@ -56,11 +56,6 @@ public class RecyclerViewActivity extends AppCompatActivity implements RecyclerV
 
     }
 
-    public void goToSignInActivity(View view) {
-        Intent goToSignInActivity = new Intent(RecyclerViewActivity.this, SignInActivity.class);
-        startActivity(goToSignInActivity);
-    }
-
 
     //метод для клика по recyclerview item
     @Override
@@ -124,7 +119,6 @@ public class RecyclerViewActivity extends AppCompatActivity implements RecyclerV
         inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
-
     //пункты меню
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
