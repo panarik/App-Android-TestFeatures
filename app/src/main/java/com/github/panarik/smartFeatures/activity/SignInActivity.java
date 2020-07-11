@@ -53,7 +53,7 @@ public class SignInActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
 
         //проверяем зарегистрирован пользователь или нет
-        if (auth.getCurrentUser() !=null){
+        if (auth.getCurrentUser() != null) {
             Intent goToRecyclerViewActivity = new Intent(this, MainActivity.class);
             startActivity(goToRecyclerViewActivity);
         }
@@ -78,65 +78,91 @@ public class SignInActivity extends AppCompatActivity {
 
         //проверяем пользователь зарегистрирован или нет
         if (chat_loginModeActive) {
-            //если зарегистрирован, то выполняем код отсюда: https://firebase.google.com/docs/auth/android/password-auth?authuser=0
-            auth.signInWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (task.isSuccessful()) {
-                                // Sign in success, update UI with the signed-in user's information
-                                Log.d(TAG, "signInWithEmail:success");
-                                FirebaseUser user = auth.getCurrentUser();
-                                //updateUI(user);
 
-                                //только когда выполнена авторизация, переходим на главный экран
-                                Intent goToRecyclerViewActivity = new Intent(SignInActivity.this, MainActivity.class);
-                                startActivity(goToRecyclerViewActivity);
+            if //если зарегистрирован и пароль меньше шести символов, то Тост
+            (chat_passwordEditText.getText().toString().trim().length() < 6) {
+                Toast.makeText(this, "Пароль должен быть не менее 6 символов", Toast.LENGTH_LONG).show();
 
-                            } else {
-                                // If sign in fails, display a message to the user.
-                                Log.w(TAG, "signInWithEmail:failure", task.getException());
-                                Toast.makeText(SignInActivity.this, "Authentication failed.",
-                                        Toast.LENGTH_SHORT).show();
-                                //updateUI(null);
+            } else if //если зарегистрирован и email пустой, то Тост
+            (chat_emailEditText.getText().toString().trim().equals("")) {
+                Toast.makeText(this, "Введите пароль", Toast.LENGTH_LONG).show();
+
+            } else { //если зарегистрирован
+                //код: https://firebase.google.com/docs/auth/android/password-auth?authuser=0
+                 auth.signInWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                            @Override
+                            public void onComplete(@NonNull Task<AuthResult> task) {
+                                if (task.isSuccessful()) {
+                                    // Sign in success, update UI with the signed-in user's information
+                                    Log.d(TAG, "signInWithEmail:success");
+                                    FirebaseUser user = auth.getCurrentUser();
+                                    //updateUI(user);
+
+                                    //только когда выполнена авторизация, переходим на главный экран
+                                    Intent goToRecyclerViewActivity = new Intent(SignInActivity.this, MainActivity.class);
+                                    startActivity(goToRecyclerViewActivity);
+
+                                } else {
+                                    // If sign in fails, display a message to the user.
+                                    Log.w(TAG, "signInWithEmail:failure", task.getException());
+                                    Toast.makeText(SignInActivity.this, "Authentication failed.",
+                                            Toast.LENGTH_SHORT).show();
+                                    //updateUI(null);
+                                    // ...
+                                }
                                 // ...
                             }
-                            // ...
-                        }
-                    });
+                        });
+            }
 
         } else {
-            //если незарегистрирован, то go to Sign UP
-            auth.createUserWithEmailAndPassword(email, password)
-                    .addOnCompleteListener(
-                            this, new OnCompleteListener<AuthResult>() {
+            //если незарегистрирован, то если не введен одинаковый пароль в chat_passwordConfirmEditText, пишем тост
+            if (!chat_passwordEditText.getText().toString().trim()
+                    .equals(chat_passwordConfirmEditText.getText().toString().trim())) {
+                Toast.makeText(this, "Введенные пароли не совпадают", Toast.LENGTH_LONG).show();
 
-                                @Override
-                                public void onComplete(@NonNull Task<AuthResult> task) {
-                                    if (task.isSuccessful()) {
-                                        // Sign in success, update UI with the signed-in user's information
-                                        Log.d(TAG, "createUserWithEmail:success");
-                                        FirebaseUser user = auth.getCurrentUser();
-                                        //updateUI(user);
+            } else if //если незарегистрирован и пароль меньше шести символов, то Тост
+            (chat_passwordEditText.getText().toString().trim().length() < 6) {
+                Toast.makeText(this, "Пароль должен быть не менее 6 символов", Toast.LENGTH_LONG).show();
 
-                                        //только когда выполнена авторизация, переходим на главный экран
-                                        Intent goToRecyclerViewActivity = new Intent(SignInActivity.this, MainActivity.class);
-                                        startActivity(goToRecyclerViewActivity);
 
-                                    } else {
-                                        // If sign in fails, display a message to the user.
-                                        Log.w(TAG, "createUserWithEmail:failure", task.getException());
-                                        Toast.makeText(SignInActivity.this, "Authentication failed.",
-                                                Toast.LENGTH_SHORT).show();
-                                        //updateUI(null);
+            } else if //если незарегистрирован и email пустой, то Тост
+            (chat_emailEditText.getText().toString().trim().equals("")) {
+                Toast.makeText(this, "Введите пароль", Toast.LENGTH_LONG).show();
+
+            } else //если незарегистрирован, то go to Sign UP
+            {
+                auth.createUserWithEmailAndPassword(email, password)
+                        .addOnCompleteListener(
+                                this, new OnCompleteListener<AuthResult>() {
+
+                                    @Override
+                                    public void onComplete(@NonNull Task<AuthResult> task) {
+                                        if (task.isSuccessful()) {
+                                            // Sign in success, update UI with the signed-in user's information
+                                            Log.d(TAG, "createUserWithEmail:success");
+                                            FirebaseUser user = auth.getCurrentUser();
+                                            //updateUI(user);
+
+                                            //только когда выполнена авторизация, переходим на главный экран
+                                            Intent goToRecyclerViewActivity = new Intent(SignInActivity.this, MainActivity.class);
+                                            startActivity(goToRecyclerViewActivity);
+
+                                        } else {
+                                            // If sign in fails, display a message to the user.
+                                            Log.w(TAG, "createUserWithEmail:failure", task.getException());
+                                            Toast.makeText(SignInActivity.this, "Authentication failed.",
+                                                    Toast.LENGTH_SHORT).show();
+                                            //updateUI(null);
+                                        }
                                     }
+
                                 }
+                        );
+            }
 
-                            }
-                    );
         }
-
-
 
 
     }
