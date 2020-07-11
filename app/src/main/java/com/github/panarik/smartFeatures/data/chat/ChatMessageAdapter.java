@@ -9,7 +9,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.github.panarik.smartFeatures.app.shop.R;
+import com.github.panarik.smartFeatures.R;
 
 import java.util.List;
 

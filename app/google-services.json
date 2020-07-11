@@ -8,17 +8,17 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:769400027591:android:e429738af71459b4dbc1e2",
+        "mobilesdk_app_id": "1:769400027591:android:37d4cf2f127207b0dbc1e2",
         "android_client_info": {
-          "package_name": "com.github.panarik.mobile.app.shop"
+          "package_name": "com.github.panarik.smartFeatures"
         }
       },
       "oauth_client": [
         {
-          "client_id": "769400027591-5ism5cllfd7d79dukvjcrri3qovekg3m.apps.googleusercontent.com",
+          "client_id": "769400027591-vq6cncfkliajiqna1lgbngs0cahr97j7.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.github.panarik.mobile.app.shop",
+            "package_name": "com.github.panarik.smartFeatures",
             "certificate_hash": "ff6b6e5ae0a3915bba7cd2e7d10e7648c1168425"
           }
         },

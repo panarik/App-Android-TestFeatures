@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.github.panarik.smartFeatures.app.shop.R;
+import com.github.panarik.smartFeatures.R;
 
 public class FreeGameActivity extends AppCompatActivity {
 

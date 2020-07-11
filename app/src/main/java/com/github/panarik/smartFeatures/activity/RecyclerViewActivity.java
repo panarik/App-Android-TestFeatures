@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.github.panarik.smartFeatures.app.shop.R;
+import com.github.panarik.smartFeatures.R;
 import com.github.panarik.smartFeatures.data.recyclerview.RecyclerViewAdapter;
 import com.github.panarik.smartFeatures.data.recyclerview.RecyclerViewItem;
 

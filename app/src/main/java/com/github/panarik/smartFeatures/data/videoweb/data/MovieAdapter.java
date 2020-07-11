@@ -10,7 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.github.panarik.smartFeatures.app.shop.R;
+import com.github.panarik.smartFeatures.R;
 import com.github.panarik.smartFeatures.data.videoweb.model.Movie;
 import com.squareup.picasso.Picasso;
 

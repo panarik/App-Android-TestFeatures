@@ -11,7 +11,7 @@ import android.widget.Button;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
-import com.github.panarik.smartFeatures.app.shop.R;
+import com.github.panarik.smartFeatures.R;
 
 public class CreateInterfaceActivity extends AppCompatActivity {
 

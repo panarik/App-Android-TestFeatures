@@ -11,7 +11,7 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.github.panarik.smartFeatures.app.shop.R;
+import com.github.panarik.smartFeatures.R;
 
 import java.util.ArrayList;
 

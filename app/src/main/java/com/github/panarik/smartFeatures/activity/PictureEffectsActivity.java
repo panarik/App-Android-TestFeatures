@@ -8,7 +8,7 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-import com.github.panarik.smartFeatures.app.shop.R;
+import com.github.panarik.smartFeatures.R;
 
 public class PictureEffectsActivity extends AppCompatActivity implements View.OnClickListener {
 

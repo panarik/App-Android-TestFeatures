@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-import com.github.panarik.smartFeatures.app.shop.R;
+import com.github.panarik.smartFeatures.R;
 
 public class VideoLocalActivity extends AppCompatActivity {
 

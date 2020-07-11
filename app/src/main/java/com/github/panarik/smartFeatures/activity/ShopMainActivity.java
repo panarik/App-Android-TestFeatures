@@ -14,7 +14,7 @@ import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.github.panarik.smartFeatures.data.Order;
-import com.github.panarik.smartFeatures.app.shop.R;
+import com.github.panarik.smartFeatures.R;
 
 import java.util.ArrayList;
 import java.util.HashMap;

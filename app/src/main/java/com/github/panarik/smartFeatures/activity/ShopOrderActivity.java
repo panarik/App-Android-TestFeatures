@@ -8,7 +8,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.TextView;
 
-import com.github.panarik.smartFeatures.app.shop.R;
+import com.github.panarik.smartFeatures.R;
 
 public class ShopOrderActivity extends AppCompatActivity {
 

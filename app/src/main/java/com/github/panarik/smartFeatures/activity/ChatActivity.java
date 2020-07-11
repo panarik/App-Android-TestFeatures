@@ -19,7 +19,7 @@ import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.ProgressBar;
 
-import com.github.panarik.smartFeatures.app.shop.R;
+import com.github.panarik.smartFeatures.R;
 import com.github.panarik.smartFeatures.data.chat.ChatMessage;
 import com.github.panarik.smartFeatures.data.chat.ChatMessageAdapter;
 import com.google.firebase.auth.FirebaseAuth;

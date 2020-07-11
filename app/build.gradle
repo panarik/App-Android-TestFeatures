@@ -11,7 +11,7 @@ android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
     defaultConfig {
-        applicationId "com.github.panarik.mobile.app.shop"
+        applicationId "com.github.panarik.smartFeatures"
         minSdkVersion 23 //min 19
         //23 - работа http Трафика
         //23 - требование android:usesCleartextTraffic="true" в AndroidManifest - нужно для запуска http Трафика

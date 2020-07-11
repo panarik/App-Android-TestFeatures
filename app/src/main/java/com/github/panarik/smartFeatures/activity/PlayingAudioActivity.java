@@ -9,7 +9,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.SeekBar;
 
-import com.github.panarik.smartFeatures.app.shop.R;
+import com.github.panarik.smartFeatures.R;
 
 import java.util.Timer;
 import java.util.TimerTask;

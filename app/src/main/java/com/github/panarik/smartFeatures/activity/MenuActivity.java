@@ -9,7 +9,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
-import com.github.panarik.smartFeatures.app.shop.R;
+import com.github.panarik.smartFeatures.R;
 import com.github.panarik.smartFeatures.data.menu.createinterface.CreateInterfaceActivity;
 
 import java.util.ArrayList;

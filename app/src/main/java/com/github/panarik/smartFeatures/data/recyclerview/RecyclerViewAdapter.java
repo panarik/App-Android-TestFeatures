@@ -6,7 +6,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.github.panarik.smartFeatures.app.shop.R;
+import com.github.panarik.smartFeatures.R;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;

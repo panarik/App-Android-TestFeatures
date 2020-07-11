@@ -21,7 +21,7 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
-import com.github.panarik.smartFeatures.app.shop.R;
+import com.github.panarik.smartFeatures.R;
 import com.github.panarik.smartFeatures.data.videoweb.data.MovieAdapter;
 import com.github.panarik.smartFeatures.data.videoweb.model.Movie;
 
