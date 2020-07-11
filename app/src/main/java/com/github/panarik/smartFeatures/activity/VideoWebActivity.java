@@ -118,10 +118,6 @@ public class VideoWebActivity extends AppCompatActivity {
     }
 
 
-    public void toPlayingAudio(View view) {
-        Intent PlayingAudioActivity = new Intent(VideoWebActivity.this, PlayingAudioActivity.class);
-        startActivity(PlayingAudioActivity);
-    }
 
     public void toSearchMovie(View view) {
         //new objects
@@ -165,6 +161,12 @@ public class VideoWebActivity extends AppCompatActivity {
         });
 
         quitDialog.show();
+    }
+
+
+    public void goToMainActivity(View view) {
+        Intent goToMainActivity = new Intent(this, MainActivity.class);
+        startActivity(goToMainActivity);
     }
 
 }

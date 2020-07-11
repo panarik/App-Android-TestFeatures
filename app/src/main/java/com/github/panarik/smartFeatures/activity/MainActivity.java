@@ -16,7 +16,6 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
-import android.view.View;
 
 import java.util.ArrayList;
 
@@ -32,7 +31,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_recycler_view);
+        setContentView(R.layout.activity_main);
 
         recyclerViewItems = new ArrayList<>();
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.mobile_shop_shoping, "Mobile shopping", "Insert text, spinner, quantity, sopping card, send order on email"));

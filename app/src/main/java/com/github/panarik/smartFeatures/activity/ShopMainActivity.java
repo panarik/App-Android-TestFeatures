@@ -35,7 +35,7 @@ public class ShopMainActivity extends AppCompatActivity implements AdapterView.O
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_shop_main);
 
         createSpinner();
         createGoodsMap();
@@ -148,21 +148,11 @@ public class ShopMainActivity extends AppCompatActivity implements AdapterView.O
         orderIntent.putExtra("quantityForIntent",order.quantity);
         orderIntent.putExtra("orderPriceForIntent",order.orderPrice);
         startActivity(orderIntent);
-
     }
 
-    public void freeGame(View view) {
-        Order order = new Order();
-        order.userName = userNameEditText.getText().toString();
-        order.goodsName = goodsName;
-        order.quantity = quantity;
-        order.orderPrice = quantity * price;
 
-        Intent freeGameIntent = new Intent(ShopMainActivity.this, FreeGameActivity.class);
-        freeGameIntent.putExtra("userNameForIntent",order.userName);
-        freeGameIntent.putExtra("goodsNameForIntent",order.goodsName);
-        freeGameIntent.putExtra("quantityForIntent",order.quantity);
-        freeGameIntent.putExtra("orderPriceForIntent",order.orderPrice);
-        startActivity(freeGameIntent);
+    public void goToMainActivity(View view) {
+        Intent goToMainActivity = new Intent(this, MainActivity.class);
+        startActivity(goToMainActivity);
     }
 }

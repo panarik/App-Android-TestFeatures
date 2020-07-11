@@ -87,12 +87,11 @@ public class PictureEffectsActivity extends AppCompatActivity implements View.On
                     Log.d("statFlowerImageView", "" + statFlowerImageView);
                 }
                 break;
-
         }
     }
 
-    public void goToVideoLocalActivity(View view) {
-        Intent goToVideoViewActivity = new Intent(PictureEffectsActivity.this, VideoLocalActivity.class);
-        startActivity(goToVideoViewActivity);
+    public void goToMainActivity(View view) {
+        Intent goToMainActivity = new Intent(this, MainActivity.class);
+        startActivity(goToMainActivity);
     }
 }

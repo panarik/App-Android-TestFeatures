@@ -57,8 +57,9 @@ public class ListViewActivity extends AppCompatActivity {
 
     }
 
-    public void GoToRecycler(View view) {
-        Intent RecyclerViewActivity = new Intent(ListViewActivity.this, MainActivity.class);
-        startActivity(RecyclerViewActivity);
+    public void goToMainActivity(View view) {
+        Intent goToMainActivity = new Intent(this, MainActivity.class);
+        startActivity(goToMainActivity);
     }
+
 }

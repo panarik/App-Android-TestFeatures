@@ -27,8 +27,10 @@ public class VideoLocalActivity extends AppCompatActivity {
 
     }
 
-    public void toPlayingAudio(View view) {
-        Intent VideoWebActivity = new Intent(VideoLocalActivity.this, VideoWebActivity.class);
-        startActivity(VideoWebActivity);
+
+    public void goToMainActivity(View view) {
+        Intent goToMainActivity = new Intent(this, MainActivity.class);
+        startActivity(goToMainActivity);
     }
+
 }

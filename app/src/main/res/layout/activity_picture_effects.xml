@@ -53,16 +53,22 @@
         android:layout_marginTop="30sp"
         app:srcCompat="@drawable/bud_and_flover_4" />
 
-    <Button
-        android:id="@+id/toWatchVideo"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/flowerImageView4"
-        android:layout_marginTop="20dp"
+    <ImageView
+        android:id="@+id/shop_main_back"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_above="@id/freeGame_endpoint"
         android:layout_marginStart="20dp"
-        android:layout_marginEnd="20dp"
-        android:textSize="24sp"
-        android:onClick="goToVideoLocalActivity"
-        android:text="Lets watch Video!" />
+        android:clickable="true"
+        android:onClick="goToMainActivity"
+        android:src="@drawable/back"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/freeGame_endpoint"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
 
 </RelativeLayout>

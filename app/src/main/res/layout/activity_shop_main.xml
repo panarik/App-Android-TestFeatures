@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    tools:context="com.github.panarik.smartFeatures.activity.ShopMainActivity">
+
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:layout_below="@id/editText"
+        app:srcCompat="@drawable/dsc9984" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/imageView"
+        android:gravity="right"
+        android:paddingTop="10dp"
+        android:paddingEnd="20dp"
+        android:text="Select item" />
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView" />
+
+    <ImageView
+        android:id="@+id/goodsImageView"
+        android:layout_width="match_parent"
+        android:layout_height="121dp"
+        android:layout_below="@id/spinner"
+        android:layout_centerInParent="true"
+        app:srcCompat="@drawable/led" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/goodsImageView"
+        android:paddingStart="30dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="40dp"
+        android:text="Order Price"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/textView2"
+        android:layout_toRightOf="@id/textView2"
+        android:gravity="left"
+        android:paddingStart="40dp"
+        android:paddingTop="10dp"
+        android:text="Quantity"
+        android:textSize="24sp"
+
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/textView3"
+        android:layout_marginLeft="60dp"
+        android:layout_marginTop="5dp"
+        android:text="0$"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/button1"
+        android:layout_width="49dp"
+        android:layout_height="51dp"
+        android:layout_below="@id/textView3"
+        android:layout_alignLeft="@id/textView3"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="0dp"
+        android:onClick="decreaseQuantity"
+        android:text="-"
+        android:textSize="24sp" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="49dp"
+        android:layout_height="51dp"
+        android:layout_alignTop="@id/button1"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="0dp"
+        android:layout_toRightOf="@id/button1"
+        android:onClick="increaseQuantity"
+        android:text="+"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/button1"
+        android:layout_marginLeft="12dp"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@id/button1"
+        android:text="0"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Button
+        android:id="@+id/addToCart"
+        android:layout_width="180dp"
+        android:layout_height="60dp"
+        android:layout_centerHorizontal="true"
+        android:layout_above="@id/shop_main_endpoint"
+        android:onClick="addToCart"
+        android:text="Add To Cart"
+        android:textSize="20sp" />
+
+    <ImageView
+        android:id="@+id/shop_main_back"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_above="@id/shop_main_endpoint"
+        android:layout_marginStart="20dp"
+        android:clickable="true"
+        android:onClick="goToMainActivity"
+        android:src="@drawable/back"
+        android:textSize="20sp" />
+
+    <TextView
+        android:id="@+id/shop_main_endpoint"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"/>
+
+</RelativeLayout>
