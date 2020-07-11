@@ -52,6 +52,13 @@ public class SignInActivity extends AppCompatActivity {
         //инициализируем объект авторизации
         auth = FirebaseAuth.getInstance();
 
+        //проверяем зарегистрирован пользователь или нет
+        if (auth.getCurrentUser() !=null){
+            Intent goToRecyclerViewActivity = new Intent(this, RecyclerViewActivity.class);
+            startActivity(goToRecyclerViewActivity);
+        }
+
+
         chat_loginSignUpButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -66,13 +73,12 @@ public class SignInActivity extends AppCompatActivity {
     }
 
 
-    //добавление нового аккаунта
+    //режимы LogIn or SingUp
     private void loginSignUpUser(String email, String password) { //метод берет email и password
 
         //проверяем пользователь зарегистрирован или нет
-
         if (chat_loginModeActive) {
-            //если да, то выполняем код отсюда: https://firebase.google.com/docs/auth/android/password-auth?authuser=0
+            //если зарегистрирован, то выполняем код отсюда: https://firebase.google.com/docs/auth/android/password-auth?authuser=0
             auth.signInWithEmailAndPassword(email, password)
                     .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                         @Override
@@ -100,6 +106,7 @@ public class SignInActivity extends AppCompatActivity {
                     });
 
         } else {
+            //если незарегистрирован, то go to Sign UP
             auth.createUserWithEmailAndPassword(email, password)
                     .addOnCompleteListener(
                             this, new OnCompleteListener<AuthResult>() {
@@ -138,11 +145,13 @@ public class SignInActivity extends AppCompatActivity {
     public void chat_toggleLoginMode(View view) {
         //проверяем
         if (chat_loginModeActive) {
+            // go to SIGN UP
             chat_loginModeActive = false;
             chat_loginSignUpButton.setText("Sign Up");
             chat_toggleSingUpTextView.setText("Or log in");
             chat_passwordConfirmEditText.setVisibility(View.VISIBLE);
         } else {
+            //go to SING IN
             chat_loginModeActive = true;
             chat_loginSignUpButton.setText("Log In");
             chat_toggleSingUpTextView.setText("Or sign Up");
