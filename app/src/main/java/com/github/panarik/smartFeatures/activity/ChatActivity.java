@@ -77,12 +77,7 @@ public class ChatActivity extends AppCompatActivity {
 
 
         //получаем userName из MainActivity
-        Intent intent = getIntent();
-        if (intent != null) {
-            userName = intent.getStringExtra("userName");
-        } else {
-            userName = "Default User";
-        }
+        get_UserName_from_MainActivity();
 
 
         //создаем новый адаптер и передаем ему ArrayList
@@ -117,16 +112,13 @@ public class ChatActivity extends AppCompatActivity {
         //ограничиваем длину сообщения
         chat_messageEditText.setFilters
                 (new InputFilter[]
-                        {
-                                new InputFilter.LengthFilter(500)
-                        }
+                        {new InputFilter.LengthFilter(500)}
                 );
 
 
         chat_messageSendButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
                 //собираем текст
                 ChatMessage message = new ChatMessage();
                 message.setText(chat_messageEditText.getText().toString());
@@ -135,7 +127,6 @@ public class ChatActivity extends AppCompatActivity {
 
                 //отправляем на сервер с помощью .push()
                 messagesDatabaseReference.push().setValue(message);
-
 
                 chat_messageEditText.setText("");
             }
@@ -218,6 +209,16 @@ public class ChatActivity extends AppCompatActivity {
         //прикрепляем listener к БД messages.
         messagesDatabaseReference.addChildEventListener(messagesChildEventListener);
 
+    }
+
+
+    private void get_UserName_from_MainActivity() {
+        Intent intent = getIntent();
+        if (intent != null) {
+            userName = intent.getStringExtra("userName");
+        } else {
+            userName = "Default User";
+        }
     }
 
 

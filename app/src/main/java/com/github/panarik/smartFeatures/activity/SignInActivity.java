@@ -222,7 +222,7 @@ public class SignInActivity extends AppCompatActivity {
     }
 
 
-    public void goToRecyclerViewActivity(View view) {
+    public void goToMainActivity(View view) {
         Intent goToRecyclerViewActivity = new Intent(this, MainActivity.class);
         startActivity(goToRecyclerViewActivity);
     }

@@ -1,4 +1,4 @@
-package com.github.panarik.smartFeatures.data;
+package com.github.panarik.smartFeatures.data.order;
 
 public class Order {
 

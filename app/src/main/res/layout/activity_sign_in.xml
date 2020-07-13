@@ -84,8 +84,8 @@ android:layout_centerHorizontal="true"
         android:layout_below="@id/chat_passwordConfirmEditText"
         android:layout_centerInParent="true"
         android:layout_marginTop="30dp"
-        android:text="Без Регистрации"
-        android:onClick="goToRecyclerViewActivity"
+        android:text="Продолжить Без Регистрации"
+        android:onClick="goToMainActivity"
         tools:ignore="OnClick" />
 
 </RelativeLayout>
