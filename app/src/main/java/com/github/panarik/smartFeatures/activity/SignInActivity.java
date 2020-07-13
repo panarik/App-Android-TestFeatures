@@ -112,10 +112,8 @@ public class SignInActivity extends AppCompatActivity {
                                     Log.d(TAG, "signInWithEmail:success");
                                     FirebaseUser user = auth.getCurrentUser();
                                     //updateUI(user);
-
                                     //только когда выполнена авторизация, переходим на главный экран
-                                    Intent goToRecyclerViewActivity = new Intent(SignInActivity.this, MainActivity.class);
-                                    startActivity(goToRecyclerViewActivity);
+                                    goToMainActivity();
 
                                 } else {
                                     // If sign in fails, display a message to the user.
@@ -161,10 +159,9 @@ public class SignInActivity extends AppCompatActivity {
                                             createUser(user);
 
                                             //updateUI(user);
-
                                             //только когда выполнена авторизация, переходим на главный экран
-                                            Intent goToRecyclerViewActivity = new Intent(SignInActivity.this, MainActivity.class);
-                                            startActivity(goToRecyclerViewActivity);
+                                            goToMainActivity();
+
 
                                         } else {
                                             // If sign in fails, display a message to the user.
@@ -182,6 +179,13 @@ public class SignInActivity extends AppCompatActivity {
         }
 
 
+    }
+
+    //переход на главный экран с переносом userName
+    private void goToMainActivity() {
+        Intent goToMainActivity = new Intent(SignInActivity.this, MainActivity.class);
+        goToMainActivity.putExtra("userName", chat_nameEditText.getText().toString().trim());
+        startActivity(goToMainActivity);
     }
 
 

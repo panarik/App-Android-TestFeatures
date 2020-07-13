@@ -26,12 +26,24 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
     private RecyclerView.LayoutManager layoutManager; //управление расположением элементов recyclerView
     ArrayList<RecyclerViewItem> recyclerViewItems;
 
+    //поля для перехода данных из SignInActivity посредством интента и передачи в другие активити
+    private String userName;
+
     private final String TAG = "onItemClick";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //получаем userName из SignInActivity
+        Intent intent = getIntent();
+        if (intent !=null){
+            userName = intent.getStringExtra("userName");
+            Log.d("goToMainActivity", "userName = "+userName);
+        } else {
+            userName = "Default User";
+        }
 
         recyclerViewItems = new ArrayList<>();
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.mobile_shop_shoping, "Mobile shopping", "Insert text, spinner, quantity, sopping card, send order on email"));
@@ -103,6 +115,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
             case 7:
                 //ChatActivity
                 Intent goToChatActivity = new Intent(this, ChatActivity.class);
+                //забираем также текущий userName
+                goToChatActivity.putExtra("userName", userName);
                 startActivity(goToChatActivity);
                 break;
             default:

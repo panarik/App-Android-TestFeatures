@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputFilter;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -62,12 +63,21 @@ public class ChatActivity extends AppCompatActivity {
         //прослушиваем ДБ на изменения
         ChildEventListener messagesChildEventListener;
 
-        userName = "User";
         progressBar = findViewById(R.id.progressBar);
         messageListView = findViewById(R.id.messageListView);
         chat_messageSendPhotoImageButton = findViewById(R.id.chat_messageSendPhotoImageButton);
         chat_messageSendButton = findViewById(R.id.chat_messageSendButton);
         chat_messageEditText = findViewById(R.id.chat_messageEditText);
+
+
+        //получаем userName из MainActivity
+        Intent intent = getIntent();
+        if (intent !=null){
+            userName = intent.getStringExtra("userName");
+        } else {
+            userName = "Default User";
+        }
+
 
         //создаем новый адаптер и передаем ему ArrayList
         List<ChatMessage> chatMessages = new ArrayList<>();
