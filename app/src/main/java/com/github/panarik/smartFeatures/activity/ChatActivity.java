@@ -48,7 +48,6 @@ public class ChatActivity extends AppCompatActivity {
     //БД Firebase
     FirebaseDatabase database;
     DatabaseReference messagesDatabaseReference;
-    DatabaseReference usersDatabaseReference;
 
 
     @Override

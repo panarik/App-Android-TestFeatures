@@ -13,11 +13,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.panarik.smartFeatures.R;
+import com.github.panarik.smartFeatures.data.chat.ChatUser;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
+import static com.google.firebase.database.FirebaseDatabase.getInstance;
 
 public class SignInActivity extends AppCompatActivity {
 
@@ -35,6 +40,10 @@ public class SignInActivity extends AppCompatActivity {
     //переключаем регистрацию и логин
     private boolean chat_loginModeActive;
 
+    //поля для добавления узла users в Firebase
+    FirebaseDatabase database;
+    DatabaseReference usersDatabaseReference;
+
     private static final String TAG = "SignInActivity";
 
     @Override
@@ -51,6 +60,11 @@ public class SignInActivity extends AppCompatActivity {
 
         //инициализируем объект авторизации
         auth = FirebaseAuth.getInstance();
+        //инициализируем БД Firebase
+        database = getInstance();
+        //инициализируем узел в БД "users" для добавления новы пользователей
+        usersDatabaseReference = database.getReference().child("users");
+
 
         //проверяем зарегистрирован пользователь или нет
         if (auth.getCurrentUser() != null) {
@@ -142,6 +156,10 @@ public class SignInActivity extends AppCompatActivity {
                                             // Sign in success, update UI with the signed-in user's information
                                             Log.d(TAG, "createUserWithEmail:success");
                                             FirebaseUser user = auth.getCurrentUser();
+
+                                            //доп метод для создания списка юзеров и использования их в дальнейшем
+                                            createUser(user);
+
                                             //updateUI(user);
 
                                             //только когда выполнена авторизация, переходим на главный экран
@@ -183,6 +201,22 @@ public class SignInActivity extends AppCompatActivity {
             chat_passwordConfirmEditText.setVisibility(View.GONE);
         }
     }
+
+
+    //метод дергается при регистрации нового юзера
+    private void createUser(FirebaseUser firebaseUser) {
+        ChatUser user = new ChatUser();
+
+        //собираем данные в объект user
+        user.setUserId( //используем сеттер из класса ChatUser
+                firebaseUser.getUid()); //id извлекаем из Firebase. Метод Firebase извлекающий id юзера из БД Firebase
+        user.setUserEmail(
+                firebaseUser.getEmail());
+        user.setUserName(chat_nameEditText.getText().toString().trim()); //имя берем из формы заполнения
+        //отправляем на сервер с помощью .push()
+        usersDatabaseReference.push().setValue(user);
+    }
+
 
     public void goToRecyclerViewActivity(View view) {
         Intent goToRecyclerViewActivity = new Intent(this, MainActivity.class);
