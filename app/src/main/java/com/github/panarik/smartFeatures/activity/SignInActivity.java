@@ -62,7 +62,7 @@ public class SignInActivity extends AppCompatActivity {
         auth = FirebaseAuth.getInstance();
         //инициализируем БД Firebase
         database = getInstance();
-        //инициализируем узел в БД "users" для добавления новы пользователей
+        //инициализируем узел в БД "users" для добавления новых пользователей
         usersDatabaseReference = database.getReference().child("users");
 
 
@@ -216,7 +216,7 @@ public class SignInActivity extends AppCompatActivity {
                 firebaseUser.getUid()); //id извлекаем из Firebase. Метод Firebase извлекающий id юзера из БД Firebase
         user.setUserEmail(
                 firebaseUser.getEmail());
-        user.setUserName(chat_nameEditText.getText().toString().trim()); //имя берем из формы заполнения
+        user.setUserName(chat_nameEditText.getText().toString().trim()); //имя берем из формы заполнения и сохраняем в объекте класса ChatUser
         //отправляем на сервер с помощью .push()
         usersDatabaseReference.push().setValue(user);
     }

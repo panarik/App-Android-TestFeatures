@@ -23,6 +23,7 @@ import android.widget.ProgressBar;
 import com.github.panarik.smartFeatures.R;
 import com.github.panarik.smartFeatures.data.chat.ChatMessage;
 import com.github.panarik.smartFeatures.data.chat.ChatMessageAdapter;
+import com.github.panarik.smartFeatures.data.chat.ChatUser;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
@@ -48,7 +49,13 @@ public class ChatActivity extends AppCompatActivity {
 
     //БД Firebase
     FirebaseDatabase database;
-    DatabaseReference messagesDatabaseReference;
+    DatabaseReference messagesDatabaseReference; //БД сообщений
+    DatabaseReference usersDatabaseReference; //БД пользователей
+    //прослушиваем изменения БД
+    ChildEventListener messagesChildEventListener; //слушаем узел сообщений
+    ChildEventListener usersChildEventListener; //слушаем узел пользователей
+
+    //
 
 
     @Override
@@ -58,10 +65,9 @@ public class ChatActivity extends AppCompatActivity {
 
         //инициализируем БД Firebase
         database = getInstance();
-        //инициализируем узел в БД
+        //инициализируем узлы в БД
         messagesDatabaseReference = database.getReference().child("messages");
-        //прослушиваем ДБ на изменения
-        ChildEventListener messagesChildEventListener;
+        usersDatabaseReference = database.getReference().child("users");
 
         progressBar = findViewById(R.id.progressBar);
         messageListView = findViewById(R.id.messageListView);
@@ -72,7 +78,7 @@ public class ChatActivity extends AppCompatActivity {
 
         //получаем userName из MainActivity
         Intent intent = getIntent();
-        if (intent !=null){
+        if (intent != null) {
             userName = intent.getStringExtra("userName");
         } else {
             userName = "Default User";
@@ -143,7 +149,44 @@ public class ChatActivity extends AppCompatActivity {
         });
 
 
-        //прослушаваем различные изменения БД
+        //прослушаваем изменения в БД (узел юзеров)
+        usersChildEventListener = new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                //получаем всех пользователей
+                ChatUser user = snapshot.getValue(ChatUser.class);
+                //находим нужного пользователя (сравниваем текущего с БД)
+                if (user.getUserId()
+                        .equals(
+                                FirebaseAuth.getInstance().getCurrentUser().getUid())) {
+                    userName = user.getUserName();
+                }
+
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+            }
+        };
+
+        //прикрепляем listener к БД users
+        usersDatabaseReference.addChildEventListener(usersChildEventListener);
+
+
+
+        //прослушаваем изменения в БД (узел сообщений)
         messagesChildEventListener = new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
