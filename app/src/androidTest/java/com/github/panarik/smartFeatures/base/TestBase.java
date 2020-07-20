@@ -4,8 +4,8 @@ import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.uiautomator.UiDevice;
 
-import com.github.panarik.smartFeatures.activity.ShopMainActivity;
 import com.github.panarik.smartFeatures.activity.SignInActivity;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.junit.After;
 import org.junit.Before;
@@ -39,7 +39,7 @@ public class TestBase {
     // public OkHttpClient client = new OkHttpClient();
     // public String responseBody;
 
-    //start main activity
+    //start activity
     @Rule
     public ActivityTestRule<SignInActivity> activityActivityTestRule = new ActivityTestRule<>(SignInActivity.class);
 
@@ -73,6 +73,9 @@ public class TestBase {
     @After
     public void stopMockServer() throws Exception {
         //server.shutdown();
+
+        //logout
+        FirebaseAuth.getInstance().signOut();
     }
 
 

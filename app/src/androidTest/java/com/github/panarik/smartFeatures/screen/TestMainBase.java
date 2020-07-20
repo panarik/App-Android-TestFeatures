@@ -2,7 +2,6 @@ package com.github.panarik.smartFeatures.screen;
 
 import com.github.panarik.smartFeatures.R;
 import com.github.panarik.smartFeatures.base.TestBase;
-import com.google.firebase.auth.FirebaseAuth;
 
 import org.junit.Test;
 
@@ -22,14 +21,14 @@ import static org.junit.Assert.assertThat;
 
 public class TestMainBase extends TestBase {
 
-    //отображение определенного активити
+    //отображение активити
     @Test
     public void test_currentActivity_onScreen() {
         onView(withId(R.id.activity_main))
                 .check(matches(isDisplayed()));
     }
 
-
+    //ввод имени
     @Test
     public void editTextNameTest() {
         onView(withId(R.id.editText))
