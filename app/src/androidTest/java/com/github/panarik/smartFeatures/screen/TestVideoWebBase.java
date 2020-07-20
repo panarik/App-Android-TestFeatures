@@ -1,20 +1,33 @@
-package com.github.panarik.smartFeatures.app.shop.screen;
+package com.github.panarik.smartFeatures.screen;
 
+import android.app.Activity;
+import android.app.Instrumentation;
+import android.content.ComponentName;
+import android.content.Intent;
+import android.support.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
+import android.support.test.runner.lifecycle.Stage;
+import android.util.Log;
 import android.view.View;
 
 import androidx.test.espresso.UiController;
 import androidx.test.espresso.ViewAction;
 
-import com.github.panarik.smartFeatures.app.shop.R;
-import com.github.panarik.smartFeatures.app.shop.base.TestBase;
+import com.github.panarik.smartFeatures.R;
+import com.github.panarik.smartFeatures.base.TestBase;
 
 import org.hamcrest.Matcher;
+import org.junit.Before;
 import org.junit.Test;
 
+import java.util.Collection;
+
+import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
+import static androidx.test.espresso.intent.Intents.intending;
+import static androidx.test.espresso.intent.matcher.IntentMatchers.toPackage;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
@@ -25,6 +38,8 @@ import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.Matchers.anyOf;
 
 public class TestVideoWebBase extends TestBase {
+
+    Activity currentActivity = null;
 
 
     @Test
@@ -76,13 +91,19 @@ public class TestVideoWebBase extends TestBase {
 
     //run to current screen
     public static void goToTestVideoWeb() {
-        onView(withId(R.id.freeGame))
+
+
+        //переводим форму в режим Sign In
+        onView(withId(R.id.chat_toggleSingUpTextView))
                 .perform(click());
-        onView(withId(R.id.anotherThings))
-                .perform(click());
-        onView(withId(R.id.toWatchVideo))
-                .perform(click());
-        onView(withId(R.id.toPlayingAudioActivity))
+        //вводим email
+        onView(withId(R.id.chat_emailEditText))
+                .perform(typeText("test1@gmail.com"));
+        //вводим пароль
+        onView(withId(R.id.chat_passwordEditText))
+                .perform(typeText("123456"));
+        //жмем далее
+        onView(withId(R.id.chat_loginSignUpButton))
                 .perform(click());
     }
 
@@ -108,3 +129,4 @@ public class TestVideoWebBase extends TestBase {
     }
 
 }
+

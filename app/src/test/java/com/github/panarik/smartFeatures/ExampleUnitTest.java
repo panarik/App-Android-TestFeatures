@@ -1,4 +1,4 @@
-package com.github.panarik.smartFeatures.app.shop;
+package com.github.panarik.smartFeatures;
 
 import org.junit.Test;
 

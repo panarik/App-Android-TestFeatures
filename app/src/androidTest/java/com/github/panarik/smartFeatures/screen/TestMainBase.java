@@ -1,7 +1,8 @@
-package com.github.panarik.smartFeatures.app.shop.screen;
+package com.github.panarik.smartFeatures.screen;
 
-import com.github.panarik.smartFeatures.app.shop.R;
-import com.github.panarik.smartFeatures.app.shop.base.TestBase;
+import com.github.panarik.smartFeatures.R;
+import com.github.panarik.smartFeatures.base.TestBase;
+import com.google.firebase.auth.FirebaseAuth;
 
 import org.junit.Test;
 
@@ -20,6 +21,13 @@ import static org.hamcrest.Matchers.anything;
 import static org.junit.Assert.assertThat;
 
 public class TestMainBase extends TestBase {
+
+    //отображение определенного активити
+    @Test
+    public void test_currentActivity_onScreen() {
+        onView(withId(R.id.activity_main))
+                .check(matches(isDisplayed()));
+    }
 
 
     @Test
@@ -105,7 +113,7 @@ public class TestMainBase extends TestBase {
 
 
     @Test
-    public void anyContentViews(){
+    public void anyContentViews() {
         onView(hasContentDescription())
                 .check(matches(isDisplayed()));
     }

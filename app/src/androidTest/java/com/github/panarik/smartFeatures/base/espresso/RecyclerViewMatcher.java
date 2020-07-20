@@ -1,4 +1,4 @@
-package com.github.panarik.smartFeatures.app.shop.base.espresso;
+package com.github.panarik.smartFeatures.base.espresso;
 
 import android.content.res.Resources;
 import android.view.View;

@@ -1,10 +1,11 @@
-package com.github.panarik.smartFeatures.app.shop.base;
+package com.github.panarik.smartFeatures.base;
 
 import androidx.test.ext.junit.runners.AndroidJUnit4;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.uiautomator.UiDevice;
 
 import com.github.panarik.smartFeatures.activity.ShopMainActivity;
+import com.github.panarik.smartFeatures.activity.SignInActivity;
 
 import org.junit.After;
 import org.junit.Before;
@@ -40,7 +41,7 @@ public class TestBase {
 
     //start main activity
     @Rule
-    public ActivityTestRule<ShopMainActivity> activityActivityTestRule = new ActivityTestRule<>(ShopMainActivity.class);
+    public ActivityTestRule<SignInActivity> activityActivityTestRule = new ActivityTestRule<>(SignInActivity.class);
 
     /*
     @Before
@@ -67,7 +68,6 @@ public class TestBase {
         //  Press home button?
         // mDevice.pressHome();
     }
-
 
 
     @After

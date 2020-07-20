@@ -1,4 +1,4 @@
-package com.github.panarik.smartFeatures.app.shop.base;
+package com.github.panarik.smartFeatures.base;
 
 import android.content.Context;
 import android.content.Intent;
