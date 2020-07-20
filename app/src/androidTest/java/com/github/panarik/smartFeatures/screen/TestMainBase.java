@@ -14,6 +14,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.hasContentDescription;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
+import static com.github.panarik.smartFeatures.screen.TestSignInBase.auth_signIn;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.Matchers.anything;
@@ -64,6 +65,8 @@ public class TestMainBase extends TestBase {
 
     @Test
     public void editAddToCardTest() {
+
+        auth_signIn();
         //вводим имя
         onView(withId(R.id.editText))
                 .perform(typeText("alex"))
