@@ -1,12 +1,12 @@
 package com.github.panarik.smartFeatures.activity;
 
-import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentActivity;
 
 import android.os.Bundle;
 
 import com.github.panarik.smartFeatures.R;
 
-public class LandscapeActivity extends AppCompatActivity {
+public class LandscapeActivity extends FragmentActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
