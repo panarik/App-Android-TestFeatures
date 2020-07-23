@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -54,6 +55,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.video_local_video, "Local video", "video from APK, control panel, volume listener"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.video_web_movie, "Movies online", "Text and pictures from API, RecycleView, search function,"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.chat_chatlogo, "Messenger", "Firebase objects, GET Firebase realtime database data, POST messages into Firebase"));
+        recyclerViewItems.add(new RecyclerViewItem(R.drawable.landscape_logo, "Landscape Orientation", "Simple Fragments, orientation screen"));
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);     //для улучшения производительности задаем количество строк
@@ -119,8 +121,15 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 goToChatActivity.putExtra("userName", userName);
                 startActivity(goToChatActivity);
                 break;
+            case 8:
+                //ChatActivity
+                Intent goToLandscapeActivity = new Intent(this, LandscapeActivity.class);
+                goToLandscapeActivity.putExtra("userName", userName);
+                startActivity(goToLandscapeActivity);
+                break;
             default:
                 Log.d(TAG, "Nope");
+                Toast.makeText(this, "Nope", Toast.LENGTH_SHORT).show();
         }
     }
 

@@ -8,7 +8,7 @@ import com.github.panarik.smartFeatures.screen.TestVideoWebBase;
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 
-//запуск нескольких классов
+//запуск нескольких классов одновременно
 @RunWith(Suite.class)
 @Suite.SuiteClasses({
         TestMainBase.class,
