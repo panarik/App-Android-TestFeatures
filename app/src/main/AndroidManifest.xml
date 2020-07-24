@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+        <!-- на удаление -->
         <activity android:name=".data.products.RecyclerProductViewActivity" />
         <activity android:name=".data.catgame.PetActivity" />
 

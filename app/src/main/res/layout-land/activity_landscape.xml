@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/black">
+
+    <fragment
+        android:name="com.github.panarik.smartFeatures.data.landscape.LandscapeImageFragment"
+        android:id="@+id/landscape_image_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/fragment_landscape_image"/>
+
+    <fragment
+        android:name="com.github.panarik.smartFeatures.data.landscape.LandscapeButtonFragment"
+        android:id="@+id/landscape_button_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:layout="@layout/fragment_landscape_button"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="10dp"/>
+
+
+
+
+
+
+</RelativeLayout>
+
+

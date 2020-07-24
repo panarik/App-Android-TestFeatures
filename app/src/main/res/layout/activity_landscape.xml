@@ -11,7 +11,7 @@
         android:name="com.github.panarik.smartFeatures.data.landscape.LandscapeImageFragment"
         android:id="@+id/landscape_image_fragment"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="200dp"
         tools:layout="@layout/fragment_landscape_image"/>
 
     <fragment
