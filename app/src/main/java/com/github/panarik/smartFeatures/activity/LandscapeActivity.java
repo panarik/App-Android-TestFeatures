@@ -36,18 +36,32 @@ public class LandscapeActivity extends FragmentActivity {
     }
 
 
-    //по нажатию кнопки "Добавить"
-    public void addFragment(View view) {
+    //по нажатию кнопок
+    public void onClickOperateFragment(View view) {
         //получаем транзакции с manager, который предоставляет транзакции
         transaction = manager.beginTransaction();
 
         //выбираем из нескольких кнопок
         switch (view.getId()) //получаем на вход id кнопки
         {
-            case R.id.landscape_addButton :
-                //добавляем фрагмент
-                transaction.add(R.id.landscape_containerLayout, //контейнер, куда будем добавлять фрагменты
-                        oneFragment); //передаём фрагмент
+            //добавляем фрагмент
+            case R.id.landscape_addButton:
+
+
+                if (manager.findFragmentByTag //проверка повторного добавления фрагмента
+                        (LandscapeOneFragment.landscapeFragmentTAG) == null)  //если == null, то фрагмент ранее не добавлялся
+                {
+                    transaction.add(R.id.landscape_containerLayout, //контейнер, куда будем добавлять фрагменты
+                            oneFragment, //передаём фрагмент
+                            LandscapeOneFragment.landscapeFragmentTAG); //передаем тег каждого фрагмента для их различия
+                }
+                break;
+
+            //удаляем фрагмент
+            case R.id.landscape_removeButton:
+                if (manager.findFragmentByTag(LandscapeOneFragment.landscapeFragmentTAG) != null) {
+                    transaction.remove(oneFragment);
+                }
                 break;
         }
 

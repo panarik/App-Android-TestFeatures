@@ -31,12 +31,23 @@
             android:id="@+id/landscape_controlLayout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
+
             <Button
                 android:id="@+id/landscape_addButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Добавить"
-                android:onClick="addFragment"/>
+                android:layout_weight="1"
+                android:onClick="onClickOperateFragment"
+                android:text="Добавить" />
+
+            <Button
+                android:id="@+id/landscape_removeButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClickOperateFragment"
+                android:text="Удалить" />
+
         </LinearLayout>
 
         <!-- в него подгружаем новые фрагменты -->
@@ -44,8 +55,8 @@
             android:id="@+id/landscape_containerLayout"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:layout_below="@id/landscape_controlLayout"/>
+            android:layout_below="@id/landscape_controlLayout"
+            android:orientation="vertical" />
 
     </RelativeLayout>
 
