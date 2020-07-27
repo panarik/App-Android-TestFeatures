@@ -47,22 +47,47 @@ public class LandscapeActivity extends FragmentActivity {
             //добавляем фрагмент
             case R.id.landscape_addButton:
 
-
+                //если нет первого фрагмента
                 if (manager.findFragmentByTag //проверка повторного добавления фрагмента
-                        (LandscapeOneFragment.landscapeFragmentTAG) == null)  //если == null, то фрагмент ранее не добавлялся
+                        (LandscapeOneFragment.landscapeFragmentTAG) == null) //если == null, то фрагмент ранее не добавлялся
                 {
                     transaction.add(R.id.landscape_containerLayout, //контейнер, куда будем добавлять фрагменты
                             oneFragment, //передаём фрагмент
                             LandscapeOneFragment.landscapeFragmentTAG); //передаем тег каждого фрагмента для их различия
                 }
+                //если нет второго фрагмента
+                else if (manager.findFragmentByTag(LandscapeTwoFragment.landscapeFragmentTAG) == null) {
+                    transaction.add(R.id.landscape_containerLayout, twoFragment, LandscapeTwoFragment.landscapeFragmentTAG);
+                }
                 break;
 
             //удаляем фрагмент
             case R.id.landscape_removeButton:
+                //если есть первый фрагмент
                 if (manager.findFragmentByTag(LandscapeOneFragment.landscapeFragmentTAG) != null) {
                     transaction.remove(oneFragment);
                 }
+                //если есть второй фрагмент
+                if (manager.findFragmentByTag(LandscapeTwoFragment.landscapeFragmentTAG) != null) {
+                    transaction.remove(twoFragment);
+                }
                 break;
+
+            //заменаяем фрагмент
+            case R.id.landscape_replaceButton: {
+                //если есть первый фрагмент
+                if (manager.findFragmentByTag(LandscapeOneFragment.landscapeFragmentTAG) != null) {
+                    transaction.replace(R.id.landscape_containerLayout,
+                            twoFragment, //меняем на второй фрагмент
+                            LandscapeTwoFragment.landscapeFragmentTAG);
+                }
+                //если есть второй фрагмент
+                if (manager.findFragmentByTag(LandscapeTwoFragment.landscapeFragmentTAG) != null) {
+                    transaction.replace(R.id.landscape_containerLayout,
+                            oneFragment, //меняем на первый фрагмент
+                            LandscapeOneFragment.landscapeFragmentTAG);
+                }
+            }
         }
 
         //транзакции -> manager -> в контейнер -> в layout

@@ -19,6 +19,7 @@
         android:name="com.github.panarik.smartFeatures.data.landscape.LandscapeButtonFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         tools:layout="@layout/fragment_landscape_button" />
 
 
@@ -30,7 +31,8 @@
         <LinearLayout
             android:id="@+id/landscape_controlLayout"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp">
 
             <Button
                 android:id="@+id/landscape_addButton"
@@ -47,6 +49,14 @@
                 android:layout_weight="1"
                 android:onClick="onClickOperateFragment"
                 android:text="Удалить" />
+
+            <Button
+                android:id="@+id/landscape_replaceButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:onClick="onClickOperateFragment"
+                android:text="Заменить" />
 
         </LinearLayout>
 
