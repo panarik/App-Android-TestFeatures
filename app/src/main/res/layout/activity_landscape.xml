@@ -8,17 +8,45 @@
     tools:context=".activity.LandscapeActivity">
 
     <fragment
-        android:name="com.github.panarik.smartFeatures.data.landscape.LandscapeImageFragment"
         android:id="@+id/landscape_image_fragment"
+        android:name="com.github.panarik.smartFeatures.data.landscape.LandscapeImageFragment"
         android:layout_width="match_parent"
         android:layout_height="200dp"
-        tools:layout="@layout/fragment_landscape_image"/>
+        tools:layout="@layout/fragment_landscape_image" />
 
     <fragment
-        android:name="com.github.panarik.smartFeatures.data.landscape.LandscapeButtonFragment"
         android:id="@+id/landscape_button_fragment"
+        android:name="com.github.panarik.smartFeatures.data.landscape.LandscapeButtonFragment"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:layout="@layout/fragment_landscape_button"/>
+        tools:layout="@layout/fragment_landscape_button" />
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!-- в нём управляющие кнопки-->
+        <LinearLayout
+            android:id="@+id/landscape_controlLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Button
+                android:id="@+id/landscape_addButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Добавить"
+                android:onClick="addFragment"/>
+        </LinearLayout>
+
+        <!-- в него подгружаем новые фрагменты -->
+        <LinearLayout
+            android:id="@+id/landscape_containerLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_below="@id/landscape_controlLayout"/>
+
+    </RelativeLayout>
 
 </LinearLayout>
