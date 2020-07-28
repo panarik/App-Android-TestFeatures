@@ -1,46 +1,22 @@
 package com.github.panarik.smartFeatures.screen;
 
-import android.app.Activity;
-import android.app.Instrumentation;
-import android.content.ComponentName;
-import android.content.Intent;
-import android.support.test.runner.lifecycle.ActivityLifecycleMonitorRegistry;
-import android.support.test.runner.lifecycle.Stage;
-import android.util.Log;
-import android.view.View;
-
-import androidx.test.espresso.UiController;
-import androidx.test.espresso.ViewAction;
-
 import com.github.panarik.smartFeatures.R;
 import com.github.panarik.smartFeatures.base.TestBase;
 
-import org.hamcrest.Matcher;
-import org.junit.Before;
 import org.junit.Test;
 
-import java.util.Collection;
-
-import static android.support.test.InstrumentationRegistry.getInstrumentation;
 import static androidx.test.core.app.ApplicationProvider.getApplicationContext;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
-import static androidx.test.espresso.intent.Intents.intending;
-import static androidx.test.espresso.intent.matcher.IntentMatchers.toPackage;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static org.hamcrest.CoreMatchers.allOf;
-import static org.hamcrest.Matchers.anyOf;
 
 public class TestVideoWeb extends TestBase {
-
-    Activity currentActivity = null;
-
 
     @Test
     public void editSearchMovieTest() {
@@ -105,27 +81,6 @@ public class TestVideoWeb extends TestBase {
         //жмем далее
         onView(withId(R.id.chat_loginSignUpButton))
                 .perform(click());
-    }
-
-
-    //UI wait some second
-    public static ViewAction waitFor(final long millis) {
-        return new ViewAction() {
-            @Override
-            public Matcher<View> getConstraints() {
-                return isRoot();
-            }
-
-            @Override
-            public String getDescription() {
-                return "Wait for " + millis + " milliseconds.";
-            }
-
-            @Override
-            public void perform(UiController uiController, final View view) {
-                uiController.loopMainThreadForAtLeast(millis);
-            }
-        };
     }
 
 }

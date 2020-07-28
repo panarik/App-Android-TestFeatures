@@ -10,13 +10,10 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.assertion.ViewAssertions.doesNotExist;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
-import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static com.github.panarik.smartFeatures.screen.TestSignIn.auth_signIn;
-import static com.github.panarik.smartFeatures.screen.TestVideoWeb.waitFor;
-import static org.hamcrest.CoreMatchers.not;
 
 public class TestLandscape extends TestBase {
 
@@ -48,7 +45,6 @@ public class TestLandscape extends TestBase {
         onView(isRoot()).perform(waitFor(1000));
         onView(withId(R.id.landscape_one_fragment_textview))
                 .check(doesNotExist());
-
     }
 
 
