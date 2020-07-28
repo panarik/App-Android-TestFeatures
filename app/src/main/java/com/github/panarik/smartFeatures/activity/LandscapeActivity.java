@@ -7,6 +7,7 @@ import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Switch;
 
 import com.github.panarik.smartFeatures.R;
 import com.github.panarik.smartFeatures.data.landscape.LandscapeOneFragment;
@@ -22,6 +23,9 @@ public class LandscapeActivity extends FragmentActivity {
     private FragmentManager manager;
     private FragmentTransaction transaction;
 
+    //свитчер переключения кнопки "Back"
+    private Switch toPreviousFragment;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,6 +37,9 @@ public class LandscapeActivity extends FragmentActivity {
 
         //инициализируем manager
         manager = getSupportFragmentManager();
+
+        toPreviousFragment = findViewById(R.id.toPreviousFragment);
+
     }
 
 
@@ -55,11 +62,6 @@ public class LandscapeActivity extends FragmentActivity {
                             oneFragment, //передаём фрагмент
                             LandscapeOneFragment.landscapeFragmentTAG); //передаем тег каждого фрагмента для их различия
                 }
-                //если нет второго фрагмента
-                else if (manager.findFragmentByTag(LandscapeTwoFragment.landscapeFragmentTAG) == null) {
-                    transaction.add(R.id.landscape_containerLayout, twoFragment, LandscapeTwoFragment.landscapeFragmentTAG);
-                }
-                break;
 
             //удаляем фрагмент
             case R.id.landscape_removeButton:
@@ -88,7 +90,15 @@ public class LandscapeActivity extends FragmentActivity {
                             LandscapeOneFragment.landscapeFragmentTAG);
                 }
             }
+
         }
+
+
+        //свитчер возвращает предыдущий Fragment
+        if (toPreviousFragment.isChecked()) {
+            transaction.addToBackStack(null);
+        }
+
 
         //транзакции -> manager -> в контейнер -> в layout
         transaction.commit();

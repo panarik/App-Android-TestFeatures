@@ -33,7 +33,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp">
-
             <Button
                 android:id="@+id/landscape_addButton"
                 android:layout_width="wrap_content"
@@ -41,7 +40,6 @@
                 android:layout_weight="1"
                 android:onClick="onClickOperateFragment"
                 android:text="Добавить" />
-
             <Button
                 android:id="@+id/landscape_removeButton"
                 android:layout_width="wrap_content"
@@ -49,7 +47,6 @@
                 android:layout_weight="1"
                 android:onClick="onClickOperateFragment"
                 android:text="Удалить" />
-
             <Button
                 android:id="@+id/landscape_replaceButton"
                 android:layout_width="wrap_content"
@@ -57,16 +54,28 @@
                 android:layout_weight="1"
                 android:onClick="onClickOperateFragment"
                 android:text="Заменить" />
-
         </LinearLayout>
 
         <!-- в него подгружаем новые фрагменты -->
         <LinearLayout
             android:id="@+id/landscape_containerLayout"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:layout_below="@id/landscape_controlLayout"
-            android:orientation="vertical" />
+            android:orientation="vertical"/>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/landscape_containerLayout">
+            <Switch
+                android:id="@+id/toPreviousFragment"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="service button {Back} to previous fragment"
+                android:layout_alignParentBottom="true"
+                android:padding="15dp"/>
+        </RelativeLayout>
 
     </RelativeLayout>
 
