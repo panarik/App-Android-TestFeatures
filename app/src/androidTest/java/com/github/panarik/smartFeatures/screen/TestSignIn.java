@@ -14,9 +14,9 @@ import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static com.github.panarik.smartFeatures.screen.TestVideoWebBase.waitFor;
+import static com.github.panarik.smartFeatures.screen.TestVideoWeb.waitFor;
 
-public class TestSignInBase extends TestBase {
+public class TestSignIn extends TestBase {
 
     //проверка SignInActivity
     @Test
@@ -63,7 +63,7 @@ public class TestSignInBase extends TestBase {
         //жмем далее
         onView(withId(R.id.chat_loginSignUpButton)).perform(click());
         //ждем
-        onView(isRoot()).perform(waitFor(1000));
+        onView(isRoot()).perform(waitFor(2000));
     }
 
 }

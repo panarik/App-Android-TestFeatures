@@ -37,7 +37,7 @@ import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static org.hamcrest.CoreMatchers.allOf;
 import static org.hamcrest.Matchers.anyOf;
 
-public class TestVideoWebBase extends TestBase {
+public class TestVideoWeb extends TestBase {
 
     Activity currentActivity = null;
 

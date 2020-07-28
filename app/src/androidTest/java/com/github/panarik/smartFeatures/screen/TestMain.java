@@ -14,13 +14,13 @@ import static androidx.test.espresso.matcher.ViewMatchers.hasContentDescription;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static com.github.panarik.smartFeatures.screen.TestSignInBase.auth_signIn;
+import static com.github.panarik.smartFeatures.screen.TestSignIn.auth_signIn;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.Matchers.anything;
 import static org.junit.Assert.assertThat;
 
-public class TestMainBase extends TestBase {
+public class TestMain extends TestBase {
 
     //отображение активити
     @Test
