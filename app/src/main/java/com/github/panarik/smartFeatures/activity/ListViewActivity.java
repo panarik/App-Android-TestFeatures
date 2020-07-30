@@ -37,7 +37,7 @@ public class ListViewActivity extends AppCompatActivity {
         listSize = arrayList.size();
         Log.d("listSize", "" + listSize);
 
-        arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, arrayList);
+        arrayAdapter = new ArrayAdapter(this, R.layout.listview_item, arrayList);
         listView.setAdapter(arrayAdapter);
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {

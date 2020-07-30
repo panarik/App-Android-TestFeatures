@@ -143,7 +143,7 @@ public class TestBase {
         //жмем далее
         onView(withId(R.id.chat_loginSignUpButton)).perform(click());
         //ждем
-        onView(isRoot()).perform(waitFor(2000));
+        onView(isRoot()).perform(waitFor(3000));
     }
 
 
