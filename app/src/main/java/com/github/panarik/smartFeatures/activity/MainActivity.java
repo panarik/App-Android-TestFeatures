@@ -39,9 +39,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
 
         //получаем userName из SignInActivity
         Intent intent = getIntent();
-        if (intent !=null){
+        if (intent != null) {
             userName = intent.getStringExtra("userName");
-            Log.d("goToMainActivity", "userName = "+userName);
+            Log.d("goToMainActivity", "userName = " + userName);
         } else {
             userName = "Default User";
         }
@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.video_web_movie, "Movies online", "Text and pictures from API, RecycleView, search function,"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.chat_chatlogo, "Messenger", "Firebase objects, GET Firebase realtime database data, POST messages into Firebase"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.landscape_logo, "Landscape Orientation", "Simple Fragments, orientation screen"));
+        recyclerViewItems.add(new RecyclerViewItem(R.drawable.web_logo, "Go To WEB!", "WebView, perform system Back button"));
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);     //для улучшения производительности задаем количество строк
@@ -127,6 +128,12 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 goToLandscapeActivity.putExtra("userName", userName);
                 startActivity(goToLandscapeActivity);
                 break;
+            case 9:
+                //WebActivity
+                Intent goToWebActivity = new Intent(this, WebActivity.class);
+                goToWebActivity.putExtra("userName", userName);
+                startActivity(goToWebActivity);
+                break;
             default:
                 Log.d(TAG, "Nope");
                 Toast.makeText(this, "Nope", Toast.LENGTH_SHORT).show();
@@ -141,6 +148,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         inflater.inflate(R.menu.menu_main, menu);
         return true;
     }
+
     //пункты меню
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

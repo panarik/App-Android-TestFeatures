@@ -11,23 +11,20 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-
+        <activity android:name=".activity.WebActivity"></activity>
         <!-- на удаление -->
         <activity android:name=".data.products.RecyclerProductViewActivity" />
         <activity android:name=".data.catgame.PetActivity" />
-
         <activity
             android:name=".activity.ChatActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.VideoWebActivity"
             android:screenOrientation="portrait" />
-
         <activity android:name=".data.menu.createinterface.LinearLayoutActivity" />
         <activity android:name=".data.menu.createinterface.CreateInterfaceActivity" />
         <activity android:name=".activity.MenuActivity" />
         <activity android:name=".activity.LandscapeActivity" />
-
         <activity
             android:name=".activity.PictureEffectsActivity"
             android:screenOrientation="portrait" />
@@ -55,7 +52,6 @@
         <activity
             android:name=".activity.SignInActivity"
             android:screenOrientation="portrait">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
