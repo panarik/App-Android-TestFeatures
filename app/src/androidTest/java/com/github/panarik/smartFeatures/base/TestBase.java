@@ -32,6 +32,7 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.web.sugar.Web.onWebView;
 import static androidx.test.platform.app.InstrumentationRegistry.getInstrumentation;
 
 @RunWith(AndroidJUnit4.class)
@@ -52,7 +53,7 @@ public class TestBase {
 
     //start activity
     @Rule
-    public ActivityTestRule<SignInActivity> activityActivityTestRule = new ActivityTestRule<>(SignInActivity.class);
+    public ActivityTestRule<SignInActivity> activityActivityTestRule = new ActivityTestRule<SignInActivity>(SignInActivity.class, false, true);
 
     /*
     @Before

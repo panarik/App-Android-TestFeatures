@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.WebActivity"></activity>
+        <activity android:name=".activity.WebActivity"/>
         <!-- на удаление -->
         <activity android:name=".data.products.RecyclerProductViewActivity" />
         <activity android:name=".data.catgame.PetActivity" />

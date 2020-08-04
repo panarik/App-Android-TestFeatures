@@ -2,7 +2,6 @@ package com.github.panarik.smartFeatures.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.os.Bundle;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
@@ -24,7 +23,7 @@ public class WebActivity extends AppCompatActivity {
         WebViewClient webViewClient = new WebViewClient();
         webView.setWebViewClient(webViewClient);
         //set URL
-        webView.loadUrl("http://google.com");
+        webView.loadUrl("https://google.com");
     }
 
 
