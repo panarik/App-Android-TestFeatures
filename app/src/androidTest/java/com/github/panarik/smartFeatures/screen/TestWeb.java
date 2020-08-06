@@ -53,9 +53,7 @@ public class TestWeb {
                 .check(webMatches(getText(), containsString("Россия")));
     }
 
-
     @Test
-
     public void test_WebView_search_withText(){
         onWebView()
                 .withElement(findElement(Locator.XPATH, "//input[@class='gLFyf']"))
@@ -65,7 +63,7 @@ public class TestWeb {
 
 
 
-    //флоу signIn
+
     public static ViewAction waitFor(final long millis) {
         return new ViewAction() {
             @Override

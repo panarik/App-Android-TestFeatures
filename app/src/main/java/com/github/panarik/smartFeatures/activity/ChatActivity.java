@@ -47,6 +47,8 @@ public class ChatActivity extends AppCompatActivity {
     private EditText chat_messageEditText;
     private String userName;
 
+    private static final int RequestCode_IMAGE = 1;
+
     //БД Firebase
     FirebaseDatabase database;
     DatabaseReference messagesDatabaseReference; //БД сообщений
@@ -133,9 +135,18 @@ public class ChatActivity extends AppCompatActivity {
         });
 
 
+        //загрузка фото в чат
         chat_messageSendPhotoImageButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                Intent intent = new Intent(Intent.ACTION_GET_CONTENT); // получение контента
+                intent.setType("image/jpeg"); //тип контента (изображения в формате jpeg)
+                intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true); //источник контента
+
+                startActivityForResult(
+                        Intent.createChooser(intent, "Choose some image"), //создаем активити выбираем
+                        RequestCode_IMAGE) //код запроса для получения и проверки результата
+                ;
             }
         });
 
@@ -174,7 +185,6 @@ public class ChatActivity extends AppCompatActivity {
 
         //прикрепляем listener к БД users
         usersDatabaseReference.addChildEventListener(usersChildEventListener);
-
 
 
         //прослушаваем изменения в БД (узел сообщений)
@@ -251,5 +261,8 @@ public class ChatActivity extends AppCompatActivity {
         Intent goToMainActivity = new Intent(this, MainActivity.class);
         startActivity(goToMainActivity);
     }
+
+    //получаем адрес изображения, выбранного по кнопке chat_messageSendPhotoImageButton
+
 
 }
