@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.InputFilter;
@@ -24,12 +25,18 @@ import com.github.panarik.smartFeatures.R;
 import com.github.panarik.smartFeatures.data.chat.ChatMessage;
 import com.github.panarik.smartFeatures.data.chat.ChatMessageAdapter;
 import com.github.panarik.smartFeatures.data.chat.ChatUser;
+import com.google.android.gms.tasks.Continuation;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.storage.FirebaseStorage;
+import com.google.firebase.storage.StorageReference;
+import com.google.firebase.storage.UploadTask;
 
 import static com.google.firebase.database.FirebaseDatabase.getInstance;
 
@@ -57,7 +64,10 @@ public class ChatActivity extends AppCompatActivity {
     ChildEventListener messagesChildEventListener; //слушаем узел сообщений
     ChildEventListener usersChildEventListener; //слушаем узел пользователей
 
-    //
+    //Firebase storage
+    FirebaseStorage storage;
+    //Прослушивание изменений storage
+    StorageReference chatImageStorageReference;
 
 
     @Override
@@ -65,11 +75,15 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
-        //инициализируем БД Firebase
-        database = getInstance();
+
+        database = getInstance(); //инициализируем БД Firebase
+        storage = FirebaseStorage.getInstance(); //инициализируем Firebase storage
+
         //инициализируем узлы в БД
         messagesDatabaseReference = database.getReference().child("messages");
         usersDatabaseReference = database.getReference().child("users");
+        //инициализируем узел в storage
+        chatImageStorageReference = storage.getReference().child("/chat_images");
 
         progressBar = findViewById(R.id.progressBar);
         messageListView = findViewById(R.id.messageListView);
@@ -140,7 +154,7 @@ public class ChatActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Intent.ACTION_GET_CONTENT); // получение контента
-                intent.setType("image/jpeg"); //тип контента (изображения в формате jpeg)
+                intent.setType("image/jpeg"); //тип контента (изображения, все виды)
                 intent.putExtra(Intent.EXTRA_LOCAL_ONLY, true); //источник контента
 
                 startActivityForResult(
@@ -263,6 +277,55 @@ public class ChatActivity extends AppCompatActivity {
     }
 
     //получаем адрес изображения, выбранного по кнопке chat_messageSendPhotoImageButton
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if (requestCode == RequestCode_IMAGE //адреса запроса совпадают
+                &&
+                resultCode == RESULT_OK) //выбор изображения успешен
+        {
+            Uri selectedImageUri = data.getData();
+            //создаем новую ссылку в storage (последний сегмент в ссылке)
+            final StorageReference imageReference = chatImageStorageReference
+                    .child(selectedImageUri.getLastPathSegment());
+
+            //загружаем изображение в storage
+            UploadTask uploadTask = imageReference.putFile(selectedImageUri);
+
+            //Get download URL from Firebase
+            //скопировано из источника: https://firebase.google.com/docs/storage/android/upload-files
+            uploadTask = imageReference.putFile(selectedImageUri);
+
+            Task<Uri> urlTask = uploadTask.continueWithTask(new Continuation<UploadTask.TaskSnapshot, Task<Uri>>() {
+                @Override
+                public Task<Uri> then(@NonNull Task<UploadTask.TaskSnapshot> task) throws Exception {
+                    if (!task.isSuccessful()) {
+                        throw task.getException();
+                    }
+
+                    // Continue with the task to get the download URL
+                    return imageReference.getDownloadUrl();
+                }
+            }).addOnCompleteListener(new OnCompleteListener<Uri>() {
+                @Override
+                public void onComplete(@NonNull Task<Uri> task) {
+                    if (task.isSuccessful()) {
+                        Uri downloadUri = task.getResult();
+                        ChatMessage message = new ChatMessage();
+                        message.setImageUrl(downloadUri.toString());
+                        //устанавливаем имя
+                        message.setName(userName);
+                        //отправляем сообщение в БД
+                        messagesDatabaseReference.push().setValue(message);
+                    } else {
+                        // Handle failures
+                        // ...
+                    }
+                }
+            });
 
 
+        }
+    }
 }
