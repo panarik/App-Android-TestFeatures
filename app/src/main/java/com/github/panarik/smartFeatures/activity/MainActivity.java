@@ -117,7 +117,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 break;
             case 7:
                 //ChatActivity
-                Intent goToChatActivity = new Intent(this, ChatActivity.class);
+                Intent goToChatActivity = new Intent(this, UserListActivity.class);
                 //забираем также текущий userName
                 goToChatActivity.putExtra("userName", userName);
                 startActivity(goToChatActivity);
