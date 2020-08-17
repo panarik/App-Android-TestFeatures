@@ -26,6 +26,8 @@ import java.util.ArrayList;
 
 public class UserListActivity extends AppCompatActivity {
 
+    private String userName; //userName из SingIn (дописать из MainActivity тоже)
+
     private DatabaseReference usersDatabaseReference;
     private ChildEventListener usersChildEventListener;
 
@@ -41,6 +43,13 @@ public class UserListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userlist);
+
+        //принимаем данные с интентом при открытии активити
+        Intent intent = getIntent();
+        if (intent != null) {
+            userName = intent.getStringExtra(userName);
+        }
+
 
         //получаем id текущего пользователя
         auth = FirebaseAuth.getInstance();
@@ -114,14 +123,18 @@ public class UserListActivity extends AppCompatActivity {
         userlistUserAdapter.setOnUserClickListener(new UserlistUserAdapter.OnUserClickListener() {
             @Override
             public void onUserClick(int position) {
-                goToChat();
+                goToChat(position); //также передаем UserId в выбранном position
             }
         });
     }
 
 
-    private void goToChat() {
+    private void goToChat(int position) {
         Intent goToChat = new Intent(UserListActivity.this, ChatActivity.class);
+
+        //получаем данные пользователя при клике и передаем его в интент
+        goToChat.putExtra("recipientUserId", userArrayList.get(position).getUserId()); //id пользователя
+        goToChat.putExtra("userName", userName); //имя пользователя
         startActivity(goToChat);
     }
 

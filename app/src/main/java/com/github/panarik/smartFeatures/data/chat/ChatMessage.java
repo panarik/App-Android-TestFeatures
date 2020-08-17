@@ -2,18 +2,39 @@ package com.github.panarik.smartFeatures.data.chat;
 
 public class ChatMessage {
 
-    String text;
-    String name;
-    String imageUrl;
+    private String text;
+    private String name;
+    private String sender; //отправитель сообщения
+    private String recipient; //получатель сообщения
+    private String imageUrl;
 
     public ChatMessage() {
     }
 
-    public ChatMessage(String text, String name, String imageUrl) {
+    public ChatMessage(String text, String name, String sender, String recipient, String imageUrl) {
         this.text = text;
         this.name = name;
+        this.sender = sender;
+        this.recipient = recipient;
         this.imageUrl = imageUrl;
     }
+
+    public String getSender() {
+        return sender;
+    }
+
+    public void setSender(String sender) {
+        this.sender = sender;
+    }
+
+    public String getRecipient() {
+        return recipient;
+    }
+
+    public void setRecipient(String recipient) {
+        this.recipient = recipient;
+    }
+
 
     public String getText() {
         return text;

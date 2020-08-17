@@ -54,20 +54,24 @@ public class ChatActivity extends AppCompatActivity {
     private EditText chat_messageEditText;
     private String userName;
 
+    private String recipientUserId; //UserId выбранного пользователя из UserListActivity (кому пишем сообщение)
+
     private static final int RequestCode_IMAGE = 1;
 
+    //Auth Firebase
+    private FirebaseAuth auth; //текущий пользователь данной сессии
     //БД Firebase
-    FirebaseDatabase database;
-    DatabaseReference messagesDatabaseReference; //БД сообщений
-    DatabaseReference usersDatabaseReference; //БД пользователей
+    private FirebaseDatabase database;
+    private DatabaseReference messagesDatabaseReference; //БД сообщений
+    private DatabaseReference usersDatabaseReference; //БД пользователей
     //прослушиваем изменения БД
-    ChildEventListener messagesChildEventListener; //слушаем узел сообщений
-    ChildEventListener usersChildEventListener; //слушаем узел пользователей
+    private ChildEventListener messagesChildEventListener; //слушаем узел сообщений
+    private ChildEventListener usersChildEventListener; //слушаем узел пользователей
 
     //Firebase storage
-    FirebaseStorage storage;
+    private FirebaseStorage storage;
     //Прослушивание изменений storage
-    StorageReference chatImageStorageReference;
+    private StorageReference chatImageStorageReference;
 
 
     @Override
@@ -75,7 +79,21 @@ public class ChatActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_chat);
 
+        //получаем текущего пользователя для данной сессии
+        auth = FirebaseAuth.getInstance();
 
+
+        //принимаем данные с интентом при открытии активити
+        Intent intent = getIntent();
+        if (intent != null) {
+            userName = intent.getStringExtra("userName"); // получаем имя пользователя
+            recipientUserId = intent.getStringExtra("recipientUserId"); // получаем id пользователя
+        } else {
+            userName = "Default User";
+        }
+
+
+        //Firebase
         database = getInstance(); //инициализируем БД Firebase
         storage = FirebaseStorage.getInstance(); //инициализируем Firebase storage
 
@@ -90,10 +108,6 @@ public class ChatActivity extends AppCompatActivity {
         chat_messageSendPhotoImageButton = findViewById(R.id.chat_messageSendPhotoImageButton);
         chat_messageSendButton = findViewById(R.id.chat_messageSendButton);
         chat_messageEditText = findViewById(R.id.chat_messageEditText);
-
-
-        //получаем userName из MainActivity
-        get_UserName_from_MainActivity();
 
 
         //создаем новый адаптер и передаем ему ArrayList
@@ -139,6 +153,8 @@ public class ChatActivity extends AppCompatActivity {
                 ChatMessage message = new ChatMessage();
                 message.setText(chat_messageEditText.getText().toString());
                 message.setName(userName);
+                message.setSender(auth.getCurrentUser().getUid()); //получаем id текущего пользователя (отправитель сообщения)
+                message.setRecipient(recipientUserId); //получаем id выбранного в UserList пользователя (получатель сообщения)
                 message.setImageUrl(null);
 
                 //отправляем на сервер с помощью .push()
@@ -209,8 +225,21 @@ public class ChatActivity extends AppCompatActivity {
                 ChatMessage message = snapshot.getValue(
                         //указываем где распознавать значения
                         ChatMessage.class);
-                //итого, получаем объект с полями, и устанавливаем его в Адаптер
-                adapter.add(message);
+
+                //проверяем сообщения:
+                if (
+                        message.getSender().equals(auth.getCurrentUser().getUid()) //если отправитель сообщения = текущий пользователь
+                                &&
+                                message.getRecipient().equals(recipientUserId) //если получатель сообщения = выбранный в UserList пользователь
+                                ||
+                                message.getRecipient().equals(auth.getCurrentUser().getUid()) //если получатель сообщения = текущий пользователь
+                                        &&
+                                        message.getSender().equals(recipientUserId) //если отправитель сообщения = выбранный в UserList пользователь
+                ) {
+                    // то добавляем в адаптер (отображаем) сообщение
+                    // получаем объект с полями, и устанавливаем его в Адаптер
+                    adapter.add(message);
+                }
             }
 
             @Override
@@ -233,16 +262,6 @@ public class ChatActivity extends AppCompatActivity {
         //прикрепляем listener к БД messages.
         messagesDatabaseReference.addChildEventListener(messagesChildEventListener);
 
-    }
-
-
-    private void get_UserName_from_MainActivity() {
-        Intent intent = getIntent();
-        if (intent != null) {
-            userName = intent.getStringExtra("userName");
-        } else {
-            userName = "Default User";
-        }
     }
 
 

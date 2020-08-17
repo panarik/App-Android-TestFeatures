@@ -41,8 +41,8 @@ public class SignInActivity extends AppCompatActivity {
     private boolean chat_loginModeActive;
 
     //поля для добавления узла users в Firebase
-    FirebaseDatabase database;
-    DatabaseReference usersDatabaseReference;
+    private FirebaseDatabase database;
+    private DatabaseReference usersDatabaseReference;
 
     private static final String TAG = "SignInActivity";
 
