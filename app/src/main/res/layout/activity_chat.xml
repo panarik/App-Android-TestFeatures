@@ -4,12 +4,23 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:padding="8dp"
-    tools:context="com.github.panarik.smartFeatures.activity.ChatActivity">
+    tools:context="com.github.panarik.smartFeatures.activity.ChatActivity"
+    android:background="@drawable/chat_cyan_paper_background">
+
+    <ImageView
+        android:id="@+id/chat_backImageView"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_margin="5dp"
+        android:clickable="true"
+        android:onClick="goToMainActivity"
+        android:src="@drawable/ic_baseline_arrow_back_24"/>
 
     <ListView
         android:id="@+id/messageListView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@id/chat_backImageView"
         android:divider="@android:color/transparent"
         android:transcriptMode="alwaysScroll"
         tools:listitem="@layout/chat_message_item"
@@ -18,9 +29,8 @@
     <RelativeLayout
         android:id="@+id/chat_messageLayout"
         android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:layout_alignParentBottom="true"
-        android:layout_marginBottom="50dp">
+        android:layout_height="60dp"
+        android:layout_alignParentBottom="true">
 
         <EditText
             android:id="@+id/chat_messageEditText"
@@ -45,7 +55,10 @@
             android:layout_centerVertical="true"
             android:layout_marginLeft="5dp"
             android:layout_toRightOf="@id/chat_messageSendPhotoImageButton"
+            android:backgroundTint="@color/colorPrimaryDark"
             android:enabled="false"
+            android:textColor="@android:color/white"
+            android:textSize="20sp"
             android:text="SEND" />
 
 
@@ -63,16 +76,7 @@
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_below="@id/chat_messageLayout"/>
-    <ImageView
-        android:id="@+id/videoLocal_backImageView"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_above="@id/chat_endpoint"
-        android:layout_margin="10dp"
-        android:clickable="true"
-        android:onClick="goToMainActivity"
-        android:src="@drawable/back"
-        android:textSize="20sp" />
+
 
 
 

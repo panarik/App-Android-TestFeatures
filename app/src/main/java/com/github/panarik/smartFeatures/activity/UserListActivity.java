@@ -3,6 +3,7 @@ package com.github.panarik.smartFeatures.activity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -113,6 +114,13 @@ public class UserListActivity extends AppCompatActivity {
 
         userRecyclerView = findViewById(R.id.userList_recyclerView);
         userRecyclerView.setHasFixedSize(true);
+
+        //разделитель между ViewItem
+        //отсюда: https://stackoverflow.com/questions/24618829/how-to-add-dividers-and-spaces-between-items-in-recyclerview
+        userRecyclerView.addItemDecoration(new DividerItemDecoration
+                (userRecyclerView.getContext(), DividerItemDecoration.VERTICAL)
+        );
+
         userLayoutManager = new LinearLayoutManager(this);
         userlistUserAdapter = new UserlistUserAdapter(userArrayList);
 
