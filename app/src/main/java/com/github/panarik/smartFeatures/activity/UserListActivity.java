@@ -34,10 +34,16 @@ public class UserListActivity extends AppCompatActivity {
     private UserlistUserAdapter userlistUserAdapter;
     private RecyclerView.LayoutManager userLayoutManager;
 
+    //текущий пользователь
+    private FirebaseAuth auth;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userlist);
+
+        //получаем id текущего пользователя
+        auth = FirebaseAuth.getInstance();
 
         userArrayList = new ArrayList<>();
 
@@ -54,10 +60,18 @@ public class UserListActivity extends AppCompatActivity {
             usersChildEventListener = new ChildEventListener() {
                 @Override
                 public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
-                    ChatUser user = dataSnapshot.getValue(ChatUser.class);
-                    user.setAvatarMockUpResource(R.drawable.ic_userlist_baseline_person_24);
-                    userArrayList.add(user);
-                    userlistUserAdapter.notifyDataSetChanged();
+                    ChatUser user = dataSnapshot.getValue(ChatUser.class); //получение пользователя
+
+                    //проверка, показываем пользователей кроме текущего
+                    if (! // не равно
+                            user.getUserId()
+                                    .equals(auth.getCurrentUser().getUid()))  //строки сравниваем с помощью метода .equals()
+                    {
+                        //добавление пользователей в ArrayList
+                        user.setAvatarMockUpResource(R.drawable.ic_userlist_baseline_person_24);
+                        userArrayList.add(user);
+                        userlistUserAdapter.notifyDataSetChanged();
+                    }
                 }
 
                 @Override
