@@ -25,7 +25,7 @@ public class UserlistUserAdapter
         void onUserClick(int position);
     }
 
-    public void setOnClickListener(OnUserClickListener listener) {
+    public void setOnUserClickListener(OnUserClickListener listener) {
         this.listener = listener;
     }
 

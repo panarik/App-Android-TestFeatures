@@ -110,6 +110,19 @@ public class UserListActivity extends AppCompatActivity {
         userRecyclerView.setLayoutManager(userLayoutManager);
         userRecyclerView.setAdapter(userlistUserAdapter);
 
+        //интерфейс для клика с пробросом в ChatActivity
+        userlistUserAdapter.setOnUserClickListener(new UserlistUserAdapter.OnUserClickListener() {
+            @Override
+            public void onUserClick(int position) {
+                goToChat();
+            }
+        });
+    }
+
+
+    private void goToChat() {
+        Intent goToChat = new Intent(UserListActivity.this, ChatActivity.class);
+        startActivity(goToChat);
     }
 
 
