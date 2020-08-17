@@ -333,10 +333,10 @@ public class ChatActivity extends AppCompatActivity {
                         Uri downloadUri = task.getResult();
                         ChatMessage message = new ChatMessage();
                         message.setImageUrl(downloadUri.toString());
-                        //устанавливаем имя
-                        message.setName(userName);
-                        //отправляем сообщение в БД
-                        messagesDatabaseReference.push().setValue(message);
+                        message.setName(userName); //устанавливаем имя
+                        message.setSender(auth.getCurrentUser().getUid()); //устанавливаем и отправляем id отправителя
+                        message.setRecipient(recipientUserId); //устанавливаем и отправляем id получателя
+                        messagesDatabaseReference.push().setValue(message); //отправляем сообщение в БД
                     } else {
                         // Handle failures
                         // ...
