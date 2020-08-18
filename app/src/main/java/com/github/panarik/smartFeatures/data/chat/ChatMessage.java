@@ -7,16 +7,19 @@ public class ChatMessage {
     private String sender; //отправитель сообщения
     private String recipient; //получатель сообщения
     private String imageUrl;
+    private Boolean isMine; //сообщение отправлено или получено
+
 
     public ChatMessage() {
     }
 
-    public ChatMessage(String text, String name, String sender, String recipient, String imageUrl) {
+    public ChatMessage(String text, String name, String sender, String recipient, String imageUrl, Boolean isMine) {
         this.text = text;
         this.name = name;
         this.sender = sender;
         this.recipient = recipient;
         this.imageUrl = imageUrl;
+        this.isMine = isMine;
     }
 
     public String getSender() {
@@ -58,5 +61,14 @@ public class ChatMessage {
 
     public void setImageUrl(String imageUrl) {
         this.imageUrl = imageUrl;
+    }
+
+
+    public Boolean getIsMine() {
+        return isMine;
+    }
+
+    public void setIsMine(Boolean mine) {
+        isMine = mine;
     }
 }

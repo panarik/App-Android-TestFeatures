@@ -226,17 +226,27 @@ public class ChatActivity extends AppCompatActivity {
                         //указываем где распознавать значения
                         ChatMessage.class);
 
-                //проверяем сообщения:
+                //проверяем сообщения, разделяем отправленные и полученные
                 if (
                         message.getSender().equals(auth.getCurrentUser().getUid()) //если отправитель сообщения = текущий пользователь
                                 &&
                                 message.getRecipient().equals(recipientUserId) //если получатель сообщения = выбранный в UserList пользователь
-                                ||
-                                message.getRecipient().equals(auth.getCurrentUser().getUid()) //если получатель сообщения = текущий пользователь
-                                        &&
-                                        message.getSender().equals(recipientUserId) //если отправитель сообщения = выбранный в UserList пользователь
                 ) {
-                    // то добавляем в адаптер (отображаем) сообщение
+                    //перед тем как добавлять в адаптер, присваиваем Boolean поле isMine = true (сообщение отправлено)
+                    message.setIsMine(true);
+
+                    // добавляем в адаптер (отображаем) сообщение
+                    // получаем объект с полями, и устанавливаем его в Адаптер
+                    adapter.add(message);
+                } else if (
+                        message.getRecipient().equals(auth.getCurrentUser().getUid()) //если получатель сообщения = текущий пользователь
+                                &&
+                                message.getSender().equals(recipientUserId) //если отправитель сообщения = выбранный в UserList пользователь
+                ) {
+                    //перед тем как добавлять в адаптер, присваиваем Boolean поле isMine = false (сообщение получено)
+                    message.setIsMine(false);
+
+                    // добавляем в адаптер (отображаем) сообщение
                     // получаем объект с полями, и устанавливаем его в Адаптер
                     adapter.add(message);
                 }
@@ -290,9 +300,9 @@ public class ChatActivity extends AppCompatActivity {
         }
     }
 
-    public void goToMainActivity(View view) {
-        Intent goToMainActivity = new Intent(this, MainActivity.class);
-        startActivity(goToMainActivity);
+    public void goToUserListActivity(View view) {
+        Intent goToUserListActivity = new Intent(this, UserListActivity.class);
+        startActivity(goToUserListActivity);
     }
 
     //получаем адрес изображения, выбранного по кнопке chat_messageSendPhotoImageButton
