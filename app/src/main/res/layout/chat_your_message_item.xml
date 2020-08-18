@@ -6,7 +6,7 @@
     <LinearLayout
         android:layout_alignParentLeft="true"
         android:background="@drawable/chat_your_message"
-        android:paddingBottom="10dp"
+        android:layout_marginBottom="5dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content">
         
@@ -17,7 +17,7 @@
 
         <TextView
             android:id="@+id/chat_messageTextView"
-            android:maxWidth="100dp"
+            android:maxWidth="200dp"
             android:padding="5dp"
             android:textColor="@android:color/tertiary_text_dark"
             android:layout_width="wrap_content"
