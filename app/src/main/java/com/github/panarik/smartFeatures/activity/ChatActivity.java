@@ -55,6 +55,7 @@ public class ChatActivity extends AppCompatActivity {
     private String userName;
 
     private String recipientUserId; //UserId выбранного пользователя из UserListActivity (кому пишем сообщение)
+    private String recipientUserName; //Имя выбранного пользователя из UserListActivity (кому пишем сообщение) для вставки в тулбар
 
     private static final int RequestCode_IMAGE = 1;
 
@@ -88,9 +89,13 @@ public class ChatActivity extends AppCompatActivity {
         if (intent != null) {
             userName = intent.getStringExtra("userName"); // получаем имя пользователя
             recipientUserId = intent.getStringExtra("recipientUserId"); // получаем id пользователя
+            recipientUserName = intent.getStringExtra("recipientUserName"); // получаем имя пользователя
         } else {
             userName = "Default User";
         }
+
+        //Устанавливаем Тему активити
+        setTitle("Chat with "+recipientUserName);
 
 
         //Firebase

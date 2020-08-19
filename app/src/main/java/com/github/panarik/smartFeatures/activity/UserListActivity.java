@@ -142,6 +142,7 @@ public class UserListActivity extends AppCompatActivity {
 
         //получаем данные пользователя при клике и передаем его в интент
         goToChat.putExtra("recipientUserId", userArrayList.get(position).getUserId()); //id пользователя
+        goToChat.putExtra("recipientUserName", userArrayList.get(position).getUserName()); //имя пользователя для вставки в тулбар
         goToChat.putExtra("userName", userName); //имя пользователя
         startActivity(goToChat);
     }
