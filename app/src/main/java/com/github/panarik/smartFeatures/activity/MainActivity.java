@@ -57,6 +57,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.chat_chatlogo, "Messenger", "Firebase objects, GET Firebase realtime database data, POST messages into Firebase"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.landscape_logo, "Landscape Orientation", "Simple Fragments, orientation screen"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.web_logo, "Go To WEB!", "WebView, perform system Back button"));
+        recyclerViewItems.add(new RecyclerViewItem(R.drawable.taxi_logo, "You need Taxi!", "Mapping, GEO"));
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);     //для улучшения производительности задаем количество строк
@@ -133,6 +134,12 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 Intent goToWebActivity = new Intent(this, WebActivity.class);
                 goToWebActivity.putExtra("userName", userName);
                 startActivity(goToWebActivity);
+                break;
+            case 10:
+                //TaxiActivity
+                Intent goToTaxiActivity = new Intent(this, TaxiActivity.class);
+                goToTaxiActivity.putExtra("userName", userName);
+                startActivity(goToTaxiActivity);
                 break;
             default:
                 Log.d(TAG, "Nope");
