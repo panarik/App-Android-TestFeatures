@@ -2,6 +2,8 @@ package com.github.panarik.smartFeatures.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 
@@ -16,8 +18,10 @@ public class TaxiChooseModeActivity extends AppCompatActivity {
     }
 
     public void goToPassengerSignIn(View view) {
+        startActivity(new Intent(this, TaxiPassengerSignInActivity.class));
     }
 
     public void goToDriverSignIn(View view) {
+        startActivity(new Intent(this, TaxiDriverSignInActivity.class));
     }
 }
