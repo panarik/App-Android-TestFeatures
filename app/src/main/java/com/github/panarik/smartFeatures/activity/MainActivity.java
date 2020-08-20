@@ -136,8 +136,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 startActivity(goToWebActivity);
                 break;
             case 10:
-                //TaxiActivity
-                Intent goToTaxiActivity = new Intent(this, TaxiActivity.class);
+                //TaxiSplashScreenActivity
+                Intent goToTaxiActivity = new Intent(this, TaxiSplashScreenActivity.class);
                 goToTaxiActivity.putExtra("userName", userName);
                 startActivity(goToTaxiActivity);
                 break;
