@@ -11,7 +11,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.TaxiSignInActivity"></activity>
+        <activity android:name=".activity.TaxiChooseModeActivity"></activity>
         <activity android:name=".activity.TaxiSplashScreenActivity" />
         <activity android:name=".activity.UserListActivity" />
         <activity android:name=".activity.WebActivity" /> <!-- на удаление -->

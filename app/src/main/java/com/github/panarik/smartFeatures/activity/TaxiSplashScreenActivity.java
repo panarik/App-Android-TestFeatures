@@ -23,7 +23,7 @@ public class TaxiSplashScreenActivity extends AppCompatActivity {
                 } catch (Exception e) {
                     e.printStackTrace();
                 } finally {
-                    startActivity(new Intent(TaxiSplashScreenActivity.this, TaxiSignInActivity.class));
+                    startActivity(new Intent(TaxiSplashScreenActivity.this, TaxiChooseModeActivity.class));
                 }
             }
 
