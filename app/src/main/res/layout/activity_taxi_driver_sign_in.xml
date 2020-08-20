@@ -22,7 +22,7 @@
 
 
     <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/taxi_textInputName1"
+        android:id="@+id/taxi_textInputName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/taxi_textInputEmail"
@@ -37,29 +37,13 @@
             android:inputType="text" />
     </com.google.android.material.textfield.TextInputLayout>
 
-    <com.google.android.material.textfield.TextInputLayout
-        android:id="@+id/taxi_textInputName2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/taxi_textInputName1"
-        app:counterEnabled="true"
-        app:counterMaxLength="15"
-        app:errorEnabled="true">
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Name (do not over 15)"
-            android:inputType="text"
-            app:counterMaxLength="15" />
-    </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/taxi_textInputPass"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/taxi_textInputName2"
-        app:errorEnabled="true"
+        android:layout_below="@id/taxi_textInputName"
+        app:counterEnabled="true"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -74,14 +58,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@id/taxi_textInputPass"
-        app:errorEnabled="true"
+        app:counterEnabled="true"
         app:passwordToggleEnabled="true">
 
         <com.google.android.material.textfield.TextInputEditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
+            android:hint="Confirm Password"
             android:inputType="textPassword" />
+
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -90,6 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_above="@id/taxi_toggleTextView"
         android:layout_marginBottom="10dp"
+        android:onClick="taxi_loginSignUpUserButton"
         android:text="signUp"
         android:textSize="20sp" />
 
@@ -101,6 +87,7 @@
         android:layout_marginBottom="20dp"
         android:clickable="true"
         android:gravity="center"
+        android:onClick="taxi_toggleTextView"
         android:text="toggle Login\Sign Up"
         android:textSize="20sp" />
 
