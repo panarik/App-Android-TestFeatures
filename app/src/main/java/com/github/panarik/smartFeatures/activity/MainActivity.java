@@ -58,6 +58,8 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.landscape_logo, "Landscape Orientation", "Simple Fragments, orientation screen"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.web_logo, "Go To WEB!", "WebView, perform system Back button"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.taxi_logo, "You need Taxi!", "Mapping, GEO"));
+        recyclerViewItems.add(new RecyclerViewItem(R.drawable.bug_ui_example_logo, "UI bugs", "UI bug in View"));
+
 
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);     //для улучшения производительности задаем количество строк
@@ -141,9 +143,13 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 goToTaxiActivity.putExtra("userName", userName);
                 startActivity(goToTaxiActivity);
                 break;
+            case 11:
+                //BugUiExampleActivity
+                startActivity(new Intent(this, BugUiExampleActivity.class));
+                break;
             default:
-                Log.d(TAG, "Nope");
-                Toast.makeText(this, "Nope", Toast.LENGTH_SHORT).show();
+                Log.d(TAG, "Activity does not exist");
+                Toast.makeText(this, "Activity does not exist", Toast.LENGTH_SHORT).show();
         }
     }
 

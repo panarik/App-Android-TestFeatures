@@ -23,5 +23,14 @@ public class TaxiChooseModeActivity extends AppCompatActivity {
 
     public void goToDriverSignIn(View view) {
         startActivity(new Intent(this, TaxiDriverSignInActivity.class));
+
+        /*
+        //проверяем зарегистрирован пользователь или нет
+        if (auth.getCurrentUser() != null) {
+            startActivity(new Intent(this, TaxiDriverActivity.class));
+        } else {
+            startActivity(new Intent(this, TaxiDriverSignInActivity.class));
+        }
+         */
     }
 }

@@ -11,7 +11,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.TaxiDriverSignInActivity"></activity>
+        <activity android:name=".activity.BugUiExampleActivity"></activity>
+        <activity android:name=".activity.TaxiDriverActivity" />
+        <activity android:name=".activity.TaxiDriverSignInActivity" />
         <activity android:name=".activity.TaxiPassengerSignInActivity" />
         <activity android:name=".activity.TaxiChooseModeActivity" />
         <activity android:name=".activity.TaxiSplashScreenActivity" />
