@@ -2,39 +2,75 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bugUiExample_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".activity.BugUiExampleActivity"
-    android:padding="10dp">
+    android:padding="20dp">
 
-    <Button
-        android:id="@+id/bugUiExample_twoRow_Button"
-        android:layout_width="100dp"
-        android:layout_height="50dp"
-        android:text="Some text in Button View"/>
+    <RelativeLayout
+        android:id="@+id/bugUiExample_Text_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+
     <TextView
         android:id="@+id/bugUiExample_twoRow_TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/bugUiExample_twoRow_Button"
-        android:layout_marginStart="20dp"
-        android:text="Пример баги с переносом текста"
-        android:layout_alignTop="@id/bugUiExample_twoRow_Button"/>
-
-    <Button
-        android:id="@+id/bugUiExample_TextTrim_Button"
-        android:layout_width="100dp"
-        android:layout_height="40dp"
-        android:layout_below="@id/bugUiExample_twoRow_Button"
-        android:text="Some text in Button"/>
+        android:text="Пример баги с переносом текста" />
 
     <TextView
         android:id="@+id/bugUiExample_TextTrim_TextView"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
+        android:layout_height="20dp"
+        android:singleLine="true"
+        android:layout_below="@id/bugUiExample_twoRow_TextView"
+        android:text="Пример баги с обрезанием текста" />
+
+        <TextView
+            android:id="@+id/bugUiExample_firstOverlaps_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@id/bugUiExample_TextTrim_TextView"
+            android:gravity="center"
+            android:text="Текст первого TextView" />
+
+        <TextView
+            android:id="@+id/bugUiExample_secondOverlaps_TextView"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@id/bugUiExample_TextTrim_TextView"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="Текст второго TextView" />
+
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bugUiExample_Buttons_layout"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/bugUiExample_TextTrim_Button"
-        android:layout_alignTop="@id/bugUiExample_TextTrim_Button"
-        android:text="Пример баги с обрезанием текста"
-        android:layout_marginStart="20dp"/>
+        android:layout_below="@id/bugUiExample_Text_layout"
+        android:padding="10dp">
+
+        <Button
+            android:id="@+id/bugUiExample_twoRow_Button"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:text="Перенос текста внутри кнопки" />
+
+    </RelativeLayout>
+
+
+
+
+
+
+
+
+
+
 
 </RelativeLayout>
