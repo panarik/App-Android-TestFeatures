@@ -8,19 +8,36 @@ import org.junit.Test;
 import static androidx.test.espresso.Espresso.onData;
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
+import static androidx.test.espresso.action.ViewActions.replaceText;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
+import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
 import static androidx.test.espresso.matcher.ViewMatchers.hasContentDescription;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
+import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
+import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static com.github.panarik.smartFeatures.screen.TestSignIn.auth_signIn;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
+import static org.hamcrest.Matchers.allOf;
 import static org.hamcrest.Matchers.anything;
+import static org.hamcrest.Matchers.endsWith;
 import static org.junit.Assert.assertThat;
 
-public class TestMain extends TestBase {
+public class TestShopMain extends TestBase {
+
+    @Test
+
+    //находим вью по наименованию, заменяем текст без экранной клавиатуры
+    public void test_replaceText_EditText() {
+        gotoShopMain();
+        onView(allOf(withClassName(endsWith("Text")), withText(is(""))))
+                .perform(replaceText("Another test"));
+        onView(isRoot()).perform(waitFor(3000));
+    }
+
 
     //отображение активити
     @Test
@@ -118,6 +135,13 @@ public class TestMain extends TestBase {
     public void anyContentViews() {
         onView(hasContentDescription())
                 .check(matches(isDisplayed()));
+    }
+
+    private void gotoShopMain(){
+        auth_signIn();
+        onView(withId(R.id.recyclerView))
+                .perform(actionOnItemAtPosition(0, click()));
+        onView(isRoot()).perform(waitFor(1000));
     }
 
 }
