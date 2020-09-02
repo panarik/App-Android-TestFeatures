@@ -19,7 +19,7 @@ public class ShopOrderActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_order);
+        setContentView(R.layout.activity_shop_order);
         Intent receiveOrderIntent = getIntent(); // создаём receiveIntent и присваиваем его к Intent
         String userName = receiveOrderIntent.getStringExtra("userNameForIntent");  //извлекаем значение userName из Intent по ключу userNameForIntent и присваеваем значение переменной userName
         String goodsName = receiveOrderIntent.getStringExtra("goodsNameForIntent");
@@ -29,7 +29,7 @@ public class ShopOrderActivity extends AppCompatActivity {
                     "Выбранный товар - "+goodsName+"\n"+
                     "Количество - "+quantity+"\n"+
                     "Стоимость - "+orderPrice+"0 $";
-        TextView orderTextView = findViewById(R.id.orderTextView); // создаём новый TextView и привязываем его к разметке activity_order
+        TextView orderTextView = findViewById(R.id.shop_orderTextView); // создаём новый TextView и привязываем его к разметке activity_shop_order
         orderTextView.setText(emailText); // выводим итог в orderTextView
 
     }

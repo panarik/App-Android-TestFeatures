@@ -33,7 +33,7 @@ public class TestShopMain extends TestBase {
     //находим вью по наименованию, заменяем текст без экранной клавиатуры
     public void test_replaceText_EditText() {
         gotoShopMain();
-        onView(allOf(withClassName(endsWith("Text")), withText(is(""))))
+        onView(allOf(withClassName(endsWith("ditText")), withText(is(""))))
                 .perform(replaceText("Another test"));
         onView(isRoot()).perform(waitFor(3000));
     }
