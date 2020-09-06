@@ -3,15 +3,23 @@ package com.github.panarik.smartFeatures.activity;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.DividerItemDecoration;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.Toast;
 
 import com.github.panarik.smartFeatures.R;
 import com.github.panarik.smartFeatures.data.chat.ChatUser;
@@ -27,6 +35,7 @@ import java.util.ArrayList;
 
 public class UserListActivity extends AppCompatActivity {
 
+    private static final int MY_PERMISSIONS_REQUEST_CALL = 1;
     private String userName; //userName из SingIn (дописать из MainActivity тоже)
 
     private DatabaseReference usersDatabaseReference;
@@ -40,10 +49,15 @@ public class UserListActivity extends AppCompatActivity {
     //текущий пользователь
     private FirebaseAuth auth;
 
+    //для отправки набранного намера в телефон
+    private EditText callNumber;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_userlist);
+
+        callNumber = findViewById(R.id.userlist_call_EditText);
 
         //принимаем данные с интентом при открытии активити
         Intent intent = getIntent();
@@ -172,4 +186,30 @@ public class UserListActivity extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
         }
     }
+
+    //звоним с введенным в EditText номером
+    public void toPhone(View view) {
+        boolean hasCallPhonePermission = ContextCompat.checkSelfPermission(this,
+                Manifest.permission.CALL_PHONE) == PackageManager.PERMISSION_GRANTED;
+
+        if (hasCallPhonePermission) {
+            startActivity(goToPhone());
+        }
+
+        else
+        {Toast.makeText(this, "Хочешь позвонить? Сначала дай мне доступ к звонкам!", Toast.LENGTH_LONG).show();
+            ActivityCompat.requestPermissions(this,
+                    new String[]{Manifest.permission.CALL_PHONE}, MY_PERMISSIONS_REQUEST_CALL);}
+
+    }
+
+    private Intent goToPhone() {
+
+        final Intent intentToCall = new Intent(Intent.ACTION_CALL);
+        String number = callNumber.getText().toString().trim();
+        intentToCall.setData(Uri.parse("tel:+7" + number));
+
+        return intentToCall;
+    }
+
 }

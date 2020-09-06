@@ -78,7 +78,7 @@ dependencies {
     //EspressoTest
     androidTestImplementation 'androidx.test:rules:1.2.0'
     //forTestRecyclerView
-    // turn off if Barista install: androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-contrib:3.0.2'
     //find activity
     androidTestImplementation 'com.android.support.test.espresso:espresso-intents:3.0.2'
     //web tests
