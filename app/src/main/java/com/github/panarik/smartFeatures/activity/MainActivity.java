@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.web_logo, "Go To WEB!", "WebView, perform system Back button"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.taxi_logo, "You need Taxi!", "Mapping, GEO"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.bug_ui_example_logo, "UI bugs", "UI bug in View"));
+        recyclerViewItems.add(new RecyclerViewItem(R.drawable.recycle_logo_500x500, "RecycleView Kotlin", "Simple functional for benchmark testing"));
 
 
         recyclerView = findViewById(R.id.recyclerView);
@@ -146,6 +147,10 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
             case 11:
                 //BugUiExampleActivity
                 startActivity(new Intent(this, BugUiExampleActivity.class));
+                break;
+            case 12:
+                //RecyclerViewKActivity
+                startActivity(new Intent(this, RecyclerViewKActivity.class));
                 break;
             default:
                 Log.d(TAG, "Activity does not exist");

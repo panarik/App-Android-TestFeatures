@@ -15,4 +15,4 @@
 .idea
 /benchmark/build
 /debug
-/release
+/app/release
