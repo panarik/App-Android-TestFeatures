@@ -7,6 +7,6 @@ import com.github.panarik.smartFeatures.R
 class BlogKotlinActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_recycler_view_k)
+        setContentView(R.layout.activity_blog_kotlin)
     }
 }

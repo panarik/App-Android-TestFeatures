@@ -149,7 +149,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 startActivity(new Intent(this, BugUiExampleActivity.class));
                 break;
             case 12:
-                //RecyclerViewKActivity
+                //BlogKotlinActivity
                 startActivity(new Intent(this, BlogKotlinActivity.class));
                 break;
             default:
