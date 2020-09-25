@@ -6,8 +6,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.github.panarik.smartFeatures.R;
-import com.github.panarik.smartFeatures.data.recyclerview.RecyclerViewAdapter;
-import com.github.panarik.smartFeatures.data.recyclerview.RecyclerViewItem;
+import com.github.panarik.smartFeatures.data.models.RecyclerViewAdapter;
+import com.github.panarik.smartFeatures.data.models.RecyclerViewItem;
 import com.google.firebase.auth.FirebaseAuth;
 
 import android.content.Intent;
@@ -75,7 +75,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
     }
 
 
-    //метод для клика по recyclerview item
+    //метод для клика по models item
     @Override
     public void recycler_onItemClick(int position) {
         Log.d(TAG, "onNoteClick: clicked");
@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 break;
             case 12:
                 //RecyclerViewKActivity
-                startActivity(new Intent(this, RecyclerViewKActivity.class));
+                startActivity(new Intent(this, BlogKotlinActivity.class));
                 break;
             default:
                 Log.d(TAG, "Activity does not exist");

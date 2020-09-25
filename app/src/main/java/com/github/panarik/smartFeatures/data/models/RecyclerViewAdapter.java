@@ -1,4 +1,4 @@
-package com.github.panarik.smartFeatures.data.recyclerview;
+package com.github.panarik.smartFeatures.data.models;
 
 import android.view.LayoutInflater;
 import android.view.View;

@@ -1,4 +1,4 @@
-package com.github.panarik.smartFeatures.data.recyclerview;
+package com.github.panarik.smartFeatures.data.models;
 
 public class RecyclerViewItem {
 
