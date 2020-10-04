@@ -6,9 +6,9 @@ apply plugin: 'com.google.gms.google-services'
 apply plugin: 'com.google.firebase.crashlytics'
 //Firebase Performance
 apply plugin: 'com.google.firebase.firebase-perf'
-apply plugin: 'kotlin-android'
 
 //Kotlin
+apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 
@@ -132,6 +132,9 @@ dependencies {
 
     //android benchmark: https://developer.android.com/studio/profile/benchmark
     androidTestImplementation "androidx.benchmark:benchmark-junit4:1.0.0"
+
+    //Kakao
+    androidTestImplementation 'com.agoda.kakao:kakao:1.0.0'
 
 
     //mock "OkHttp"

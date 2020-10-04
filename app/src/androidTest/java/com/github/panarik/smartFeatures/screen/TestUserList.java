@@ -29,6 +29,7 @@ public class TestUserList extends IntentsBase {
 
 
     @Test
+
     public void test_typeNumber_ValidInput_InitiatesCall() {
         auth_signIn();
         onView(withId(R.id.recyclerView))
