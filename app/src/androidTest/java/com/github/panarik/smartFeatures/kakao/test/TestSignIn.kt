@@ -18,7 +18,7 @@ class TestSignIn {
     val rule = ActivityTestRule(SignInActivity::class.java)
 
     @Test
-    fun testContentScreen() {
+    fun test_ContentScreen() {
 
         onScreen<SignInScreen>{
 
