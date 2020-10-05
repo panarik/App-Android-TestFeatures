@@ -13,6 +13,7 @@ class SingleTypeRecyclerTest {
     @JvmField
     val rule = ActivityTestRule(BlogKotlinActivity::class.java)
 
+    //
     @Test
     fun testContentItemsRecyclerView() {
 
