@@ -134,7 +134,7 @@ dependencies {
     androidTestImplementation "androidx.benchmark:benchmark-junit4:1.0.0"
 
     //Kakao
-    androidTestImplementation 'com.agoda.kakao:kakao:1.0.0'
+    androidTestImplementation 'com.agoda.kakao:kakao:2.4.0'
 
 
     //mock "OkHttp"
