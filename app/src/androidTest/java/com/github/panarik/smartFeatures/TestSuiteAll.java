@@ -1,10 +1,10 @@
 package com.github.panarik.smartFeatures;
 
 
-import com.github.panarik.smartFeatures.screen.TestLandscape;
-import com.github.panarik.smartFeatures.screen.TestShopMain;
-import com.github.panarik.smartFeatures.screen.TestSignIn;
-import com.github.panarik.smartFeatures.screen.TestVideoWeb;
+import com.github.panarik.smartFeatures.espresso.screen.TestLandscape;
+import com.github.panarik.smartFeatures.espresso.screen.TestShopMain;
+import com.github.panarik.smartFeatures.espresso.screen.TestSignIn;
+import com.github.panarik.smartFeatures.espresso.screen.TestVideoWeb;
 
 import org.junit.runner.RunWith;
 import org.junit.runners.Suite;

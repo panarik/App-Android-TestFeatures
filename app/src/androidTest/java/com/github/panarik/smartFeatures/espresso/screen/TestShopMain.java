@@ -1,7 +1,7 @@
-package com.github.panarik.smartFeatures.screen;
+package com.github.panarik.smartFeatures.espresso.screen;
 
 import com.github.panarik.smartFeatures.R;
-import com.github.panarik.smartFeatures.base.TestBase;
+import com.github.panarik.smartFeatures.espresso.base.TestBase;
 
 import org.junit.Test;
 
@@ -18,7 +18,6 @@ import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withClassName;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
-import static com.github.panarik.smartFeatures.screen.TestSignIn.auth_signIn;
 import static org.hamcrest.CoreMatchers.is;
 import static org.hamcrest.CoreMatchers.notNullValue;
 import static org.hamcrest.Matchers.allOf;

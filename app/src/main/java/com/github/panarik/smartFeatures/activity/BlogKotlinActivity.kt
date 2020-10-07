@@ -9,6 +9,7 @@ import com.github.panarik.smartFeatures.data.blog.BlogAdapter
 import kotlinx.android.synthetic.main.activity_blog_kotlin.*
 import kotlinx.android.synthetic.main.activity_main.view.*
 
+
 class BlogKotlinActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

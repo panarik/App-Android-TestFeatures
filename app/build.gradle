@@ -136,6 +136,9 @@ dependencies {
     //Kakao
     androidTestImplementation 'com.agoda.kakao:kakao:2.4.0'
 
+    //Kaspresso
+    androidTestImplementation 'com.kaspersky.android-components:kaspresso:1.2.0'
+
 
     //mock "OkHttp"
     // implementation 'com.squareup.okhttp3:mockwebserver:4.7.2'

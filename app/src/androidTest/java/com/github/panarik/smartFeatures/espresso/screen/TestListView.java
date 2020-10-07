@@ -1,7 +1,7 @@
-package com.github.panarik.smartFeatures.screen;
+package com.github.panarik.smartFeatures.espresso.screen;
 
 import com.github.panarik.smartFeatures.R;
-import com.github.panarik.smartFeatures.base.TestBase;
+import com.github.panarik.smartFeatures.espresso.base.TestBase;
 
 import org.junit.Test;
 

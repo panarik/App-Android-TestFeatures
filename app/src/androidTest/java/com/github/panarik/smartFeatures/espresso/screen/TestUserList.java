@@ -1,16 +1,15 @@
-package com.github.panarik.smartFeatures.screen;
+package com.github.panarik.smartFeatures.espresso.screen;
 
 import android.content.Intent;
 import android.net.Uri;
 
 import com.github.panarik.smartFeatures.R;
-import com.github.panarik.smartFeatures.base.IntentsBase;
+import com.github.panarik.smartFeatures.espresso.base.IntentsBase;
 
 import org.junit.Test;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
-import static androidx.test.espresso.action.ViewActions.closeSoftKeyboard;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
 import static androidx.test.espresso.intent.Intents.intended;
@@ -18,8 +17,8 @@ import static androidx.test.espresso.intent.matcher.IntentMatchers.hasAction;
 import static androidx.test.espresso.intent.matcher.IntentMatchers.hasData;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
-import static com.github.panarik.smartFeatures.base.TestBase.auth_signIn;
-import static com.github.panarik.smartFeatures.base.TestBase.waitFor;
+import static com.github.panarik.smartFeatures.espresso.base.TestBase.auth_signIn;
+import static com.github.panarik.smartFeatures.espresso.base.TestBase.waitFor;
 import static org.hamcrest.core.AllOf.allOf;
 
 public class TestUserList extends IntentsBase {

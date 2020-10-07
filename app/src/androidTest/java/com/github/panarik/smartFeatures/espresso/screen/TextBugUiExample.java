@@ -1,9 +1,7 @@
-package com.github.panarik.smartFeatures.screen;
-
-import androidx.test.espresso.ViewAssertion;
+package com.github.panarik.smartFeatures.espresso.screen;
 
 import com.github.panarik.smartFeatures.R;
-import com.github.panarik.smartFeatures.base.TestBase;
+import com.github.panarik.smartFeatures.espresso.base.TestBase;
 
 import org.junit.Test;
 
@@ -13,8 +11,6 @@ import static androidx.test.espresso.assertion.LayoutAssertions.noEllipsizedText
 import static androidx.test.espresso.assertion.LayoutAssertions.noMultilineButtons;
 import static androidx.test.espresso.assertion.LayoutAssertions.noOverlaps;
 import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
-import static androidx.test.espresso.matcher.LayoutMatchers.hasEllipsizedText;
-import static androidx.test.espresso.matcher.LayoutMatchers.hasMultilineText;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.matcher.ViewMatchers.withText;
