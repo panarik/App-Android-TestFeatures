@@ -1,9 +1,10 @@
-package com.github.panarik.smartFeatures.kaspresso
+package com.github.panarik.smartFeatures.kaspresso.tests
 
 import android.Manifest
 import androidx.test.rule.ActivityTestRule
 import androidx.test.rule.GrantPermissionRule
 import com.github.panarik.smartFeatures.activity.SignInActivity
+import com.github.panarik.smartFeatures.kaspresso.scenario.SignInScenario
 import com.github.panarik.smartFeatures.kaspresso.screen.SignInScreen
 import com.kaspersky.kaspresso.testcases.api.testcase.TestCase
 import org.junit.Rule
@@ -20,30 +21,17 @@ class TestSignIn : TestCase() {
     @get:Rule
     val activityTestRule = ActivityTestRule(SignInActivity::class.java, true, false)
 
+
     @Test
-    fun test_SignIn() {
+    fun test_SignInWithoutAuth() {
         run {
             step("test signIn") {
-                activityTestRule.launchActivity(null)
-                testLogger.i("I am testLogger")
-                device.screenshots.take("Additional_screenshot")
-
-                SignInScreen {
-
-                    signIn_withoutAuth {
-                        isVisible()
-                        click()
-                    }
-
-
-
-                }
+                scenario(
+                        SignInScenario()
+                )
 
             }
-
-
         }
-
     }
 
 
