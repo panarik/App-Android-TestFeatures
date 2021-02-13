@@ -143,8 +143,13 @@ public class TestBase {
         onView(withId(R.id.chat_passwordEditText)).perform(typeText("123456"));
         //жмем далее
         onView(withId(R.id.chat_loginSignUpButton)).perform(click());
-        //ждем
-        onView(isRoot()).perform(waitFor(3000));
+
+    }
+
+    //войти без регистрации
+    public void login_withoutAuth(){
+        onView(withId(R.id.sign_in_without_auth))
+                .perform(click());
     }
 
 

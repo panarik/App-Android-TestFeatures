@@ -17,6 +17,7 @@ import org.junit.Rule;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
 import static androidx.test.espresso.web.assertion.WebViewAssertions.webMatches;
@@ -41,6 +42,7 @@ public class TestWeb {
 
     @Test
     public void test_WebView_ID_withText() {
+        onView(isRoot()).perform(waitFor(1000));
         onWebView()
                 .withElement(findElement(Locator.ID,"fsl"))
                 .check(webMatches(getText(), containsString("Россия")));

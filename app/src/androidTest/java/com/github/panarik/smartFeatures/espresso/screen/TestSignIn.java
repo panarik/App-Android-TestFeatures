@@ -33,6 +33,12 @@ public class TestSignIn extends TestBase {
     }
 
     @Test
+    public void test_login_withoutSignIn(){
+        login_withoutAuth();
+        onView(withId(R.id.activity_main)).check(matches(isDisplayed()));
+    }
+
+    @Test
     public void test_auth_signUp(){
         //вводим новый email
         final Random random = new Random();
