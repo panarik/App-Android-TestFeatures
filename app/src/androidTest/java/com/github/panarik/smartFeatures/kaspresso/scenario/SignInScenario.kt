@@ -13,6 +13,8 @@ class SignInScenario : Scenario() {
     val activityTestRule = ActivityTestRule(SignInActivity::class.java, true, false)
 
 
+
+
     override val steps: TestContext<Unit>.() -> Unit = {
         step("sign in without auth") {
             activityTestRule.launchActivity(null)

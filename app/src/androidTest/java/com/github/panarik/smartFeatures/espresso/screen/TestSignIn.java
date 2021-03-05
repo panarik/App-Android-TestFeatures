@@ -43,7 +43,9 @@ public class TestSignIn extends TestBase {
         //вводим новый email
         final Random random = new Random();
         onView(withId(R.id.chat_emailEditText)).perform(typeText
-                ("test"+random.nextInt(900)+"@gmail.com"));
+                ("test"+random.nextInt(9000)+"@gmail.com"));
+
+
         //вводим пароль
         onView(withId(R.id.chat_passwordEditText)).perform(typeText("123456"));
         //вводим подтверждение пароля

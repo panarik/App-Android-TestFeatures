@@ -12,7 +12,7 @@ class BlogAdapter:
 {
 
     //Создаём ArrayList, содержащий заголовки в вьюХолдерах
-    val blogTitles = listOf<String>("First title", "Second title", "Third title", "Another title")
+    val blogTitles = listOf<String>("First title", "Second title", "Third title", "Another title", "Again title", "More titles", "More titles!")
 
 
 
@@ -33,9 +33,6 @@ class BlogAdapter:
         //2ой пример. Привязываем текст к ArrayList
         val blogTitle = blogTitles.get(position)
         holder.view.blog_title.text = blogTitle
-
-
-
     }
 
     //количество ИьюХолдеров в RecyclerView
@@ -46,9 +43,6 @@ class BlogAdapter:
 
 //Создаем свой ViewHolder
 class BlogViewHolder(val view: View): RecyclerView.ViewHolder(view) {
-
-
-
 }
 
 

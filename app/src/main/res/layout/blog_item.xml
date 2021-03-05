@@ -7,7 +7,8 @@
         android:id="@+id/blog_image"
         android:layout_width="100dp"
         android:layout_height="100dp"
-        android:layout_centerHorizontal="true" />
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/userlist_user_image"/>
 
     <TextView
         android:id="@+id/blog_title"
