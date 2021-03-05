@@ -15,9 +15,11 @@ import java.util.ArrayList;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewViewHolder> {
 
+
     private ArrayList<RecyclerViewItem> arrayList;
     //добавили в рамках интеграции RecyclerItemListener
     private RecyclerItemListener mRecyclerItemListener;
+
 
     public static class RecyclerViewViewHolder extends RecyclerView.ViewHolder //содержит элементы, которые находятся в RecyclerView
             implements View.OnClickListener { //также добавляем OnClickListener для прослушивания RecyclerView
@@ -40,7 +42,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
 
             //прикрепляем OnClickListener
             itemView.setOnClickListener(this);
-
         }
 
         //
@@ -56,7 +57,6 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     ) {
         this.arrayList = arrayList;
         this.mRecyclerItemListener = recyclerItemListener;
-
     }
 
 

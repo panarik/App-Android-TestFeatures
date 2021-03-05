@@ -39,7 +39,7 @@ class TestBlog : TestCase() {
 
                 BlogScreen {
                     blog_recyclerview.act {
-                        RecyclerViewActions.actionOnItem<BlogViewHolder>(ViewMatchers.hasDescendant(ViewMatchers.withText("Camera")), ViewActions.click())
+                        RecyclerViewActions.actionOnItem<BlogViewHolder>(ViewMatchers.hasDescendant(ViewMatchers.withText("More titles!")), ViewActions.click())
                     }
                 }
 
