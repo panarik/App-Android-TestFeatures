@@ -60,6 +60,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.taxi_logo, "You need Taxi!", "Mapping, GEO"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.bug_ui_example_logo, "UI bugs", "UI bug in View"));
         recyclerViewItems.add(new RecyclerViewItem(R.drawable.recycle_logo_500x500, "RecycleView Kotlin", "Simple functional for benchmark testing"));
+        recyclerViewItems.add(new RecyclerViewItem(R.drawable.dragndrop, "Drag and drop", "Simple drag and drop functional for UI tests"));
 
 
         recyclerView = findViewById(R.id.recyclerView);
@@ -152,6 +153,11 @@ public class MainActivity extends AppCompatActivity implements RecyclerViewAdapt
                 //BlogKotlinActivity
                 startActivity(new Intent(this, BlogKotlinActivity.class));
                 break;
+            case 13:
+                //DragAndDropActivity
+                startActivity(new Intent(this, DragAndDropActivity.class));
+                break;
+
             default:
                 Log.d(TAG, "Activity does not exist");
                 Toast.makeText(this, "Activity does not exist", Toast.LENGTH_SHORT).show();
