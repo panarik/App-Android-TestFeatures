@@ -1,15 +1,10 @@
 package com.github.panarik.smartFeatures.espresso.screen;
 
-import android.util.Log;
-
-import androidx.test.uiautomator.UiDevice;
-
+import android.os.RemoteException;
 import com.github.panarik.smartFeatures.R;
 import com.github.panarik.smartFeatures.espresso.base.TestBase;
 
 import org.junit.Test;
-
-import java.io.File;
 
 import static androidx.test.espresso.Espresso.onView;
 import static androidx.test.espresso.action.ViewActions.click;
@@ -25,28 +20,15 @@ public class TestDragAndDrop extends TestBase {
     }
 
     @Test
-    public void test_clickOnCoordinates(){
+    public void test_dragOnCoordinates() throws RemoteException {
         goToDragAndDropActivity();
-        waitFor(1000);
+        onView(isRoot()).perform(waitFor(1000));
 
-       mDevice.drag(675, 900, 675, 1780, 20);
-        waitFor(2000);
-//
-//        mDevice.swipe(100, 100, 100,400,20);
-//        waitFor(2000);
-//
-//        //клик
-//        mDevice.click(50,50);
-//        Log.d("espresso", "click (50, 50)");
-//        waitFor(2000);
-//
-//        File file = new File("/sdcard0/filename.png");
-//        mDevice.takeScreenshot(file);
-//        Log.d("espresso", "takeScreenshot(/sdcard0/DCIM/Screenshots/)");
-//        waitFor(2000);
+        mDevice.drag(550, 550, 550, 1300, 30);
+        onView(isRoot()).perform(waitFor(1000));
 
-        mDevice.pressHome();
-        waitFor(2000);
+
+
     }
 
 
@@ -56,5 +38,11 @@ public class TestDragAndDrop extends TestBase {
                 .perform(actionOnItemAtPosition(13, click()));
         onView(isRoot()).perform(waitFor(1000));
     }
+
+    private void myDrag(int startX, int startY, int endX, int endY, int speed) {
+        mDevice.drag(startX, startY, endX, endY, speed);
+
+    }
+
 
 }
