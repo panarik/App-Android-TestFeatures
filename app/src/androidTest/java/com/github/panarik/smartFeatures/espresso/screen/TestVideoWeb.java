@@ -34,7 +34,7 @@ public class TestVideoWeb extends TestBase {
         onView(withId(R.id.searchMovie))
                 .perform(click());
 
-        onView(isRoot()).perform(waitFor(1000));
+        waitFor(1000);
 
         /*
         onView(allOf(isDisplayed()))

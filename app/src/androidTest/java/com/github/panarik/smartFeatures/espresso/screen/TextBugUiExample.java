@@ -43,6 +43,5 @@ public class TextBugUiExample extends TestBase {
         auth_signIn();
         onView(withId(R.id.recyclerView))
                 .perform(actionOnItemAtPosition(11, click()));
-        onView(isRoot()).perform(waitFor(1000));
     }
 }

@@ -53,7 +53,7 @@ public class TestSignIn extends TestBase {
         //жмем кнопку Далее
         onView(withId(R.id.chat_loginSignUpButton)).perform(click());
         //ждем
-        onView(isRoot()).perform(waitFor(3000));
+        waitFor(1000);
         //переход на MainActivity
         onView(withId(R.id.activity_main)).check(matches(isDisplayed()));
     }

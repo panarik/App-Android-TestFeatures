@@ -48,7 +48,7 @@ public class TestListView extends TestBase {
         auth_signIn();
         onView(withId(R.id.recyclerView))
                 .perform(actionOnItemAtPosition(3, click()));
-        onView(isRoot()).perform(waitFor(1000));
+        waitFor(1000);
     }
 
 }

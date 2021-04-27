@@ -1,10 +1,13 @@
 package com.github.panarik.smartFeatures.espresso.base;
 
+import android.graphics.Point;
+import android.os.RemoteException;
 import android.view.View;
 
 import androidx.test.espresso.UiController;
 import androidx.test.espresso.ViewAction;
 import androidx.test.ext.junit.runners.AndroidJUnit4;
+import androidx.test.platform.app.InstrumentationRegistry;
 import androidx.test.rule.ActivityTestRule;
 import androidx.test.uiautomator.UiDevice;
 
@@ -72,13 +75,32 @@ public class TestBase {
     }
      */
 
-    @Before
-    public void startMainActivity() {
-        // Initialize UiDevice instance
-        mDevice = UiDevice.getInstance(getInstrumentation());
+//    @Before
+//    public void startMainActivity() {
+//        // Initialize UiDevice instance
+//        mDevice = UiDevice.getInstance(getInstrumentation());
+//
+//        //  Press home button?
+//        // mDevice.pressHome();
+//    }
 
-        //  Press home button?
-        // mDevice.pressHome();
+    @Before
+    public void init(){
+        mDevice = UiDevice.getInstance(getInstrumentation());
+        mDevice = UiDevice.getInstance(InstrumentationRegistry.getInstrumentation());
+        Point[] coordinates = new Point[2];
+        coordinates[0] = new Point(500, 1500); //нижняя точка
+        coordinates[1] = new Point(500, 500); //верхняя точка
+        //coordinates[2] = new Point(796, 1520);
+        //coordinates[3] = new Point(796, 929);
+        try {
+            if (!mDevice.isScreenOn()) {
+                mDevice.wakeUp();
+                mDevice.swipe(coordinates, 10);
+            }
+        } catch (RemoteException e) {
+            e.printStackTrace();
+        }
     }
 
 
@@ -112,8 +134,12 @@ public class TestBase {
     }
 */
 
+    public static void waitFor(long millis) {
+        onView(isRoot()).perform(myWait(millis));
+    }
+
     //UI wait some second
-    public static ViewAction waitFor(final long millis) {
+    private static ViewAction myWait(final long millis) {
         return new ViewAction() {
             @Override
             public Matcher<View> getConstraints() {

@@ -34,7 +34,6 @@ public class TestShopMain extends TestBase {
         gotoShopMain();
         onView(allOf(withClassName(endsWith("ditText")), withText(is(""))))
                 .perform(replaceText("Another test"));
-        onView(isRoot()).perform(waitFor(3000));
     }
 
 
@@ -140,7 +139,6 @@ public class TestShopMain extends TestBase {
         auth_signIn();
         onView(withId(R.id.recyclerView))
                 .perform(actionOnItemAtPosition(0, click()));
-        onView(isRoot()).perform(waitFor(1000));
     }
 
 }

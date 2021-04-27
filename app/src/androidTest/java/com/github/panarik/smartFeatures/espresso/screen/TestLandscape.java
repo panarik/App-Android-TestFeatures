@@ -41,7 +41,7 @@ public class TestLandscape extends TestBase {
         onView(withId(R.id.landscape_one_fragment_textview)).check(matches(withText("Fragment One")));
 
         onView(withId(R.id.landscape_removeButton)).perform(click());
-        onView(isRoot()).perform(waitFor(1000));
+        waitFor(1000);
         onView(withId(R.id.landscape_one_fragment_textview))
                 .check(doesNotExist());
     }
@@ -51,7 +51,7 @@ public class TestLandscape extends TestBase {
         auth_signIn();
         onView(withId(R.id.recyclerView))
                 .perform(actionOnItemAtPosition(8, click()));
-        onView(isRoot()).perform(waitFor(1000));
+        waitFor(1000);
     }
 }
 

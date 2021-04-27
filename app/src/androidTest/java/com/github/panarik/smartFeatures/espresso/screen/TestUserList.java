@@ -33,7 +33,7 @@ public class TestUserList extends IntentsBase {
         auth_signIn();
         onView(withId(R.id.recyclerView))
                 .perform(actionOnItemAtPosition(7, click()));
-        onView(isRoot()).perform(waitFor(1000));
+        waitFor(1000);
 
         //ввод номера телефона и закрытие клавиатуры
         onView(withId(R.id.userlist_call_EditText))
