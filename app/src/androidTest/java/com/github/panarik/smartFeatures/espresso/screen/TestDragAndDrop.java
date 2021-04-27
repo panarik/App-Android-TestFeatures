@@ -1,6 +1,7 @@
 package com.github.panarik.smartFeatures.espresso.screen;
 
 import android.app.Instrumentation;
+import android.graphics.Point;
 import android.os.RemoteException;
 
 import androidx.test.espresso.ViewAction;
@@ -20,6 +21,7 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.contrib.RecyclerViewActions.actionOnItemAtPosition;
 import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+import static androidx.test.espresso.matcher.ViewMatchers.withText;
 import static com.github.panarik.smartFeatures.espresso.base.MyViewAction.dragToBottom;
 
 public class TestDragAndDrop extends TestBase {
@@ -43,12 +45,13 @@ public class TestDragAndDrop extends TestBase {
         waitFor(1000);
         //onView(isRoot()).perform(dragToBottom());
         //onView(withId(R.id.dragAndDrop_button)).perform(dragToBottom());
-        //waitFor(1000);
 
         //Instrumentation inst = new Instrumentation();
         //MyViewAction.drag(inst, 550, 550, 550, 1300, 30);
 
-        //onView(withId(R.id.dragAndDrop_button)).perform(drag(400, 400, 400, 400));
+        //onView(isRoot()).perform(drag(400, 400, 400, 400)); //error for RootView
+        onView(withId(R.id.dragAndDrop_button))
+                .perform(drag(500, 500, 500, 1200)); //при захвате кнопки не двигается. Просто по экрану свайп есть.
         waitFor(3000);
     }
 
@@ -61,9 +64,13 @@ public class TestDragAndDrop extends TestBase {
         waitFor(1000);
     }
 
-    private void myDrag(int startX, int startY, int endX, int endY, int speed) {
-        mDevice.drag(startX, startY, endX, endY, speed);
+    private void myDevice_SwipeUp(){
+        Point[] coordinates = new Point[2];
+        coordinates[0] = new Point(500, 1500); //нижняя точка
+        coordinates[1] = new Point(500, 500); //верхняя точка
+        mDevice.swipe(coordinates, 10);
     }
+
 
     public static ViewAction drag(int startX, int startY, int endX, int endY) {
         return new GeneralSwipeAction(
@@ -72,6 +79,5 @@ public class TestDragAndDrop extends TestBase {
                 new CustomisableCoordinatesProvider(endX, endY),
                 Press.FINGER);
     }
-
 
 }

@@ -96,6 +96,7 @@ public class TestBase {
         try {
             if (!mDevice.isScreenOn()) {
                 mDevice.wakeUp();
+                waitFor(500);
                 mDevice.swipe(coordinates, 10);
             }
         } catch (RemoteException e) {
