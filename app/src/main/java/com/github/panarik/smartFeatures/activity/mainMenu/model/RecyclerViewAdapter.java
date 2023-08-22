@@ -1,4 +1,4 @@
-package com.github.panarik.smartFeatures.data.models;
+package com.github.panarik.smartFeatures.activity.mainMenu.model;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,12 +11,12 @@ import com.github.panarik.smartFeatures.R;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapter.RecyclerViewViewHolder> {
 
 
-    private ArrayList<RecyclerViewItem> arrayList;
+    private List<RecyclerViewItem> arrayList;
     //добавили в рамках интеграции RecyclerItemListener
     private RecyclerItemListener mRecyclerItemListener;
 
@@ -52,7 +52,7 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     }
 
     // инициализируем поле arrayList и передаем в него данные из ArrayList в RecyclerViewAdapter
-    public RecyclerViewAdapter(ArrayList<RecyclerViewItem> arrayList,
+    public RecyclerViewAdapter(List<RecyclerViewItem> arrayList,
                                RecyclerItemListener recyclerItemListener //добавили recyclerItemListener
     ) {
         this.arrayList = arrayList;
@@ -72,8 +72,8 @@ public class RecyclerViewAdapter extends RecyclerView.Adapter<RecyclerViewAdapte
     public void onBindViewHolder(@NonNull RecyclerViewViewHolder recyclerViewViewHolder, int i) { //передаем из поля arrayList все его значения
         RecyclerViewItem recyclerViewItem = arrayList.get(i); //при помощи параметра i связываем каждый элемент поля arrayList с каждым элементом RecyclerView
         recyclerViewViewHolder.imageView.setImageResource(recyclerViewItem.getImageResource()); //путь к данным извлекаем из recyclerViewItem с помощью геттера getImageResource
-        recyclerViewViewHolder.textView1.setText(recyclerViewItem.getText1());
-        recyclerViewViewHolder.textView2.setText(recyclerViewItem.getText2());
+        recyclerViewViewHolder.textView1.setText(recyclerViewItem.getName());
+        recyclerViewViewHolder.textView2.setText(recyclerViewItem.getDesc());
     }
 
     @Override

@@ -10,6 +10,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.github.panarik.smartFeatures.R;
+import com.github.panarik.smartFeatures.activity.mainMenu.MainActivity;
 
 public class FreeGameActivity extends AppCompatActivity {
 

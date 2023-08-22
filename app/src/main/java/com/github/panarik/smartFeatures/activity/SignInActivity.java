@@ -13,6 +13,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.github.panarik.smartFeatures.R;
+import com.github.panarik.smartFeatures.activity.mainMenu.MainActivity;
 import com.github.panarik.smartFeatures.data.chat.ChatUser;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;

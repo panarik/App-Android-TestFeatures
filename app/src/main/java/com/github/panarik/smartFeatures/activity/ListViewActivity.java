@@ -12,6 +12,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.github.panarik.smartFeatures.R;
+import com.github.panarik.smartFeatures.activity.mainMenu.MainActivity;
 
 import java.util.ArrayList;
 

@@ -41,7 +41,7 @@
             android:name=".activity.PictureEffectsActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.MainActivity"
+            android:name=".activity.mainMenu.MainActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.ListViewActivity"

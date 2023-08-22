@@ -4,10 +4,9 @@ import android.view.View
 import com.agoda.kakao.image.KImageView
 import com.agoda.kakao.recycler.KRecyclerItem
 import com.agoda.kakao.recycler.KRecyclerView
-import com.agoda.kakao.text.KButton
 import com.agoda.kakao.text.KTextView
 import com.github.panarik.smartFeatures.R
-import com.github.panarik.smartFeatures.activity.MainActivity
+import com.github.panarik.smartFeatures.activity.mainMenu.MainActivity
 import com.kaspersky.kaspresso.screens.KScreen
 import org.hamcrest.Matcher
 
