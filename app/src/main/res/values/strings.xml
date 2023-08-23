@@ -1,7 +1,9 @@
 <resources>
     <string name="app_name">Smart Features</string>
 
-    <!--for testing-->
     <string name="item_element_text">Superman Returns</string>
+    <string name="freeGameActivity_tryAgainButton">Try Again :)</string>
+    <string name="freeGameActivity_clickOnChest">Click on chest!</string>
+    <string name="menu_options">MENU OPTIONS</string>
 
 </resources>

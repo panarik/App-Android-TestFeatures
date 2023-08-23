@@ -53,7 +53,7 @@
             android:name=".activity.VideoLocalActivity"
             android:screenOrientation="portrait" />
         <activity
-            android:name=".activity.FreeGameActivity"
+            android:name=".activity.freeGame.FreeGameActivity"
             android:screenOrientation="portrait" />
         <activity
             android:name=".activity.ShopOrderActivity"

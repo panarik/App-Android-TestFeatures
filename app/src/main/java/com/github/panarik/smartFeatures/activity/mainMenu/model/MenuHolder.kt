@@ -4,7 +4,7 @@ import com.github.panarik.smartFeatures.R
 import com.github.panarik.smartFeatures.activity.BlogKotlinActivity
 import com.github.panarik.smartFeatures.activity.BugUiExampleActivity
 import com.github.panarik.smartFeatures.activity.DragAndDropActivity
-import com.github.panarik.smartFeatures.activity.FreeGameActivity
+import com.github.panarik.smartFeatures.activity.freeGame.FreeGameActivity
 import com.github.panarik.smartFeatures.activity.LandscapeActivity
 import com.github.panarik.smartFeatures.activity.ListViewActivity
 import com.github.panarik.smartFeatures.activity.PictureEffectsActivity
@@ -35,7 +35,8 @@ object MenuHolder {
                     "Free Game",
                     "эффекты alpha и немного математики",
                     R.drawable.chest_open_gold
-                ), FreeGameActivity()
+                ),
+                FreeGameActivity()
             )
         )
         add(
