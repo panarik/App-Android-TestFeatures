@@ -17,7 +17,6 @@ class FreeGameActivity : AppCompatActivity() {
     lateinit var youVinView: ImageView
     lateinit var hint: TextView
 
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_free_game)
