@@ -17,7 +17,7 @@ android {
     buildToolsVersion "29.0.3"
     defaultConfig {
         applicationId "com.github.panarik.smartFeatures"
-        minSdkVersion 23 //min 19
+        minSdkVersion 24 //min 19
         //23 - работа http Трафика
         //23 - требование android:usesCleartextTraffic="true" в AndroidManifest - нужно для запуска http Трафика
         //24 - требование строки android:networkSecurityConfig="@xml/network_security_config" в AndroidManifest

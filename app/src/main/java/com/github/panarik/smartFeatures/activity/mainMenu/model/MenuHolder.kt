@@ -15,6 +15,7 @@ import com.github.panarik.smartFeatures.activity.UserListActivity
 import com.github.panarik.smartFeatures.activity.VideoLocalActivity
 import com.github.panarik.smartFeatures.activity.VideoWebActivity
 import com.github.panarik.smartFeatures.activity.WebActivity
+import com.github.panarik.smartFeatures.activity.tipsCalculator.TipsCalcActivity
 
 object MenuHolder {
 
@@ -145,6 +146,15 @@ object MenuHolder {
                     "Simple drag and drop functional for UI tests",
                     R.drawable.dragndrop
                 ), DragAndDropActivity()
+            )
+        )
+        add(
+            MenuItem(
+                RecyclerViewItem(
+                    "Tips Calculator",
+                    "Use View binding calculator",
+                    R.drawable.tips
+                ), TipsCalcActivity()
             )
         )
     }

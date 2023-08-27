@@ -51,13 +51,13 @@
                 android:id="@+id/tips_tip_options_good"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/TipsCalcActivity_good_18" />
+                android:text="@string/TipsCalcActivity_good_15" />
 
             <RadioButton
                 android:id="@+id/tips_tip_options_okay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/TipsCalcActivity_ok_15" />
+                android:text="@string/TipsCalcActivity_ok_10" />
 
         </RadioGroup>
 

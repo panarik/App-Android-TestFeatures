@@ -9,8 +9,8 @@
     <string name="TipsCalcActivity_cost_of_service">Cost of Service</string>
     <string name="TipsCalcActivity_how_was_the_service">How was the service?</string>
     <string name="TipsCalcActivity_amazing_20">Amazing (20%)</string>
-    <string name="TipsCalcActivity_good_18">Good (18%)</string>
-    <string name="TipsCalcActivity_ok_15">Okay (15%)</string>
+    <string name="TipsCalcActivity_good_15">Good (15%)</string>
+    <string name="TipsCalcActivity_ok_10">Okay (10%)</string>
     <string name="TipsCalcActivity_round_up_tip">Round up tip</string>
     <string name="TipsCalcActivity_calculate">Calculate</string>
     <string name="TipsCalcActivity_tip_amount">Tip Amount</string>
