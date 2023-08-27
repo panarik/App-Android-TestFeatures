@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.github.panarik.smartFeatures.activity.mainMenu.MainActivity"
-    android:id="@+id/activity_main">
+    android:id="@+id/activity_main"
+    tools:viewBindingIgnore="true">
 
 
     <androidx.recyclerview.widget.RecyclerView

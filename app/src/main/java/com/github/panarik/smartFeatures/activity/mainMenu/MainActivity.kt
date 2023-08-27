@@ -28,8 +28,8 @@ class MainActivity : AppCompatActivity(), RecyclerItemListener {
         recyclerView.setHasFixedSize(true)
         adapter = RecyclerViewAdapter(getRecyclerViewItems(), this)
         layoutManager = LinearLayoutManager(this)
-        recyclerView.setAdapter(adapter)
-        recyclerView.setLayoutManager(layoutManager)
+        recyclerView.adapter = adapter
+        recyclerView.layoutManager = layoutManager
     }
 
     override fun recycler_onItemClick(position: Int) {
@@ -50,6 +50,7 @@ class MainActivity : AppCompatActivity(), RecyclerItemListener {
                 startActivity(Intent(this, SignInActivity::class.java))
                 true
             }
+
             else -> super.onOptionsItemSelected(item)
         }
     }

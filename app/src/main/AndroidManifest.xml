@@ -15,7 +15,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".activity.DragAndDropActivity"></activity>
+        <activity android:name=".activity.tipsCalculator.TipsCalcActivity" />
+        <activity android:name=".activity.DragAndDropActivity" />
         <activity android:name=".activity.BlogKotlinActivity" />
         <activity android:name=".activity.BugUiExampleActivity" />
         <activity android:name=".activity.TaxiDriverActivity" />
@@ -24,7 +25,7 @@
         <activity android:name=".activity.TaxiChooseModeActivity" />
         <activity android:name=".activity.TaxiSplashScreenActivity" />
         <activity android:name=".activity.UserListActivity" />
-        <activity android:name=".activity.WebActivity" /> <!-- на удаление -->
+        <activity android:name=".activity.WebActivity" />
         <activity android:name=".data.products.RecyclerProductViewActivity" />
         <activity android:name=".data.catgame.PetActivity" />
         <activity
