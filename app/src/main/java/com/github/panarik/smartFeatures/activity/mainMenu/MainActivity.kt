@@ -1,5 +1,6 @@
 package com.github.panarik.smartFeatures.activity.mainMenu
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -37,6 +38,7 @@ class MainActivity : AppCompatActivity(), RecyclerItemListener {
         startActivity(Intent(this, menu[position].activity.javaClass))
     }
 
+    @SuppressLint("ResourceType")
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
         val inflater = menuInflater
         inflater.inflate(R.menu.menu_main, menu)
@@ -50,7 +52,6 @@ class MainActivity : AppCompatActivity(), RecyclerItemListener {
                 startActivity(Intent(this, SignInActivity::class.java))
                 true
             }
-
             else -> super.onOptionsItemSelected(item)
         }
     }
