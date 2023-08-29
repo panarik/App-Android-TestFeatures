@@ -51,7 +51,7 @@ class TipsCalcModel(
         NumberFormat.getCurrencyInstance().format(tips)
 
     private fun updateOrderCost(): Double {
-        val input = binding.tipsCostOfService.text.toString()
+        val input = binding.tipsCostOfService.editText?.text.toString()
         return if (input.isEmpty()) 0.0 else input.toDouble()
     }
 
