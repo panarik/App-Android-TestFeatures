@@ -164,15 +164,15 @@ public class TestBase {
 
     //флоу signIn
     public static void auth_signIn() {
+
         //переход в режим signIn
         onView(withId(R.id.chat_toggleSingUpTextView)).perform(click());
         //вводим email
-        onView(withId(R.id.chat_emailEditText)).perform(typeText("test2@gmail.com"));
+        onView(withId(R.id.chat_emailEditText)).perform(typeText("test")); // сейчас авторизация не проходит
         //вводим пароль
         onView(withId(R.id.chat_passwordEditText)).perform(typeText("123456"));
         //жмем далее
         onView(withId(R.id.chat_loginSignUpButton)).perform(click());
-
     }
 
     //войти без регистрации
