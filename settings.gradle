@@ -1,3 +1,11 @@
-include ':benchmark'
+pluginManagement {
+    repositories {
+        google()
+        mavenCentral()
+        gradlePluginPortal()
+    }
+}
+
+rootProject.name = 'SmartFeatures'
 include ':app'
-rootProject.name='SmartFeatures'
+include ':benchmark'

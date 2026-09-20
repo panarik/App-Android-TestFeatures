@@ -1,11 +1,9 @@
 package com.github.panarik.smartFeatures.data.blog
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.github.panarik.smartFeatures.R
-import kotlinx.android.synthetic.main.blog_item.view.*
+import com.github.panarik.smartFeatures.databinding.BlogItemBinding
 
 class BlogAdapter:
         RecyclerView.Adapter<BlogViewHolder>() //типовой RecyclerView.Adapter будет использовать кастомный BlogViewHolder
@@ -19,9 +17,8 @@ class BlogAdapter:
     //создаёт отдельный ВьюХолдер
     override fun onCreateViewHolder
             (parent: ViewGroup, viewType: Int): BlogViewHolder {
-        val layoutInflater = LayoutInflater.from(parent.context)
-        val blogItem = layoutInflater.inflate(R.layout.blog_item, parent, false) //разметка вьюХолдера = разметка blog_item
-        return BlogViewHolder(blogItem)
+        val binding = BlogItemBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return BlogViewHolder(binding)
     }
 
     //присваиваем ВьюХолдерам конкретные значения в полях разметки
@@ -32,7 +29,7 @@ class BlogAdapter:
 
         //2ой пример. Привязываем текст к ArrayList
         val blogTitle = blogTitles.get(position)
-        holder.view.blog_title.text = blogTitle
+        holder.binding.blogTitle.text = blogTitle
     }
 
     //количество ИьюХолдеров в RecyclerView
@@ -42,8 +39,5 @@ class BlogAdapter:
 }
 
 //Создаем свой ViewHolder
-class BlogViewHolder(val view: View): RecyclerView.ViewHolder(view) {
+class BlogViewHolder(val binding: BlogItemBinding): RecyclerView.ViewHolder(binding.root) {
 }
-
-
-

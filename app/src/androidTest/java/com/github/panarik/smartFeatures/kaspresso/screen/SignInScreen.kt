@@ -1,7 +1,7 @@
 package com.github.panarik.smartFeatures.kaspresso.screen
 
-import com.agoda.kakao.text.KButton
-import com.agoda.kakao.text.KTextView
+import io.github.kakaocup.kakao.text.KButton
+import io.github.kakaocup.kakao.text.KTextView
 import com.github.panarik.smartFeatures.R
 import com.github.panarik.smartFeatures.activity.SignInActivity
 import com.kaspersky.kaspresso.screens.KScreen

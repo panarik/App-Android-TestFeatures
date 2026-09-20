@@ -3,10 +3,10 @@ package com.github.panarik.smartFeatures.kakao.screen
 
 import android.view.View
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import com.agoda.kakao.recycler.KRecyclerItem
-import com.agoda.kakao.recycler.KRecyclerView
-import com.agoda.kakao.screen.Screen
-import com.agoda.kakao.text.KTextView
+import io.github.kakaocup.kakao.recycler.KRecyclerItem
+import io.github.kakaocup.kakao.recycler.KRecyclerView
+import io.github.kakaocup.kakao.screen.Screen
+import io.github.kakaocup.kakao.text.KTextView
 import com.github.panarik.smartFeatures.R
 import org.hamcrest.Matcher
 

@@ -2,7 +2,7 @@ package com.github.panarik.smartFeatures.kakao.test
 
 import androidx.test.internal.runner.junit4.AndroidJUnit4ClassRunner
 import androidx.test.rule.ActivityTestRule
-import com.agoda.kakao.screen.Screen.Companion.onScreen
+import io.github.kakaocup.kakao.screen.Screen.Companion.onScreen
 import com.github.panarik.smartFeatures.activity.SignInActivity
 import com.github.panarik.smartFeatures.kakao.screen.SignInScreen
 import org.junit.Rule

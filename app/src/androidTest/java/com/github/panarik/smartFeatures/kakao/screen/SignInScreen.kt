@@ -1,9 +1,9 @@
 package com.github.panarik.smartFeatures.kakao.screen
 
 
-import com.agoda.kakao.edit.KEditText
-import com.agoda.kakao.screen.Screen
-import com.agoda.kakao.text.KTextView
+import io.github.kakaocup.kakao.edit.KEditText
+import io.github.kakaocup.kakao.screen.Screen
+import io.github.kakaocup.kakao.text.KTextView
 import com.github.panarik.smartFeatures.R
 
 open class SignInScreen : Screen<SignInScreen>() {

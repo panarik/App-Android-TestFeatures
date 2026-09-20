@@ -1,17 +1,17 @@
 package com.github.panarik.smartFeatures.kaspresso.screen
 
 import androidx.test.espresso.matcher.ViewMatchers.withId
-import com.agoda.kakao.recycler.KRecyclerView
+import io.github.kakaocup.kakao.recycler.KRecyclerView
 import com.github.panarik.smartFeatures.R
 import com.github.panarik.smartFeatures.activity.BlogKotlinActivity
 import com.kaspersky.kaspresso.screens.KScreen
 
 import android.view.View
-import com.agoda.kakao.image.KImageView
-import com.agoda.kakao.recycler.KRecyclerItem
-import com.agoda.kakao.text.KTextView
+import io.github.kakaocup.kakao.image.KImageView
+import io.github.kakaocup.kakao.recycler.KRecyclerItem
+import io.github.kakaocup.kakao.text.KTextView
 import org.hamcrest.Matcher
-import com.agoda.kakao.common.builders.ViewBuilder
+import io.github.kakaocup.kakao.common.builders.ViewBuilder
 
 object BlogScreen : KScreen<BlogScreen>() {
 
