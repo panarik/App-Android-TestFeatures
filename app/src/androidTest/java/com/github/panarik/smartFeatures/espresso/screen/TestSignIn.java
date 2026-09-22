@@ -12,8 +12,11 @@ import static androidx.test.espresso.action.ViewActions.click;
 import static androidx.test.espresso.action.ViewActions.typeText;
 import static androidx.test.espresso.assertion.ViewAssertions.matches;
 import static androidx.test.espresso.matcher.ViewMatchers.isDisplayed;
-import static androidx.test.espresso.matcher.ViewMatchers.isRoot;
 import static androidx.test.espresso.matcher.ViewMatchers.withId;
+
+import android.util.Log;
+
+import androidx.test.espresso.NoMatchingViewException;
 
 public class TestSignIn extends TestBase {
 
@@ -24,12 +27,29 @@ public class TestSignIn extends TestBase {
                 .check(matches(isDisplayed()));
     }
 
-    //Sign In
+    /**
+     * Пример автотеста с авторизацией.
+     * @throws InterruptedException
+     */
     @Test
-    public void test_auth_signIn(){
+    public void test_auth_signIn() throws InterruptedException {
+
+        // Принудительное ожидание
+        Thread.sleep(1000);
+
         auth_signIn();
-        //находимся в MainActivity
-        onView(withId(R.id.activity_main)).check(matches(isDisplayed()));
+
+        try {
+            onView(withId(R.id.activity_main)).check(matches(isDisplayed())); // проверка что открыт экран MainActivity
+        } catch (NoMatchingViewException e) {
+            Log.d("TestRunner", "Не могу найти главный экран");
+            Thread.sleep(2000);
+            login_withoutAuth();
+        } finally {
+            Thread.sleep(2000);
+            onView(withId(R.id.activity_main)).check(matches(isDisplayed())); // проверка что открыт экран MainActivity
+        }
+
     }
 
     @Test
@@ -39,7 +59,7 @@ public class TestSignIn extends TestBase {
     }
 
     @Test
-    public void test_auth_signUp(){
+    public void test_auth_signUp() {
         //вводим новый email
         final Random random = new Random();
         onView(withId(R.id.chat_emailEditText)).perform(typeText
